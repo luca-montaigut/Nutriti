@@ -2,7 +2,7 @@
 
 ## 1. Présentation
 
-Une appli qui te propose des repas pour la semaine selon tes objectifs et génère la liste des courses correspondantes avec les quantités.
+Une appli qui te propose des repas pour la semaine selon tes objectifs et génère la liste des courses correspondante avec les quantités.
 
 ## 2. Parcours utilisateur
 
@@ -12,9 +12,9 @@ L'utilisateur entre ses informations :
 
 - 🆔 taille + poids (=calcul de l'IMC) 
 
-- 🏃 activité physique (nulle, modéré, régulière, intense ...) 
+- 🏃 activité physique (nulle, modérée, régulière, intense ...) 
 
-- 🎯 objectif : maigrir,grossir ou seulement équilibrer ses repas)
+- 🎯 objectif : maigrir, grossir ou seulement équilibrer ses repas)
 
 L'appli génère une semaine de repas type avec les quantités et la liste de courses 
 
@@ -22,7 +22,7 @@ L'utilisateur voit son planning de repas
 
 Il peut cliquer sur les repas pour les modifier (ex : changer un aliment qu'il n'aime pas etc...)
 
-Il peut s'envoyer sa liste des courses par mail ou l'imprimer
+Il peut s'envoyer sa liste de courses par mail ou l'imprimer
 
 Fonctionnalités avancées : 
 
@@ -34,13 +34,13 @@ Loin dans le futur : 🗺️ applicable à divers pays (langue + aliments et rec
 
 ## 3. Concrètement et techniquement
 
-L'appli doit apprendre de l'utilisateur à force d'utilisation : possibilité de paramétrer les aliments petit à petit
+L'appli doit apprendre de l'utilisateur : possibilité de paramétrer les aliments petit à petit
 
 - ne pas me proposer (j'aime pas)
 
-- ne plus me le proposer pendant quelques temps (j'en ai trop manger dernièrement)
+- ne plus me le proposer pendant quelques temps (j'en ai trop mangé dernièrement)
 
-- augmenter la fréquence (j'en voudrais plus souvent, quitte a diminué un aliment de la même catégorie)
+- augmenter la fréquence (j'en voudrais plus souvent, quitte à diminuer un aliment de la même catégorie)
 
 - etc...
 
@@ -64,7 +64,7 @@ L'appli doit proposer des programmes sur :
 
 ### 3.2. Front
 
-Bootstrap avec ou sans thème +Surement du Javascript mais nous n'avons pas encore vu le cours dessus
+Bootstrap avec ou sans thème + sûrement du Javascript mais nous n'avons pas encore vu le cours dessus
 
 ### 3.3. Backend
 
@@ -72,17 +72,17 @@ Rails, Devise, Letter-Opener, Table Print, Mailjet
 
 ### 3.4. Mes besoins techniques
 
-La partie qui m'inquiête le plus concerne la création des repas et les relations de la base de données.
+La partie qui m'inquiète le plus concerne la création des repas et les relations de la base de données.
 
 L'appli a été pensée de base pour mobile. Je n'ai pas spécialement d'idées pour la charte graphique du front.
 
 ## 4. La version minimaliste mais fonctionnelle qu'il faut avoir livré la première semaine
 
-MVP = L'appli génère des repas (équilibrés ou non) et une liste de courses sans prise en compte de régimes particulier ni de paramétrage des aliments + compte utilisateur
+MVP = L'appli génère des repas (équilibrés ou non) et une liste de courses sans prise en compte des régimes particuliers et du paramétrage des aliments + compte utilisateur
 
-## 5. La version que l'on présentera aux jury
+## 5. La version que l'on présentera au jury
 
-Pramétrage des aliments pour s'adapter à l'utilisateur + "beau" front
+Paramétrage des aliments pour s'adapter à l'utilisateur + "beau" front
 
 ## 6. Notre mentor
-🧙‍♂️ Qui veut être notre mentor ? 🧙‍♀️
+🧙‍♂️ Manuel Cartier https://www.linkedin.com/in/manucartier
