@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 2020_03_16_141010) do
     t.string "last_name"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.integer "weight"
-    t.integer "height"
+    t.decimal "weight"
+    t.decimal "height"
     t.integer "age"
     t.string "gender"
     t.string "physical_activity"
