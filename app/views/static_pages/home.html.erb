@@ -1,26 +1,47 @@
-<h1>Coucou Thibault</h1>
-<ul>
-  <% if user_signed_in? %>
-    <li>
-      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-    </li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="jumbotron jumbotron-fluid" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://images.pexels.com/photos/1153369/pexels-photo-1153369.jpeg?cs=srgb&dl=a-l-interieur-adulte-aliments-content-1153369.jpg&fm=jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;">
+  
+    <div class="container ml-5 mt-5" >
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-6 mt-5">
+          <h1 class="display-2 text-warning"> UNE ALIMENTATION SAINE POUR UN CORPS SAIN</h1>
+          <button type="button" class="btn btn-warning disabled text-center">Rejoignez-nous !</button>
+        </div>
+        <div class="col-5"></div>
+      </div>
+    </div>
+  </div>
 
-    <li>
-      Voici ton email : <%= current_user.email %>
-    </li>
+  <div class="container">
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="https://images.pexels.com/photos/1833335/pexels-photo-1833335.jpeg?cs=srgb&dl=aliments-assiette-cuisine-delicieux-1833335.jpg&fm=jpg" class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <li>
-      <%= link_to "Edit email / password", edit_user_registration_path %>
-    </li>
+  </div>
+  
+</body>
+</html>
 
-  <% else %>
-    <li>
-      <%= link_to "Sign in", new_user_session_path %>
-    </li>
-
-    <li>
-      <%= link_to "Sign up", new_user_registration_path %>
-    </li>
-
-  <% end %>
-</ul>
