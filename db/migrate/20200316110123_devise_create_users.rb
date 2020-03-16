@@ -8,8 +8,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
 	  t.string :last_name
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-	  t.decimal :weight
-	  t.decimal :height
+	  t.integer :weight
+	  t.integer :height
 	  t.integer :age
 	  t.string :gender
 	  t.string :physical_activity
