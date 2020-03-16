@@ -29,8 +29,6 @@
                 <%= current_user %>
               </button>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <!--<%= link_to "Voir profil", user_path(current_user.id), class: "dropdown-item" %>-->
-                <!--<%= link_to "Parametres", user_path(current_user.id), class: "dropdown-item" %>-->
                 <div class="dropdown-divider"></div>
                 <%= link_to "Se déconnecter", destroy_user_session_path, class:"dropdown-item", method: :delete %>
               </div>
