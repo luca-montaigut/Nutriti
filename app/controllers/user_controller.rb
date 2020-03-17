@@ -3,14 +3,17 @@ class UserController < ApplicationController
     @user = current_user
   end
 
-  def update
-    height = "#{params[:meter]}#{params[:cm]}".to_i
-    
-    current_user.update(gender: params[:gender],
-                        birthday: params[:birthday],
-                        weight: params[:weight],
-                        physical_activity: params[:activity],
-                        height: height)
+  def update  
+    current_user.update(user_params)
 
+    redirect_to user_path(current_user.id), flash:{notice: "Votre profil a été mis à jours"}
+  end
+
+private
+
+  def user_params
+    params
+    .require(:user)
+    .permit(:first_name, :last_name, :gender, :height, :weight, :birthday, :physical_activity, :id)
   end
 end

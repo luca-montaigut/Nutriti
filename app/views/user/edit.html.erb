@@ -1,0 +1,48 @@
+<div class="container">
+
+<%= form_with(model: current_user, method: "put") do |f|%>
+
+<div class="form-group">
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name ,  value: current_user.first_name,required: true, class:"form-control" %>
+</div>
+
+<div class="form-group">
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name ,  value: current_user.last_name,required: true, class:"form-control" %>
+</div>
+
+<div class="form-group">
+  <%= f.label :birthday %>
+  <%= f.date_field :birthday ,  value: current_user.birthday,required: true, class:"form-control" %>
+</div>
+
+<div class="form-group">
+  <%= f.label :weight, "Poids en kg" %>
+  <%= f.number_field :weight, value: current_user.weight ,required: true, class:"form-control"%>
+</div>
+
+<div class="form-group">
+    <%= f.label :height, "Taille en cm"%>
+    <%= f.number_field :height ,value: current_user.height, required: true, class:"form-control"%>
+</div>
+
+<div class="form-group">
+  <%= f.label :sexe %>
+  <%= f.select :gender, [['Homme'],['Femmme']] , value: current_user.gender,required: true, class:"form-control"%>
+</div>
+
+<div class="form-group">
+  <%= f.label :activity %>
+  <%= f.select :physical_activity, [['Sedentaire', '1.37'],['Actif', '1.50'],['Tres Actif', '1.80']] ,required: true, class:"form-control"%>
+</div>
+
+  <%= submit_tag("Mettre a jour mon profil") %>
+<% end %>
+
+<%= link_to "Modifier votre email et Mot de passe", edit_user_registration_path %>
+</div>
+
+    <div class="text-center mt-3">
+        <%= link_to '« Retour Profil', user_path(current_user.id), class:"btn btn-success" %>
+    </div>

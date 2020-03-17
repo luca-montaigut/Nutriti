@@ -1,38 +1,33 @@
-<p><%= @user.last_name%></p>
-<p><%= @user.first_name%></p>
-<p><%= @user.email%></p>
 
-<%= form_with(url: "/user/:id", method: "put") do |f|%>
+  
+  <h1 class="text-center mt-4"> Bienvenue sur votre profil <%=current_user.first_name%> <%=current_user.last_name%></h1>
+  
+  
+<div class="d-flex justify-content-center mt-5">
+        <div class="card w-50">
+          <div class="card-body">
+            <h5 class="card-title"><%= current_user.first_name %> <%= current_user.last_name %></h5>
+            <p class="card-text"><%= current_user.gender %></p>
+            <p class="card-text"><%= current_user.birthday %></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><%= current_user.email %></li>
+            <li class="list-group-item"><%= current_user.height %></li>
+            <li class="list-group-item"><%= current_user.weight %></li>
+            <li class="list-group-item"><%= current_user.physical_activity %></li>
+          </ul>
+          <div class="card-body text-center">
+            <%if current_user.id == current_user.id %>
+              <%= link_to 'Editer le compte', edit_user_registration_path, class:"btn btn-outline-success" %> |
+              <%= link_to 'Editer le profil', edit_user_path, class:"btn btn-success" %>
+            <% end %>
+          </div>
+        </div>
+    </div>
 
-<div class="form-group">
-  <%= f.label :birthday %>
-  <%= f.date_field :birthday ,  value: current_user.birthday,required: true%>
+    <div class="text-center mt-3">
+        <%= link_to '« Retour Accueil', root_path, class:"btn btn-warning" %>
+    </div>
+  <br>
+
 </div>
-
-<div class="form-group">
-  <%= f.label :weight %>
-  <%= f.number_field :weight,  value: current_user.weight ,required: true%>
-</div>
-
-<div class="form-group">
-    <%= f.label :height %>
-    <%= f.number_field :meter ,value: current_user.height.digits[2],required: true%>
-    m
-    <%= f.number_field :cm , value: current_user.height.to_s[1..2],required: true%>
-    cm
-</div>
-
-<div class="form-group">
-  <%= f.label :sexe %>
-  <%= f.select :gender, [['Homme'],['Femmme']] , value: current_user.gender,required: true%>
-</div>
-
-<div class="form-group">
-  <%= f.label :activity %>
-  <%= f.select :activity, [['Sedantaire', '1.37'],['Actif', '1.50'],['Tres Actif', '1.80']] ,required: true%>
-</div>
-
-  <%= submit_tag("Mettre a jour mon profile") %>
-<% end %>
-
-<%= link_to "Modifier votre email et Mot de passe", edit_user_registration_path %>
