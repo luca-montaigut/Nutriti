@@ -4,7 +4,7 @@ class Admin::RecipesController < Admin::ApplicationController
   # GET /admin/recipes
   # GET /admin/recipes.json
   def index
-    @admin_recipes = Admin::Recipe.all
+    @admin_recipes = Recipe.all
   end
 
   # GET /admin/recipes/1
@@ -14,7 +14,8 @@ class Admin::RecipesController < Admin::ApplicationController
 
   # GET /admin/recipes/new
   def new
-    @admin_recipe = Admin::Recipe.new
+    @admin_recipe = Recipe.new
+    @admin_recipe.join_recipe_foods.build
   end
 
   # GET /admin/recipes/1/edit
@@ -24,15 +25,13 @@ class Admin::RecipesController < Admin::ApplicationController
   # POST /admin/recipes
   # POST /admin/recipes.json
   def create
-    @admin_recipe = Admin::Recipe.new(admin_recipe_params)
+    @admin_recipe = Recipe.new(admin_recipe_params)
 
     respond_to do |format|
       if @admin_recipe.save
-        format.html { redirect_to @admin_recipe, notice: 'Recipe was successfully created.' }
-        format.json { render :show, status: :created, location: @admin_recipe }
+        format.html { redirect_to admin_recipes_path, notice: 'Recipe was successfully created.' }
       else
         format.html { render :new }
-        format.json { render json: @admin_recipe.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -42,11 +41,9 @@ class Admin::RecipesController < Admin::ApplicationController
   def update
     respond_to do |format|
       if @admin_recipe.update(admin_recipe_params)
-        format.html { redirect_to @admin_recipe, notice: 'Recipe was successfully updated.' }
-        format.json { render :show, status: :ok, location: @admin_recipe }
+        format.html { redirect_to admin_recipes_path, notice: 'Recipe was successfully updated.' }
       else
         format.html { render :edit }
-        format.json { render json: @admin_recipe.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -57,18 +54,19 @@ class Admin::RecipesController < Admin::ApplicationController
     @admin_recipe.destroy
     respond_to do |format|
       format.html { redirect_to admin_recipes_url, notice: 'Recipe was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_admin_recipe
-      @admin_recipe = Admin::Recipe.find(params[:id])
+      @admin_recipe = Recipe.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def admin_recipe_params
-      params.fetch(:admin_recipe, {})
+      params
+      .require(:recipe)
+      .permit(:title, :forhowmany, :cookingtime, :budget, :url, join_recipe_foods_attributes: [:food_id, :quantity, :_destroy])
     end
 end

@@ -1,4 +1,19 @@
 <p id="notice"><%= notice %></p>
 
+<td><%= @admin_recipe.title %></td>
+<td><%= @admin_recipe.forhowmany %></td>
+<td><%= @admin_recipe.cookingtime %></td>
+<td><%= @admin_recipe.budget %></td>
+<td><%= @admin_recipe.url %></td>
+
+  <ul>
+<% @admin_recipe.join_recipe_foods.each do |food| %>
+  <li>
+    <%= food.quantity %>
+    <%= food.food.alim_name %>
+  </li>
+<% end %>
+  </ul>
+
 <%= link_to 'Edit', edit_admin_recipe_path(@admin_recipe) %> |
 <%= link_to 'Back', admin_recipes_path %>
