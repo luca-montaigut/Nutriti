@@ -8,6 +8,8 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'mailjet'
+gem 'letter_opener', :group => :development
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
 # Use postgresql as the database for Active Record
@@ -66,6 +68,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+gem 'friendly_id', '~> 5.2.4' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
@@ -74,5 +77,10 @@ end
 gem 'table_print'
 gem 'faker'
 
+<<<<<<< HEAD
 gem 'jquery-rails'
 gem 'cocoon' 
+=======
+gem 'cocoon'
+gem 'dotenv-rails' 
+>>>>>>> development

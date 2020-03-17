@@ -8,11 +8,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
 	  t.string :last_name
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-	  t.integer :weight
-	  t.integer :height
-	  t.integer :age
+	  t.integer :weight, :default => 0
+    t.integer :height, :default => 0
+    t.datetime :birthday, :default => Time.now
+	  t.integer :age, :default => 0
 	  t.string :gender
-	  t.string :physical_activity
+	  t.string :physical_activity, :default => "0"
 	  t.string :objective
 
       ## Recoverable

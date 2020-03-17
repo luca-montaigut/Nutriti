@@ -58,11 +58,12 @@ ActiveRecord::Schema.define(version: 2020_03_17_102317) do
     t.string "last_name"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.integer "weight"
-    t.integer "height"
-    t.integer "age"
+    t.integer "weight", default: 0
+    t.integer "height", default: 0
+    t.datetime "birthday", default: "2020-03-17 13:31:34"
+    t.integer "age", default: 0
     t.string "gender"
-    t.string "physical_activity"
+    t.string "physical_activity", default: "0"
     t.string "objective"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

@@ -13,6 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require activestorage
+<<<<<<< HEAD
 //= require turbolinks
 //= require cocoon
+=======
+>>>>>>> development
 //= require_tree .

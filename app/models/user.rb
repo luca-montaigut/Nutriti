@@ -1,10 +1,13 @@
 class User < ApplicationRecord
+  after_update :age
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :recoverable, :rememberable, :validatable,
 		 :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
+
+  after_create :welcome_mail
 
 def self.new_with_session(params, session)
   super.tap do |user|
@@ -22,11 +25,22 @@ def self.from_omniauth(auth)
   end
 end
 
+def get_age
+  ((Time.zone.now - self.birthday.to_time) / 1.year.seconds).floor
+end
+
   def tmb
-    if (self.gender == "homme")
-       ((13.707 * self.weight) + (492.3 * self.height / 100) - (6.673 * self.age) + 77.607) * self.physical_activity.to_f
+
+    if (self.gender == "Homme")
+       ((13.707 * self.weight) + (492.3 * self.height / 100) - (6.673 * self.get_age) + 77.607) * self.physical_activity.to_f
     else
-     ((9.740 * self.weight) + (492.3 * (self.height / 100)) - (6.673 * self.age) + 77.607) * self.physical_activity.to_f
+        ((9.740 * self.weight) + (492.3 * (self.height / 100)) - (6.673 * self.get_age) + 77.607) * self.physical_activity.to_f
     end
+  end
+
+  def welcome_mail
+	UserMailer.welcome_email(self).deliver_now
+  def has_completed?
+    (self.tmb == 0.0)? false : true
   end
 end
