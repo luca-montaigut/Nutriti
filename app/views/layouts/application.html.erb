@@ -24,18 +24,15 @@
         <ul class="navbar-nav">
           <% if user_signed_in? %>
             <li class="nav-item dropdown">
-<<<<<<< HEAD
               <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <%= "#{current_user.first_name} #{current_user.last_name}" %>
               </button>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                    <%= link_to "Voir profil", user_path(current_user.id), class: "dropdown-item" %>
-=======
               <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <%= current_user %>
               </button>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
->>>>>>> development
                 <div class="dropdown-divider"></div>
                 <%= link_to "Se déconnecter", destroy_user_session_path, class:"dropdown-item", method: :delete %>
               </div>
@@ -55,7 +52,13 @@
         </ul>
       </div>
     </nav>
-    
+    <% if current_user%>
+      <% if !current_user.has_completed? %>
+        <div class="alert alert-warning" role="alert">
+         Veuillez remple vos information <%= link_to "cliquer ici",user_path(current_user)%>.  
+        </div>
+      <% end %>
+    <%end%>
     <%= yield %>
   
   </body>
