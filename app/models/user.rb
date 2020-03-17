@@ -6,6 +6,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
 		 :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
+  after_create :welcome_mail
+
 def self.new_with_session(params, session)
   super.tap do |user|
     if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
@@ -28,5 +30,9 @@ end
     else
      ((9.740 * self.weight) + (492.3 * (self.height / 100)) - (6.673 * self.age) + 77.607) * self.physical_activity.to_f
     end
+  end
+
+  def welcome_mail
+	UserMailer.welcome_email(self).deliver_now
   end
 end
