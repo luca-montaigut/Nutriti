@@ -9,6 +9,8 @@
       <th>Pour combien de personnes</th>
       <th>Temps de préparation</th>
       <th>Budget</th>
+      <th>Kcal</th>
+      <th>Protein</th>
       <th>Lien vers la recette</th>
       <th colspan="3"></th>
     </tr>
@@ -21,6 +23,8 @@
         <td><%= admin_recipe.forhowmany %></td>
         <td><%= admin_recipe.cookingtime %></td>
         <td><%= admin_recipe.budget %></td>
+        <td><%= admin_recipe.total_kcal %></td>
+        <td><%= admin_recipe.total_prot %></td>
         <td><%= admin_recipe.url %></td>
         <td><%= link_to 'Show', admin_recipe_path(admin_recipe.id) %></td>
         <td><%= link_to 'Edit', edit_admin_recipe_path(admin_recipe.id) %></td>
