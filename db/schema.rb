@@ -15,26 +15,28 @@ ActiveRecord::Schema.define(version: 2020_03_17_102317) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "foods", force: :cascade do |t|
-    t.integer "alim_code"
+  create_table "foods", id: false, force: :cascade do |t|
+    t.string "alim_code", null: false
     t.string "alim_name"
     t.string "alim_group"
     t.string "alim_sub_group"
     t.string "alim_sub_sub_group"
-    t.string "kcalfor100g"
-    t.string "proteinfor100g"
-    t.string "carbohydratefor100g"
-    t.string "lipidfor100g"
-    t.string "sugarfor100g"
-    t.string "cholesterolfor100g"
-    t.string "saltfor100g"
+    t.decimal "kcalfor100g"
+    t.decimal "proteinfor100g"
+    t.decimal "carbohydratefor100g"
+    t.decimal "lipidfor100g"
+    t.decimal "sugarfor100g"
+    t.decimal "cholesterolfor100g"
+    t.decimal "saltfor100g"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["alim_code"], name: "index_foods_on_alim_code", unique: true
   end
 
   create_table "join_recipe_foods", force: :cascade do |t|
     t.bigint "recipe_id"
     t.bigint "food_id"
+    t.integer "quantity", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["food_id"], name: "index_join_recipe_foods_on_food_id"
@@ -74,6 +76,5 @@ ActiveRecord::Schema.define(version: 2020_03_17_102317) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "join_recipe_foods", "foods"
   add_foreign_key "join_recipe_foods", "recipes"
 end

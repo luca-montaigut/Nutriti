@@ -74,4 +74,5 @@ end
 gem 'table_print'
 gem 'faker'
 
+gem 'jquery-rails'
 gem 'cocoon' 

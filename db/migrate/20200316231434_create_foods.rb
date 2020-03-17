@@ -1,20 +1,21 @@
 class CreateFoods < ActiveRecord::Migration[5.2]
   def change
-    create_table :foods do |t|
-      t.integer :alim_code
+    create_table :foods, id: false do |t|
+      t.string :alim_code, null: false
       t.string :alim_name
       t.string :alim_group
       t.string :alim_sub_group
       t.string :alim_sub_sub_group
-      t.string :kcalfor100g
-      t.string :proteinfor100g
-      t.string :carbohydratefor100g
-      t.string :lipidfor100g
-      t.string :sugarfor100g
-      t.string :cholesterolfor100g
-      t.string :saltfor100g
+      t.decimal :kcalfor100g
+      t.decimal :proteinfor100g
+      t.decimal :carbohydratefor100g
+      t.decimal :lipidfor100g
+      t.decimal :sugarfor100g
+      t.decimal :cholesterolfor100g
+      t.decimal :saltfor100g
 
       t.timestamps
     end
+    add_index :foods, :alim_code, unique: true
   end
 end
