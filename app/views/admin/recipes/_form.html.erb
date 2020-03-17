@@ -26,7 +26,7 @@
     <%= f.text_field :url, class:"form-control"%>
 <br>
 
-<p>Ingrédients :</p>
+<p>Liste des ingrédients :</p>
     <div class="food">
         <%= f.fields_for :join_recipe_foods do |recipe_form| %>
             <%= render 'join_recipe_food_fields', f: recipe_form%>

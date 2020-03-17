@@ -39,6 +39,7 @@ class Admin::RecipesController < Admin::ApplicationController
   # PATCH/PUT /admin/recipes/1
   # PATCH/PUT /admin/recipes/1.json
   def update
+    @admin_recipe.join_recipe_foods.destroy_all
     respond_to do |format|
       if @admin_recipe.update(admin_recipe_params)
         format.html { redirect_to admin_recipes_path, notice: 'Recipe was successfully updated.' }
@@ -51,6 +52,7 @@ class Admin::RecipesController < Admin::ApplicationController
   # DELETE /admin/recipes/1
   # DELETE /admin/recipes/1.json
   def destroy
+    @admin_recipe.join_recipe_foods.destroy_all
     @admin_recipe.destroy
     respond_to do |format|
       format.html { redirect_to admin_recipes_url, notice: 'Recipe was successfully destroyed.' }
@@ -68,5 +70,18 @@ class Admin::RecipesController < Admin::ApplicationController
       params
       .require(:recipe)
       .permit(:title, :forhowmany, :cookingtime, :budget, :url, join_recipe_foods_attributes: [:food_id, :quantity, :_destroy])
+    end
+
+    def update_recipe_params
+      params
+      .require(:recipe)
+      .permit(:title, :forhowmany, :cookingtime, :budget, :url)
+    end
+
+
+    def update_food_params
+      params
+      .require(:recipe)
+      .permit(join_recipe_foods_attributes: [:food_id, :quantity, :_destroy])
     end
 end

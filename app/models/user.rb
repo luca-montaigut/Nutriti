@@ -53,7 +53,7 @@ class User < ApplicationRecord
     UserMailer.welcome_email(self).deliver_now
   end
 
-  def has_completed?
-    (self.mb == 0.0)? false : true
+  def incomplete_profile?
+    self.drc == 0.0
   end
 end
