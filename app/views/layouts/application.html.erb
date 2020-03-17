@@ -34,7 +34,7 @@
         <ul class="navbar-nav">
           <% if user_signed_in? %>
             <li class="nav-item dropdown">
-              <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <%= "#{current_user.first_name} #{current_user.last_name}" %>
               </button>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -65,9 +65,9 @@
     <!-- End of Navbar-->
 
     <% if current_user%>
-      <% if !current_user.has_completed? %>
+      <% if current_user.incomplete_profile? %>
         <div class="alert alert-warning" role="alert">
-         Veuillez remple vos information <%= link_to "cliquer ici",user_path(current_user)%>.  
+         Veuillez remple vos information <%= link_to "cliquer ici",edit_user_path(current_user.id)%>.  
         </div>
       <% end %>
     <%end%>
