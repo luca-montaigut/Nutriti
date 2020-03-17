@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  after_update :get_age
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -21,6 +22,14 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
       user.first_name = auth.info.name   # assuming the user model has a name
+    end
+  end
+
+  def get_age
+    if self.birthday
+      (Time.now.year - self.birthday.year)
+    else
+      return 1
     end
   end
 
