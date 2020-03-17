@@ -2,12 +2,11 @@
     <div>
       <%= link_to_remove_association "<i class='fas fa-trash-alt'></i>".html_safe, f, class:"text-danger"%>
       <%= f.label :name, "<h5>Aliment : </h5>".html_safe, class:"mb-1" %>
-      <%= f.collection_select(:food_id, Food.all, :alim_code, :alim_name) %>
+      <%= f.collection_select(:food_id, Food.all, :alim_code, :alim_name, {prompt: false}, {"data-live-search" => "true"})  %>
     </div>
     <div class="d-flex flex-row mt-1">
     <%= f.label :quantity, "Quantité en gramme", class:"mx-2" %>
     <%= f.number_field :quantity, class:"form-control" %>
-    <%= f.collection_select(:food_id, Food.all, :alim_code, :alim_name, {prompt: false}, {"data-live-search" => "true"}) %>
   </div>
 
 <script>
