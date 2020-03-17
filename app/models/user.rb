@@ -25,10 +25,6 @@ class User < ApplicationRecord
     end
   end
 
-  def get_age
-    ((Time.zone.now - self.birthday.to_time) / 1.year.seconds).floor
-  end
-
   def tmb
     if (self.gender == "Homme")
       ((13.707 * self.weight) + (492.3 * self.height / 100) - (6.673 * self.get_age) + 77.607) * self.physical_activity.to_f
