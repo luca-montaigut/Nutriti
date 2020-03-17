@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Admin Recipes</h1>
+<h1>Liste des Recettes</h1>
 
+<%= link_to 'Nouvelle Recette', new_admin_recipe_path, class:"btn btn-primary" %>
+<br>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -36,4 +38,3 @@
 
 <br>
 
-<%= link_to 'New Admin Recipe', new_admin_recipe_path %>

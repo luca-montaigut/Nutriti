@@ -11,32 +11,34 @@
     </div>
   <% end %>
 
-    <%= f.label :title%>
-    <%= f.text_field :title, class:"form-control"%>
-<br>
-    <%= f.label :forhowmany%>
-    <%= f.number_field :forhowmany, class:"form-control"%>
-<br>
-    <%= f.label :cookingtime%>
-    <%= f.number_field :cookingtime, class:"form-control"%>
-<br>
-
-
-    <%= f.label :url%>
-    <%= f.text_field :url, class:"form-control"%>
-<br>
+  <%= f.label :title%>
+  <%= f.text_field :title, class:"form-control"%>
+  <br>
+  <%= f.label :forhowmany%>
+  <%= f.number_field :forhowmany, class:"form-control"%>
+  <br>
+  <%= f.label :cookingtime%>
+  <%= f.number_field :cookingtime, class:"form-control"%>
+  <br>
+  <%= f.label :budget, "faire un select_form budget"%>
+  <%= f.text_field :budget, class:"form-control"%>
+  <br>
+  <%= f.label :url%>
+  <%= f.text_field :url, class:"form-control"%>
+  <br>
 
 <p>Liste des ingrédients :</p>
-    <div class="food">
-        <%= f.fields_for :join_recipe_foods do |recipe_form| %>
-            <%= render 'join_recipe_food_fields', f: recipe_form%>
-        <% end %>
-    </div>
-    <br>
-    <div>
-    <%= link_to_add_association 'add ingredient', f, :join_recipe_foods, class:"btn btn-success", data: { association_insertion_node: '.food', association_insertion_method: :append } %>
-    <br>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="food">
+    <%= f.fields_for :join_recipe_foods do |recipe_form| %>
+        <%= render 'join_recipe_food_fields', f: recipe_form%>
+    <% end %>
   </div>
+  <br>
+  <div>
+  <%= link_to_add_association 'Ajouter un aliment', f, :join_recipe_foods, class:"btn btn-success", data: { association_insertion_node: '.food', association_insertion_method: :append } %>
+  </div>
+  <br>
+<div class="actions">
+  <%= f.submit %>
+</div>
 <% end %>

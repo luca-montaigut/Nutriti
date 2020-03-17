@@ -1,19 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<td><%= @admin_recipe.title %></td>
-<td><%= @admin_recipe.forhowmany %></td>
-<td><%= @admin_recipe.cookingtime %></td>
-<td><%= @admin_recipe.budget %></td>
-<td><%= @admin_recipe.url %></td>
+<h1 class=text-center><%= @admin_recipe.title %></h1>
+<div class="text-center">
+  Pour <%= @admin_recipe.forhowmany %> personne(s) |
+  <%= @admin_recipe.cookingtime %> minute(s) |
+  Budget : <%= @admin_recipe.budget %> |
+  Voir la recette sur : <%= @admin_recipe.url %>
+</div>
+<br>
+<h2>Valeure nutritionnelle</h2>
+<div><%= @admin_recipe.total_kcal %> kcal pour <%= @admin_recipe.forhowmany %></div>
+<div>Soit : <%= @admin_recipe.total_kcal / @admin_recipe.forhowmany %> kcal par personne</div>
+<div>dont : <%= @admin_recipe.total_prot / @admin_recipe.forhowmany %> gramme de proteine(s) par personne</div>
 
+<br>
+<h2>Liste des ingrédients</h2>
   <ul>
-<% @admin_recipe.join_recipe_foods.each do |food| %>
-  <li>
-    <%= food.quantity %>
-    <%= food.food.alim_name %>
-  </li>
-<% end %>
+    <% @admin_recipe.join_recipe_foods.each do |food| %>
+      <li>
+        <%= food.food.alim_name %> =
+        <%= food.quantity %> gramme(s)
+      </li>
+    <% end %>
   </ul>
 
-<%= link_to 'Edit', edit_admin_recipe_path(@admin_recipe) %> |
-<%= link_to 'Back', admin_recipes_path %>
+<hr>
+<div class="text-center">
+<%= link_to 'Edit', edit_admin_recipe_path(@admin_recipe), class:"btn btn-success" %> |
+<%= link_to 'Back', admin_recipes_path, class:"btn btn-primary" %>
+</div>
