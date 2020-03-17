@@ -1,26 +1,50 @@
-<h1>Coucou Thibault</h1>
-<ul>
-  <% if user_signed_in? %>
-    <li>
-      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-    </li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="jumbotron jumbotron-fluid" style="background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url(https://images.pexels.com/photos/1153369/pexels-photo-1153369.jpeg?cs=srgb&dl=a-l-interieur-adulte-aliments-content-1153369.jpg&fm=jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;">
+  
+    <div class="container ml-5 mt-5" >
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-6 mt-5">
+          <h1 class="display-2 text-white"> <b>Des courses saines en deux clics</b> </h1>
+          <button type="button mt-2" class="btn btn-warning btn-lg text-center">Essayer maintenant !</button>
+        </div>
+        <div class="col-5"></div>
+      </div>
+    </div>
+  </div>
 
-    <li>
-      Voici ton email : <%= current_user.email %>
-    </li>
 
-    <li>
-      <%= link_to "Edit email / password", edit_user_registration_path %>
-    </li>
 
-  <% else %>
-    <li>
-      <%= link_to "Sign in", new_user_session_path %>
-    </li>
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-4">
+        <h3>HEY</h3>
 
-    <li>
-      <%= link_to "Sign up", new_user_registration_path %>
-    </li>
+      </div>
+      <div class="col-4">
+        <h3>COUCOU</h3>
+  
+      </div>
+      <div class="col-4">
+        <h3>TOI</h3>
+  
+      </div>
 
-  <% end %>
-</ul>
+    </div>
+    
+  </div>
+  
+</body>
+</html>
+
