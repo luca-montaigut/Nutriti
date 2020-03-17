@@ -33,11 +33,19 @@ class User < ApplicationRecord
     end
   end
 
-  def tmb
+  def mb
     if (self.gender == "Homme")
-      ((13.707 * self.weight) + (492.3 * self.height / 100) - (6.673 * self.get_age) + 77.607) * self.physical_activity.to_f
+      ((13.707 * self.weight) + (492.3 * (self.height / 100.00).to_d) - (6.673 * self.get_age) + 77.607).to_d
     else
-      ((9.740 * self.weight) + (492.3 * (self.height / 100)) - (6.673 * self.get_age) + 77.607) * self.physical_activity.to_f
+      ((9.740 * self.weight) + (492.3 * (self.height / 100.00).to_d) - (6.673 * self.get_age) + 77.607).to_d
+    end
+  end
+
+  def drc
+    if (self.gender == "Homme")
+      self.mb * self.physical_activity.to_d
+    else
+      self.mb * self.physical_activity.to_d
     end
   end
 
@@ -46,6 +54,6 @@ class User < ApplicationRecord
   end
 
   def has_completed?
-    (self.tmb == 0.0)? false : true
+    (self.mb == 0.0)? false : true
   end
 end
