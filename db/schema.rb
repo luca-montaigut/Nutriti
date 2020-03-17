@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_16_231434) do
+ActiveRecord::Schema.define(version: 2020_03_17_102317) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,25 @@ ActiveRecord::Schema.define(version: 2020_03_16_231434) do
     t.string "sugarfor100g"
     t.string "cholesterolfor100g"
     t.string "saltfor100g"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "join_recipe_foods", force: :cascade do |t|
+    t.bigint "recipe_id"
+    t.bigint "food_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["food_id"], name: "index_join_recipe_foods_on_food_id"
+    t.index ["recipe_id"], name: "index_join_recipe_foods_on_recipe_id"
+  end
+
+  create_table "recipes", force: :cascade do |t|
+    t.string "title"
+    t.integer "forhowmany"
+    t.integer "cookingtime"
+    t.string "budget"
+    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -50,8 +69,11 @@ ActiveRecord::Schema.define(version: 2020_03_16_231434) do
     t.datetime "updated_at", null: false
     t.string "provider"
     t.string "uid"
+    t.boolean "is_admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "join_recipe_foods", "foods"
+  add_foreign_key "join_recipe_foods", "recipes"
 end
