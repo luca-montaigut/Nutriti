@@ -60,8 +60,7 @@ ActiveRecord::Schema.define(version: 2020_03_17_102317) do
     t.string "encrypted_password", default: "", null: false
     t.integer "weight", default: 0
     t.integer "height", default: 0
-    t.datetime "birthday", default: "2020-03-17 13:31:34"
-    t.integer "age", default: 0
+    t.date "birthday"
     t.string "gender"
     t.string "physical_activity", default: "0"
     t.string "objective"

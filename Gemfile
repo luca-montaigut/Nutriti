@@ -77,10 +77,5 @@ end
 gem 'table_print'
 gem 'faker'
 
-<<<<<<< HEAD
 gem 'jquery-rails'
 gem 'cocoon' 
-=======
-gem 'cocoon'
-gem 'dotenv-rails' 
->>>>>>> development

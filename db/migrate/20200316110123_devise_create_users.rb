@@ -10,8 +10,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :encrypted_password, null: false, default: ""
 	  t.integer :weight, :default => 0
     t.integer :height, :default => 0
-    t.datetime :birthday, :default => Time.now
-	  t.integer :age, :default => 0
+	  t.date :birthday
 	  t.string :gender
 	  t.string :physical_activity, :default => "0"
 	  t.string :objective
