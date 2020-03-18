@@ -19,13 +19,16 @@
   <br>
   <%= f.label :cookingtime%>
   <%= f.number_field :cookingtime, class:"form-control"%>
-  <br>
-  <%= f.label :budget, "faire un select_form budget"%>
-  <%= f.text_field :budget, class:"form-control"%>
-  <br>
-  <%= f.label :type, "faire un select_form type"%>
-  <%= f.text_field :type, class:"form-control"%>
-  <br>
+  <div class="d-flex flex-row mt-2">
+    <div class="mr-5">
+    <%= f.label :type, "Type de recette"%>
+    <%= f.select :type, [['Entrée'],['Plat']], class:"form-control"%>
+    </div>
+    <div class="mx-5">
+    <%= f.label :budget, "Budget"%>
+    <%= f.select :budget, [['Bon marché'],['Coût moyen'],['Assez Cher']], class:"form-control"%>
+    </div>
+  </div>
   <%= f.label :url%>
   <%= f.text_field :url, class:"form-control"%>
   <br>

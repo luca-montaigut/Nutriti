@@ -1,4 +1,12 @@
-<p id="notice"><%= notice %></p>
+<b>Votre : <%= @meal.type %></b>
+<hr>
+<ul>
+  <li><%= @meal.starter %></li>
+  <li><%= @meal.dish %></li>
+  <li><%= @meal.dessert %></li>
+  <li><%= @meal.drink %></li>
+  <li><%= @meal.complement %></li>
+</ul>
 
-<%= link_to 'Edit', edit_users_meal_path(@users_meal) %> |
-<%= link_to 'Back', users_meals_path %>
+<%= link_to 'Edit', edit_users_meal_path(@meal) %> |
+<%= link_to 'Back', meals_path %>

@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Users Meals</h1>
+<h1>Meals list</h1>
 
 <table>
   <thead>
@@ -10,7 +8,7 @@
   </thead>
 
   <tbody>
-    <% @users_meals.each do |users_meal| %>
+    <% @meals.each do |users_meal| %>
       <tr>
         <td><%= link_to 'Show', users_meal %></td>
         <td><%= link_to 'Edit', edit_users_meal_path(users_meal) %></td>
@@ -22,4 +20,4 @@
 
 <br>
 
-<%= link_to 'New Users Meal', new_users_meal_path %>
+<%= link_to 'New Users Meal', new_meal_path %>
