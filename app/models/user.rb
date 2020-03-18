@@ -26,8 +26,8 @@ class User < ApplicationRecord
   end
 
   def get_age
-    if self.birthday
-      (Time.now.year - self.birthday.year)
+    if self.birthdate
+      (Time.now.year - self.birthdate.year)
     else
       return 1
     end

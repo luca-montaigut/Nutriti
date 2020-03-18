@@ -69,19 +69,7 @@ class Admin::RecipesController < Admin::ApplicationController
     def admin_recipe_params
       params
       .require(:recipe)
-      .permit(:title, :forhowmany, :cookingtime, :budget, :url, join_recipe_foods_attributes: [:food_id, :quantity, :_destroy])
+      .permit(:title, :forhowmany, :cookingtime, :budget, :type, :url, join_recipe_foods_attributes: [:food_id, :quantity, :_destroy])
     end
 
-    def update_recipe_params
-      params
-      .require(:recipe)
-      .permit(:title, :forhowmany, :cookingtime, :budget, :url)
-    end
-
-
-    def update_food_params
-      params
-      .require(:recipe)
-      .permit(join_recipe_foods_attributes: [:food_id, :quantity, :_destroy])
-    end
 end
