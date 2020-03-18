@@ -37,8 +37,6 @@ ActiveRecord::Schema.define(version: 2020_03_18_060021) do
     t.bigint "recipe_id"
     t.bigint "food_id"
     t.integer "quantity", default: 1
-    t.integer "number"
-    t.string "numbertype"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["food_id"], name: "index_join_recipe_foods_on_food_id"

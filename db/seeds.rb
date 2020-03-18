@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'csv'
 Food.destroy_all
+Recipe.destroy_all
+JoinRecipeFood.destroy_all
 
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'foods_nutriti.csv'))
 csv = CSV.parse(csv_text, headers: true, encoding: 'ISO-8859-1')
@@ -30,31 +32,41 @@ end
 
 puts "There are now #{Food.count} foods in database"
 
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'recipes_nutriti.csv'))
-csv = CSV.parse(csv_text, headers: true, encoding: 'ISO-8859-1')
-csv.each do |row|
-  recipe = Recipe.new
-  recipe.title = row['title']
-  recipe.forhowmany = row['forhowmany']
-  recipe.cookingtime = row['cookingtime']
-  recipe.category = row['category']
-  recipe.budget = row['budget']
-  recipe.url = row['url']
-  recipe.save
-
-end
+Recipe.create(title: "Eau minérale", forhowmany: 1, cookingtime: 1, budget:  "Bon Marché", category:  "Drink", url: "") 
+Recipe.create(title: "Pain", forhowmany: 1, cookingtime: 1, budget:  "Bon Marché", category:  "Complement", url: "")  
+Recipe.create(title: "Pomme", forhowmany: 1, cookingtime: 1, budget:  "Bon Marché", category:  "Dessert", url: "")  
+Recipe.create(title: "Banane", forhowmany: 1, cookingtime: 1, budget:  "Bon Marché", category:  "Dessert", url: "")  
+Recipe.create(title: "Tian de légumes du soleil", forhowmany: 4, cookingtime: 10, budget:  "Bon marché", category:  "Starter", url:  "")
+Recipe.create(title: "Petit salé aux lentilles" , forhowmany: 6, cookingtime: 15, budget:  "Bon marché", category:  "Dish", url:  "")
+Recipe.create(title: "Croque-monsieur" , forhowmany: 6, cookingtime: 10, budget:  "Bon marché", category:  "Dish", url:  "")
 
 puts "There are now #{Recipe.count} recipes in database"
 
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'join_recipe_foods_nutriti.csv'))
-csv = CSV.parse(csv_text, headers: true, encoding: 'ISO-8859-1')
-csv.each do |row|
-  join = JoinRecipejoin.new
-  join.recipe_id = row['recipe_id']
-  join.food_id = row['food_id']
-  join.quantity = row['quantity']
-  join.save
+JoinRecipeFood.create(recipe_id: Recipe.where(title: "Pomme"), food_id: 13050, quantity: 150)
+JoinRecipeFood.create(recipe_id: Recipe.where(title: "Eau minérale"), food_id: 18044, quantity: 500)
+JoinRecipeFood.create(recipe_id: Recipe.where(title: "Banane"), food_id: 13005, quantity: 120)
+JoinRecipeFood.create(recipe_id: Recipe.where(title: "Tian de légumes du soleil"), food_id: 20002, quantity: 250)
+JoinRecipeFood.create(recipe_id: Recipe.where(title: "Tian de légumes du soleil"), food_id: 20047, quantity: 300)
+JoinRecipeFood.create(recipe_id: Recipe.where(title: "Tian de légumes du soleil"), food_id: 11070, quantity: 1)
+JoinRecipeFood.create(recipe_id: Recipe.where(title: "Tian de légumes du soleil"), food_id: 11000, quantity: 16)
+JoinRecipeFood.create(recipe_id: Recipe.where(title: "Tian de légumes du soleil"), food_id: 11058, quantity: 1)
+JoinRecipeFood.create(recipe_id: Recipe.where(title: "Tian de légumes du soleil"), food_id: 11015, quantity: 1)
+JoinRecipeFood.create(recipe_id: Recipe.where(title:"Petit salé aux lentilles"), food_id: 28550, quantity: 1200)
+JoinRecipeFood.create(recipe_id: Recipe.where(title:"Petit salé aux lentilles"), food_id: 30104, quantity: 300)
+JoinRecipeFood.create(recipe_id: Recipe.where(title:"Petit salé aux lentilles"), food_id: 20587, quantity: 400)
+JoinRecipeFood.create(recipe_id: Recipe.where(title:"Petit salé aux lentilles"), food_id: 11174, quantity: 10)
+JoinRecipeFood.create(recipe_id: Recipe.where(title:"Petit salé aux lentilles"), food_id: 20008, quantity: 125)
+JoinRecipeFood.create(recipe_id: Recipe.where(title:"Petit salé aux lentilles"), food_id: 11052, quantity: 1)
+JoinRecipeFood.create(recipe_id: Recipe.where(title:"Petit salé aux lentilles"), food_id: 11053, quantity: 1)
+JoinRecipeFood.create(recipe_id: Recipe.where(title: "Croque-monsieur"), food_id: 16400, quantity: 50)
+JoinRecipeFood.create(recipe_id: Recipe.where(title: "Croque-monsieur"), food_id: 9545, quantity: 50)
+JoinRecipeFood.create(recipe_id: Recipe.where(title: "Croque-monsieur"), food_id: 19041, quantity: 1000)
+JoinRecipeFood.create(recipe_id: Recipe.where(title: "Croque-monsieur"), food_id: 11058, quantity: 1)
+JoinRecipeFood.create(recipe_id: Recipe.where(title: "Croque-monsieur"), food_id: 11015, quantity: 1)
+JoinRecipeFood.create(recipe_id: Recipe.where(title: "Croque-monsieur"), food_id: 7200, quantity: 170)
+JoinRecipeFood.create(recipe_id: Recipe.where(title: "Croque-monsieur"), food_id: 12118, quantity: 80)
+JoinRecipeFood.create(recipe_id: Recipe.where(title: "Croque-monsieur"), food_id: 11013, quantity: 40)
+JoinRecipeFood.create(recipe_id: Recipe.where(title: "Croque-monsieur"), food_id: 28925, quantity: 300)
+JoinRecipeFood.create(recipe_id: Recipe.where(title: "Pain"), food_id: 7000, quantity: 70)
 
-end
-
-puts "All your recipes are completed"
+puts "There are now #{JoinRecipeFood.count} ingredients to complete yours recipes in database"
