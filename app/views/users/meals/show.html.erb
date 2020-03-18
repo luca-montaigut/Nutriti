@@ -6,6 +6,7 @@
   <li><%= @meal.dessert.title %></li>
   <li><%= @meal.drink.title %></li>
   <li><%= @meal.complement.title %></li>
+  <li>kcal:<%= @meal.kcal %></li>
 </ul>
 
 <%= link_to 'Edit', meal_path(@meal.id) %> |
