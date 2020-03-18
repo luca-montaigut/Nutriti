@@ -41,10 +41,12 @@ class User < ApplicationRecord
   end
 
   def mb
-    if (self.gender == "Homme")
+    if self.gender == "Homme"
       ((13.707 * self.weight) + (492.3 * (self.height / 100.00).to_d) - (6.673 * self.get_age) + 77.607).to_d
-    else
+    elsif self.gender == "Femme"
       ((9.740 * self.weight) + (172.9 * (self.height / 100.00).to_d) - (4.737 * self.get_age) + 667.051).to_d
+    else
+      return 0.0
     end
   end
 
