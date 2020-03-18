@@ -1,25 +1,25 @@
 class Meal < ApplicationRecord
   belongs_to :starter, class_name: 'Recipe'
   belongs_to :dish, class_name: 'Recipe'
-  belongs_to :dessert, class_name: 'Food'
-  belongs_to :drink, class_name: 'Food'
-  belongs_to :complement, class_name: 'Food'
+  belongs_to :dessert, class_name: 'Recipe'
+  belongs_to :drink, class_name: 'Recipe'
+  belongs_to :complement, class_name: 'Recipe'
 
 
-  def generate(type)
+  def generate(category)
     recipes = Recipe.all
     foods = Food.all
-    if type == "Dish"
-      self.type = "Dish"
+    if category == "Dish"
+      self.category = "Dish"
     else 
-      self.type = "Dinner"
+      self.category = "Dinner"
     end
 
-    self.starter = recipes.where(type: "Starter").sample
-    self.dish = recipes.where(type: "Dish").sample
-    self.dessert = recipes.where(type: "Dessert").sample
-    self.drink = recipes.where(type: "Drink") # Eau minérale
-    self.complement = recipes.where(type: "Complement") # Pain
+    self.starter_id = recipes.where(category: "Starter").sample.id
+    self.dish_id = recipes.where(category: "Dish").sample.id
+    self.dessert_id = recipes.where(category: "Dessert").sample.id
+    self.drink_id = recipes.where(category: "Drink").sample.id # Eau minérale
+    self.complement_id = recipes.where(category: "Complement").sample.id # Pain
 
     return self
   end

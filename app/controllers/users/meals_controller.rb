@@ -24,7 +24,8 @@ class Users::MealsController < Users::ApplicationController
   # POST /users/meals
   # POST /users/meals.json
   def create
-    @meal = Meal.new.generate("Dish")
+    category = ['Breakfast','Dish','Dinner']
+    @meal = Meal.new.generate(category.sample)
 
     respond_to do |format|
       if @meal.save
