@@ -16,4 +16,24 @@ class Recipe < ApplicationRecord
   def total_prot
     self.join_recipe_foods.map { |food| food.protein}.sum
   end
+  
+  def total_lip
+    self.join_recipe_foods.map { |food| food.lip}.sum
+  end
+
+  def total_salt
+    self.join_recipe_foods.map { |food| food.salt}.sum
+  end
+
+  def total_sugar
+    self.join_recipe_foods.map { |food| food.sugar}.sum
+  end
+
+  def total_chol
+    self.join_recipe_foods.map { |food| food.chol}.sum
+  end
+
+  def total_carb
+    self.join_recipe_foods.map { |food| food.carb}.sum
+  end
 end
