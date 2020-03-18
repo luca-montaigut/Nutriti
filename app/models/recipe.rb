@@ -5,6 +5,9 @@ class Recipe < ApplicationRecord
 
   has_many :starter_meal, foreign_key: 'starter_id', class_name: 'Meal'
   has_many :dish_meal, foreign_key: 'dish_id', class_name: 'Meal'
+  has_many :dessert_meal, foreign_key: 'dessert_id', class_name: 'Meal'
+  has_many :drink_meal, foreign_key: 'drink_id', class_name: 'Meal'
+  has_many :complement_meal, foreign_key: 'complement_id', class_name: 'Meal'
   
   def total_kcal
     self.join_recipe_foods.map { |food| food.kcal}.sum

@@ -21,8 +21,8 @@
   <%= f.number_field :cookingtime, class:"form-control"%>
   <div class="d-flex flex-row mt-2">
     <div class="mr-5">
-    <%= f.label :type, "Type de recette"%>
-    <%= f.select :type, [['Entrée'],['Plat']], class:"form-control"%>
+    <%= f.label :category, "Type de recette"%>
+    <%= f.select :category, [["Starter"],["Dish"], ["Dessert"], ["Drink"], ["Complement"]], class:"form-control"%>
     </div>
     <div class="mx-5">
     <%= f.label :budget, "Budget"%>

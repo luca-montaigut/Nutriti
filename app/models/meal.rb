@@ -17,9 +17,9 @@ class Meal < ApplicationRecord
 
     self.starter = recipes.where(type: "Starter").sample
     self.dish = recipes.where(type: "Dish").sample
-    self.dessert = foods.where(alim_sub_group: "fruit").sample
-    self.drink = Food.find(18044) # Eau minérale
-    self.complement = Food.find(7000) # Pain
+    self.dessert = recipes.where(type: "Dessert").sample
+    self.drink = recipes.where(type: "Drink") # Eau minérale
+    self.complement = recipes.where(type: "Complement") # Pain
 
     return self
   end
