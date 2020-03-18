@@ -5,7 +5,7 @@ class CreateRecipes < ActiveRecord::Migration[5.2]
       t.integer :forhowmany
       t.integer :cookingtime
       t.string :budget
-      t.string :type
+      t.string :category
       t.string :url
 
       t.timestamps

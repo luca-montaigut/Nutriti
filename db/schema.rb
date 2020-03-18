@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2020_03_18_060021) do
   end
 
   create_table "meals", force: :cascade do |t|
-    t.string "type"
+    t.string "category"
     t.bigint "starter_id"
     t.bigint "dish_id"
     t.bigint "dessert_id"
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 2020_03_18_060021) do
     t.integer "forhowmany"
     t.integer "cookingtime"
     t.string "budget"
-    t.string "type"
+    t.string "category"
     t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
