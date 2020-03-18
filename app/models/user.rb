@@ -7,6 +7,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
 		 :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
+  validates :email,
+    presence: true,
+    uniqueness: true,
+    format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "email adress please" }
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+
   after_create :welcome_mail
 
   def self.new_with_session(params, session)
