@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_18_060021) do
+ActiveRecord::Schema.define(version: 2020_03_18_171854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "days", force: :cascade do |t|
+    t.string "title"
+    t.integer "meal"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["meal"], name: "index_days_on_meal"
+  end
 
   create_table "foods", id: false, force: :cascade do |t|
     t.string "alim_code", null: false
@@ -33,6 +41,16 @@ ActiveRecord::Schema.define(version: 2020_03_18_060021) do
     t.index ["alim_code"], name: "index_foods_on_alim_code", unique: true
   end
 
+  create_table "join_meal_days", force: :cascade do |t|
+    t.bigint "day_id"
+    t.bigint "meal_id"
+    t.text "meal_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["day_id"], name: "index_join_meal_days_on_day_id"
+    t.index ["meal_id"], name: "index_join_meal_days_on_meal_id"
+  end
+
   create_table "join_recipe_foods", force: :cascade do |t|
     t.bigint "recipe_id"
     t.bigint "food_id"
@@ -50,6 +68,7 @@ ActiveRecord::Schema.define(version: 2020_03_18_060021) do
     t.bigint "dessert_id"
     t.bigint "drink_id"
     t.bigint "complement_id"
+    t.decimal "kcal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["complement_id"], name: "index_meals_on_complement_id"

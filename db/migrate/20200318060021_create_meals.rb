@@ -7,6 +7,7 @@ class CreateMeals < ActiveRecord::Migration[5.2]
       t.references :dessert, index: true
       t.references :drink, index: true
       t.references :complement, index: true
+      t.decimal :kcal
 
       t.timestamps
     end
