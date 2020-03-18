@@ -29,3 +29,32 @@ csv.each do |row|
 end
 
 puts "There are now #{Food.count} foods in database"
+
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'recipes_nutriti.csv'))
+csv = CSV.parse(csv_text, headers: true, encoding: 'ISO-8859-1')
+csv.each do |row|
+  recipe = Recipe.new
+  recipe.title = row['title']
+  recipe.forhowmany = row['forhowmany']
+  recipe.cookingtime = row['cookingtime']
+  recipe.category = row['category']
+  recipe.budget = row['budget']
+  recipe.url = row['url']
+  recipe.save
+
+end
+
+puts "There are now #{Recipe.count} recipes in database"
+
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'join_recipe_foods_nutriti.csv'))
+csv = CSV.parse(csv_text, headers: true, encoding: 'ISO-8859-1')
+csv.each do |row|
+  join = JoinRecipejoin.new
+  join.recipe_id = row['recipe_id']
+  join.food_id = row['food_id']
+  join.quantity = row['quantity']
+  join.save
+
+end
+
+puts "All your recipes are completed"
