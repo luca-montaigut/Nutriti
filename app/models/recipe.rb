@@ -24,11 +24,7 @@ class Recipe < ApplicationRecord
 	presence:true
 
   def total_kcal
-    i = 0
-    self.join_recipe_foods.each do |cal|
-      i += cal.kcal.to_d 
-    end
-    i
+    self.join_recipe_foods.map { |food| food.kcal}.sum
   end
 
   def total_prot
