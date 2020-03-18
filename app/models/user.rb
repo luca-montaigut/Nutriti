@@ -56,4 +56,16 @@ class User < ApplicationRecord
   def incomplete_profile?
     self.drc == 0.0
   end
+
+  def  breakfast
+    (self.drc / 100) * 25
+  end
+
+  def  dinner
+    (self.drc / 100) * 45
+  end
+
+  def  supper
+    (self.drc / 100) * 30
+  end
 end
