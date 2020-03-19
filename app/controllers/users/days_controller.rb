@@ -1,4 +1,4 @@
-class Users::DaysController < ApplicationController
+class Users::DaysController < Users::ApplicationController
   before_action :set_users_day, only: [:show, :edit, :update, :destroy]
 
   # GET /users/days

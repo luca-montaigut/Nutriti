@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  before_create :user_week
   after_update :get_age
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -66,15 +67,22 @@ class User < ApplicationRecord
     self.drc == 0.0
   end
 
-  def  breakfast
+  def breakfast
     (self.drc / 100) * 25
   end
 
-  def  dinner
+  def lunch
     (self.drc / 100) * 45
   end
 
-  def  supper
+  def dinner
     (self.drc / 100) * 30
   end
+  
+  private
+  
+  def user_week
+    Week.create(user_id: self.id)    
+  end
+  
 end

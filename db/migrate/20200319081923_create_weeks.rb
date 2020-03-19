@@ -1,7 +1,7 @@
 class CreateWeeks < ActiveRecord::Migration[5.2]
   def change
     create_table :weeks do |t|
-      t.belongs_to :user, foreign_key: true
+      t.belongs_to :user, index: true
       t.references :monday, index: true
       t.references :tuesday, index: true
       t.references :wednesday, index: true

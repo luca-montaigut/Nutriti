@@ -1,10 +1,10 @@
-class Users::WeeksController < ApplicationController
+class Users::WeeksController < Users::ApplicationController
   before_action :set_users_week, only: [:show, :edit, :update, :destroy]
 
   # GET /users/weeks
   # GET /users/weeks.json
   def index
-    @users_weeks = Users::Week.all
+    @users_weeks = Week.all
   end
 
   # GET /users/weeks/1
@@ -14,7 +14,7 @@ class Users::WeeksController < ApplicationController
 
   # GET /users/weeks/new
   def new
-    @users_week = Users::Week.new
+    @users_week = Week.new
   end
 
   # GET /users/weeks/1/edit
@@ -24,7 +24,7 @@ class Users::WeeksController < ApplicationController
   # POST /users/weeks
   # POST /users/weeks.json
   def create
-    @users_week = Users::Week.new(users_week_params)
+    @users_week = Week.new(users_week_params)
 
     respond_to do |format|
       if @users_week.save
@@ -59,7 +59,7 @@ class Users::WeeksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_users_week
-      @users_week = Users::Week.find(params[:id])
+      @users_week = Week.find_by(user_id: current_user.id)
     end
 
     # Only allow a list of trusted parameters through.
