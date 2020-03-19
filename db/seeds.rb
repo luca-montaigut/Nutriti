@@ -8,9 +8,9 @@
 require 'csv'
 require 'faker'
 
+JoinRecipeFood.destroy_all
 Food.destroy_all
 Recipe.destroy_all
-JoinRecipeFood.destroy_all
 Week.destroy_all
 User.destroy_all
 
