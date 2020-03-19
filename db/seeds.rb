@@ -41,9 +41,9 @@ Recipe.create(title: "Eau minérale", forhowmany: 1, cookingtime: 1, budget:  "B
 Recipe.create(title: "Pain", forhowmany: 1, cookingtime: 1, budget:  "Bon Marché", category:  "Complement", url: "")  
 Recipe.create(title: "Pomme", forhowmany: 1, cookingtime: 1, budget:  "Bon Marché", category:  "Dessert", url: "")  
 Recipe.create(title: "Banane", forhowmany: 1, cookingtime: 1, budget:  "Bon Marché", category:  "Dessert", url: "")  
-Recipe.create(title: "Tian de légumes du soleil", forhowmany: 4, cookingtime: 10, budget:  "Bon marché", category:  "Starter", url:  "")
-Recipe.create(title: "Petit salé aux lentilles" , forhowmany: 6, cookingtime: 15, budget:  "Bon marché", category:  "Dish", url:  "")
-Recipe.create(title: "Croque-monsieur" , forhowmany: 6, cookingtime: 10, budget:  "Bon marché", category:  "Dish", url:  "")
+Recipe.create(title: "Tian de légumes du soleil", forhowmany: 4, cookingtime: 10, budget:  "Bon marché", category:  "Starter", url:  "https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Tian-de-legumes-du-soleil-3145546")
+Recipe.create(title: "Petit salé aux lentilles" , forhowmany: 6, cookingtime: 15, budget:  "Bon marché", category:  "Dish", url:  "https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Le-petit-sale-aux-lentilles-2634663")
+Recipe.create(title: "Croque-monsieur" , forhowmany: 6, cookingtime: 10, budget:  "Bon marché", category:  "Dish", url:  "https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Croque-monsieur-2280962")
 
 puts "There are now #{Recipe.count} recipes in database"
 

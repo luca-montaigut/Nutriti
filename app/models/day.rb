@@ -11,7 +11,7 @@ class Day < ApplicationRecord
   has_many :saturday_weeks, foreign_key: 'saturday_id', class_name: 'Week'
   has_many :sunday_weeks, foreign_key: 'sunday_id', class_name: 'Week'
 
-  def day_generate(day)
+  def generate(day)
 
     case day
     when "Monday"

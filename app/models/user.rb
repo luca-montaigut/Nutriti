@@ -82,7 +82,8 @@ class User < ApplicationRecord
   private
   
   def user_week
-    Week.create(user_id: self.id)    
+    user_week = Week.create(user_id: self.id)
+    user_week.generate
   end
   
 end

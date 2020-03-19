@@ -22,7 +22,7 @@ class Meal < ApplicationRecord
       self.category = "Dinner"
     end
 
-    self.starter_id = Recipe.all.where(category: "Starter").sample.id
+    self.starter = Recipe.all.where(category: "Starter").sample
     self.dish_id = Recipe.all.where(category: "Dish").sample.id
     self.dessert_id = Recipe.all.where(category: "Dessert").sample.id
     self.drink_id = Recipe.all.where(category: "Drink").sample.id # Eau minérale
