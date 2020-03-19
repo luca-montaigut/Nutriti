@@ -1,4 +1,23 @@
-<p id="notice"><%= notice %></p>
+<h1><%= @users_day.name %></h1>
 
-<%= link_to 'Edit', edit_users_day_path(@users_day) %> |
-<%= link_to 'Back', users_days_path %>
+  <h3>Petit Déjeuner</h3>
+<ul>
+  <li><%= @users_day.breakfast.starter.title %></li>
+  <li><%= @users_day.breakfast.dish.title %></li>
+  <li><%= @users_day.breakfast.dessert.title %></li>
+</ul>
+  <h3>Déjeuner</h3>
+<ul>
+  <li><%= @users_day.lunch.starter.title %></li>
+  <li><%= @users_day.lunch.dish.title %> </li>
+  <li><%= @users_day.lunch.dessert.title  %></li>
+</ul>
+  <h3>Dinner</h3>
+<ul>
+  <li><%= @users_day.dinner.starter.title %></li>
+  <li><%= @users_day.dinner.dish.title %> </li>
+  <li><%= @users_day.dinner.dessert.title  %></li>
+</ul>
+
+<%= link_to 'Edit', edit_day_path(@users_day) %> |
+<%= link_to 'Back', days_path %>

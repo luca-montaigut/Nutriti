@@ -183,8 +183,8 @@
 </div>
 <hr>
 <div class="d-flex flex-row justify-content-center">
-  <%= button_to "Generate Meal", meals_path, data:{method: 'post'}, class:'btn btn-warning'%> |
-  <%= button_to "Generate Day", meals_path, data:{method: 'post'}, class:'btn btn-info'%> |
-  <%= button_to "Generate Week", meals_path, data:{method: 'post'}, class:'btn btn-success'%>
+  <%= link_to "Generate Meal", meals_path, data:{method: 'post'}, class:'btn btn-warning'%> |
+  <%= link_to "Generate Day", days_path, data:{method: 'post'}, class:'btn btn-info'%> |
+  <%= link_to "Generate Week", meals_path, data:{method: 'post'}, class:'btn btn-success'%>
 </div>
 
