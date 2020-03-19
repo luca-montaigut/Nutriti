@@ -87,13 +87,14 @@ class User < ApplicationRecord
       day.meals.each do |meal|
         meal.recipes.each do |recipe|
           recipe.join_recipe_foods.each do |join|
-            array << {:alim_name => join.food.alim_name, :quantity => join.quantity.to_i}
+            array << {join.food.alim_name => join.quantity.to_i}
           end
         end
       end
     end
 
-    array
+    array.reduce {|acc, h| acc.merge(h) {|_,v1,v2| v1 + v2 }}
+    # https://stackoverflow.com/questions/36004998/add-values-of-same-key-in-array-of-hashes
   end
   
   private
