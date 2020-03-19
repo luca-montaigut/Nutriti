@@ -127,5 +127,4 @@ ActiveRecord::Schema.define(version: 2020_03_19_081923) do
     t.index ["wednesday_id"], name: "index_weeks_on_wednesday_id"
   end
 
-  add_foreign_key "weeks", "users"
 end
