@@ -83,8 +83,10 @@ User.create(
   password: 123456,
   height: 35,
   weight: 5,
+  gender: "Homme",
   birthdate: Faker::Date.birthday(min_age: 18, max_age: 65),
-  physical_activity: 1.37
+  physical_activity: 1.37,
+  is_admin: true
 )
 
 puts "There are now an user who is admin in database"
