@@ -1,5 +1,9 @@
 class Week < ApplicationRecord
   belongs_to :user
+
+  has_many :day
+  has_many :meal , through: :day
+
   belongs_to :monday, class_name: 'Day', optional: true
   belongs_to :tuesday, class_name: 'Day', optional: true
   belongs_to :wednesday, class_name: 'Day', optional: true
