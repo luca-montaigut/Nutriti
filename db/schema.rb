@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2020_03_19_081923) do
     t.bigint "dessert_id"
     t.bigint "drink_id"
     t.bigint "complement_id"
+    t.decimal "kcal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["complement_id"], name: "index_meals_on_complement_id"
