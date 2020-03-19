@@ -7,13 +7,19 @@ class Meal < ApplicationRecord
   belongs_to :drink, class_name: 'Recipe'
   belongs_to :complement, class_name: 'Recipe'
 
+  has_many :breakfast_days, foreign_key: 'breakfast_id', class_name: 'Day'
+  has_many :lunch_days, foreign_key: 'lunch_id', class_name: 'Day'
+  has_many :dinner_days, foreign_key: 'dinner_id', class_name: 'Day'
+
 
   def generate(category)
     recipes = Recipe.all
     foods = Food.all
-    if category == "Dish"
-      self.category = "Dish"
-    else 
+    if category == "Breakfast"
+      self.category = "Breakfast"
+    if category == "Lunch"
+      self.category = "Lunch"
+    elsif category == "Diner"
       self.category = "Dinner"
     end
 
