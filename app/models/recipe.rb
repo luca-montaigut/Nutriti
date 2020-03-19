@@ -9,6 +9,20 @@ class Recipe < ApplicationRecord
   has_many :drink_meal, foreign_key: 'drink_id', class_name: 'Meal'
   has_many :complement_meal, foreign_key: 'complement_id', class_name: 'Meal'
   
+  validates :title,
+	presence: true,
+	length: { in: 3..50 }
+  validates :forhowmany,
+	presence: true,
+	numericality: { greater_than: 0 }
+  validates :cookingtime,
+	presence: true,
+	numericality: { greater_than: 0 }
+  validates :budget,
+	presence: true
+  validates :category,
+	presence:true
+
   def total_kcal
     self.join_recipe_foods.map { |food| food.kcal}.sum
   end

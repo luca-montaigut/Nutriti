@@ -1,12 +1,13 @@
-<b>Votre : <%= @meal.type %></b>
+<b>Votre : <%= @meal.category %></b>
 <hr>
 <ul>
-  <li><%= @meal.starter %></li>
-  <li><%= @meal.dish %></li>
-  <li><%= @meal.dessert %></li>
-  <li><%= @meal.drink %></li>
-  <li><%= @meal.complement %></li>
+  <li><%= @meal.starter.title %></li>
+  <li><%= @meal.dish.title %></li>
+  <li><%= @meal.dessert.title %></li>
+  <li><%= @meal.drink.title %></li>
+  <li><%= @meal.complement.title %></li>
+  <li>kcal:<%= @meal.kcal %></li>
 </ul>
 
-<%= link_to 'Edit', edit_users_meal_path(@meal) %> |
+<%= link_to 'Edit', meal_path(@meal.id) %> |
 <%= link_to 'Back', meals_path %>

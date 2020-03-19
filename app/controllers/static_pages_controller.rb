@@ -1,7 +1,8 @@
 class StaticPagesController < ApplicationController
   def home
     if user_signed_in?
-      redirect_to userboard_path(current_user.id)
+      @week = Week.find_by(user_id: current_user.id)
+      redirect_to week_path(@week.id)
     else
       redirect_to landing_path
     end

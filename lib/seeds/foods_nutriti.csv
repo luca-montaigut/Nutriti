@@ -2245,3 +2245,194 @@ alim_code,alim_name,alim_group,alim_sub_group,alim_sub_sub_group,kcalfor100g,pro
 16560,Graisse d'oie,matières grasses,autres matières grasses,,898,0,0,99.8,0,100,0
 16570,Graisse de dinde,matières grasses,autres matières grasses,,898,0,0,99.8,0,102,0
 17999,Huile de paraffine,matières grasses,autres matières grasses,,0,0,0,0,0,,0
+11008,Ketchup,aides culinaires et ingrédients divers,sauces,sauces condimentaires,99,1.27,21.4,0.19,20.8,0,2.59
+11051,"Sauce tartare, préemballée",aides culinaires et ingrédients divers,sauces,sauces condimentaires,520,0.99,4.6,55,3.11,35.1,1.94
+11054,Mayonnaise (70% MG min.),aides culinaires et ingrédients divers,sauces,sauces condimentaires,696,1.36,2.62,75.2,01.03,70,1.39
+11079,Mayonnaise à teneur réduite en matière grasse ou Mayonnaise allégée,aides culinaires et ingrédients divers,sauces,sauces condimentaires,309,0.93,8.98,29.9,4.91,38,2.37
+11100,"Sauce barbecue, préemballée",aides culinaires et ingrédients divers,sauces,sauces condimentaires,141,0.73,32,0.55,26.5,0,2.47
+11104,"Sauce soja, préemballée",aides culinaires et ingrédients divers,sauces,sauces condimentaires,46.2,07.08,3.83,0.1,1.32,0,18.6
+11109,"Sauce vinaigrette allégée en MG (25 à 50% d'huile), préemballée",aides culinaires et ingrédients divers,sauces,sauces condimentaires,,0.48,3.64,27.5,2.14,0.7,1.99
+11110,"Sauce vinaigrette (50 à 75% d'huile), préemballée",aides culinaires et ingrédients divers,sauces,sauces condimentaires,,0.54,4.56,52.4,2.9,0.7,2.57
+11112,Harissa (sauce condimentaire),aides culinaires et ingrédients divers,sauces,sauces condimentaires,,2.72,7.3,2.9,,,2.81
+11120,"Sauce bourguignonne, préemballée",aides culinaires et ingrédients divers,sauces,sauces condimentaires,433,1.25,7.85,43.9,5.23,32,2.71
+11157,"Sauce moutarde, préemballée",aides culinaires et ingrédients divers,sauces,sauces condimentaires,229,1.66,3.3,22.8,0.92,40.8,2.35
+11166,Sauce au yaourt,aides culinaires et ingrédients divers,sauces,sauces condimentaires,,3.66,4.79,6.91,4.33,03.02,1.27
+11167,"Sauce américaine, préemballée",aides culinaires et ingrédients divers,sauces,sauces condimentaires,423,1.42,9.48,41.8,5.1,,2.94
+11168,"Sauce aïoli, préemballée",aides culinaires et ingrédients divers,sauces,sauces condimentaires,395,1.13,4.7,41,3.14,,1.85
+11187,"Sauce crudités ou Sauce salade, préemballée",aides culinaires et ingrédients divers,sauces,sauces condimentaires,304,0.86,5.3,30.9,04.06,0,2.4
+11194,"Sauce Nuoc Mâm ou Sauce au poisson, préemballée",aides culinaires et ingrédients divers,sauces,sauces condimentaires,81.2,9.3,10.9,0,8.34,,22.2
+11196,"Sauce burger, préemballée",aides culinaires et ingrédients divers,sauces,sauces condimentaires,367,01.06,13.3,33.8,10.2,20.5,2.13
+11198,"Sauce crudités ou Sauce salade, allégée en matière grasse, préemballée",aides culinaires et ingrédients divers,sauces,sauces condimentaires,161,0.76,7.26,14.3,5.1,0.04,2.57
+11203,"Sauce kebab, préemballée",aides culinaires et ingrédients divers,sauces,sauces condimentaires,293,1.1,9.15,27.6,4.6,,1.5
+11205,"Sauce rouille, préemballée",aides culinaires et ingrédients divers,sauces,sauces condimentaires,381,1.1,1,41.4,,,1.18
+11212,"Sauce au poivre, condimentaire, froide, préemballée",aides culinaires et ingrédients divers,sauces,sauces condimentaires,494,0.97,6,51.4,4.68,,2.11
+11215,Caviar de tomates,aides culinaires et ingrédients divers,sauces,sauces condimentaires,218,2.19,6.8,19.2,6.5,,02.09
+11301,"Sauce teriyaki, préemballée",aides culinaires et ingrédients divers,sauces,sauces condimentaires,,3.82,16,01.06,13.2,0,6.13
+25620,"Guacamole, préemballé",aides culinaires et ingrédients divers,sauces,sauces condimentaires,,2.18,5.85,16.5,2.65,3.6,1.38
+25621,Houmous,aides culinaires et ingrédients divers,sauces,sauces condimentaires,288,8.2,7.1,23.9,1.38,,1.19
+11101,"Sauce béchamel, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,90.1,2.31,7.27,5.66,2.82,30,0.9
+11102,"Sauce béarnaise, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,454,0.88,4.52,47.7,2.3,48.9,1.95
+11105,"Sauce hollandaise, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,203,1.19,4.58,19.8,0.7,56.7,1.19
+11107,"Sauce tomate aux oignons, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,78.8,1.52,7.69,4.18,5.44,0,1.17
+11111,"Sauce armoricaine, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,83.6,2.1,3.95,6.6,0.73,,1.3
+11114,"Sauce tomate à la viande ou Sauce bolognaise, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,93.8,4.22,7.27,4.81,4.74,13.7,1.18
+11115,"Sauce au poivre vert, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,83.9,1.3,5.3,6.1,1.3,,1.15
+11121,"Sauce madère, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,37.6,0.6,3.6,2.2,1.9,,1.1
+11122,"Sauce à l'échalote à la crème, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,106,1.7,11.9,5.53,2.27,,1.61
+11128,"Sauce carbonara, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,160,5.17,4.7,12.8,1,,1.49
+11129,"Sauce chasseur, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,38.8,1.21,4.66,1.61,,,01.03
+11132,"Sauce au curry, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,77.4,01.02,10.6,3.16,5.83,7.5,1.12
+11140,"Sauce au beurre blanc, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,174,0.93,4.58,16.8,1.1,,1.2
+11143,"Sauce béchamel, maison",aides culinaires et ingrédients divers,sauces,sauces chaudes,147,3.84,8.97,10.6,4.38,7,0.89
+11158,"Sauce au beurre, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,192,2.2,5.2,17.9,1,51.4,1.36
+11159,Sauce à la crème,aides culinaires et ingrédients divers,sauces,sauces chaudes,78.8,1.28,5.9,5.51,0.65,11.8,1.4
+11160,"Sauce aux champignons, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,98.8,3.2,6.3,6.26,2.2,15.1,0.9
+11161,Sauce à la crème aux épices,aides culinaires et ingrédients divers,sauces,sauces chaudes,80.7,1.25,6.2,5.5,0.7,11.6,1.38
+11162,Sauce à la crème aux herbes,aides culinaires et ingrédients divers,sauces,sauces chaudes,75.2,1.25,5.2,5.38,0.69,11.4,1.36
+11163,"Sauce aigre douce, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,,0.55,20.1,0.2,15.9,0,01.01
+11164,Sauce au vin rouge,aides culinaires et ingrédients divers,sauces,sauces chaudes,,0.93,7,2.14,0.84,4.73,1.73
+11170,"Sauce basquaise ou Sauce aux poivrons, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,63.1,1.17,7.41,2.71,4.46,,1.13
+11177,"Sauce tomate aux champignons, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,67.1,1.79,7.78,2.68,4.58,0.7,01.04
+11178,"Sauce tomate aux olives, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,108,1.41,7.5,7.32,3.68,0.7,1.83
+11179,"Sauce pesto, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,370,3.94,6.6,35.4,3.2,18.2,2.64
+11182,"Sauce au poivre, chaude, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,160,1,4.8,14.8,1.76,19.5,1.58
+11189,"Sauce au fromage pour risotto ou pâtes, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,118,3.11,4.24,9.53,0.68,,1.38
+11191,"Sauce au roquefort, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,128,2.85,4.4,10.9,1.1,,1.25
+11192,"Sauce aux champignons et à la crème, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,90.5,01.08,5.14,7.11,1.26,,01.02
+11199,"Sauce grand veneur, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,103,1.5,8.45,7,6.6,,1.14
+11202,"Sauce indienne type tandoori ou tikka masala, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,86.7,2.6,14.3,1.7,12.3,,2.4
+11207,"Sauce tomate aux petits légumes, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,66.8,1.54,7.57,2.9,5.22,,0.99
+11208,"Sauce tomate au fromage, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,180,3.94,08.09,14.2,4.6,,1.31
+11210,"Sauce pesto rosso, préemballée",aides culinaires et ingrédients divers,sauces,sauces chaudes,305,4.8,8.58,27,2.75,,1.99
+11218,Sauce chaude (aliment moyen),aides culinaires et ingrédients divers,sauces,sauces chaudes,124,2.56,07.05,9.1,2.63,19.5,1.21
+51502,"Meloukhia, sauce, artisanale",aides culinaires et ingrédients divers,sauces,sauces chaudes,,1.13,0.2,21,,,0.95
+11300,Sauce au chocolat,aides culinaires et ingrédients divers,sauces,sauces sucrées,277,3.8,26.2,16.8,24.1,,0.13
+39700,"Crème anglaise, préemballée",aides culinaires et ingrédients divers,sauces,sauces sucrées,105,3.44,16.7,2.5,12.9,26.6,0.13
+11004,"Cornichon, au vinaigre",aides culinaires et ingrédients divers,condiments,-,26.8,1.18,1.3,0.29,0.68,0,02.09
+11013,Moutarde,aides culinaires et ingrédients divers,condiments,-,152,6.92,4.33,11.2,1.66,0,6.3
+11018,Vinaigre,aides culinaires et ingrédients divers,condiments,-,22.6,0.04,0.62,0.1,0.04,0,0.033
+11021,Moutarde à l'ancienne,aides culinaires et ingrédients divers,condiments,-,142,6.6,2.2,9.9,2.2,5.44,4.9
+11040,"Câpres, au vinaigre",aides culinaires et ingrédients divers,condiments,-,,2.25,3.5,0.86,0.41,0,04.06
+11043,Tapenade,aides culinaires et ingrédients divers,condiments,-,,1.3,2.6,23,0.2,3.2,3.2
+11055,Oignon au vinaigre,aides culinaires et ingrédients divers,condiments,-,,0.56,2.5,0.2,1.98,,2.36
+11090,Vinaigre de cidre,aides culinaires et ingrédients divers,condiments,-,,0,0.93,0,0.4,0,0.013
+11091,Vinaigre balsamique,aides culinaires et ingrédients divers,condiments,-,125,0.69,25.8,0.6,19.1,,0.068
+11097,"Cornichon, aigre-doux",aides culinaires et ingrédients divers,condiments,-,36,1.25,5,0.35,4,,1.1
+13032,"Olive noire, en saumure",aides culinaires et ingrédients divers,condiments,-,,1.38,0.1,17.2,0,0.7,1.77
+13033,"Olive verte, en saumure",aides culinaires et ingrédients divers,condiments,-,,1.25,0.38,14.8,0.33,1,2.78
+13131,"Olive noire, à l'huile (à la grecque)",aides culinaires et ingrédients divers,condiments,-,332,2.19,0.1,33.3,,0.7,8.45
+13147,"Olives vertes, fourrées ou farcies (anchois, poivrons, etc.)",aides culinaires et ingrédients divers,condiments,-,,02.09,0.61,15.2,0.4,1.4,2.78
+11001,"Bouillon de boeuf, déshydraté",aides culinaires et ingrédients divers,aides culinaires,-,240,10.2,19.7,13.3,3.95,4.8,33
+11169,"Fond de veau pour sauces et cuisson, déshydraté",aides culinaires et ingrédients divers,aides culinaires,-,343,8.5,59.5,7.4,22.3,18.2,16.7
+11171,"Fond de volaille pour sauces et cuisson, déshydraté",aides culinaires et ingrédients divers,aides culinaires,-,341,7.4,66.3,4.9,13.6,,12.5
+11172,"Court-bouillon pour poissons, déshydraté",aides culinaires et ingrédients divers,aides culinaires,-,260,5,7,23,4.5,,47.5
+11174,"Bouillon de volaille, déshydraté",aides culinaires et ingrédients divers,aides culinaires,-,233,11.3,20.8,11.5,5.38,,49.6
+11175,"Gelée au madère, déshydratée",aides culinaires et ingrédients divers,aides culinaires,-,248,44.5,17,0.2,1.25,,28.6
+11176,Gelée au madère,aides culinaires et ingrédients divers,aides culinaires,-,11.3,2,0.8,0.01,0.1,,1.48
+11214,"Préparation culinaire à base de soja, type ""crème de soja""",aides culinaires et ingrédients divers,aides culinaires,-,153,3.25,02.03,14.7,1.6,,0.063
+11304,"Fond de veau, préemballé",aides culinaires et ingrédients divers,aides culinaires,-,40.9,3.15,2.4,02.05,0.7,,1.1
+25525,"Pizza, sauce garniture pour",aides culinaires et ingrédients divers,aides culinaires,-,38.5,2.12,3.2,0.73,3.2,0,0.59
+25918,"Bouillon de viande et légumes type pot-au-feu, déshydraté",aides culinaires et ingrédients divers,aides culinaires,-,213,10.3,17.7,11.1,2.87,,54.1
+25970,"Bouillon de viande et légumes type pot-au-feu, non dégraissé, déshydraté",aides culinaires et ingrédients divers,aides culinaires,-,212,11.6,28.9,5.4,2.8,4.55,48.4
+25971,"Bouillon de viande et légumes type pot-au-feu, dégraissé, déshydraté",aides culinaires et ingrédients divers,aides culinaires,-,197,10.8,30.9,3.1,2.2,12.8,48.2
+11017,"Sel blanc alimentaire, non iodé, non fluoré (marin, ignigène ou gemme)",aides culinaires et ingrédients divers,sels,-,0,0,0,0,0,0,97.8
+11044,Sel au céleri,aides culinaires et ingrédients divers,sels,-,49,1.81,4.14,2.53,0,,87.5
+11058,"Sel blanc alimentaire, iodé, non fluoré (marin, ignigène ou gemme)",aides culinaires et ingrédients divers,sels,-,0,0,0,0,0,,97.8
+11082,"Fleur de sel, non iodée, non fluorée",aides culinaires et ingrédients divers,sels,-,0,0,0,0,0,,94.3
+11083,"Sel marin gris, non iodé, non fluoré",aides culinaires et ingrédients divers,sels,-,0,0,0,0,0,,80.5
+11096,"Sel blanc alimentaire, iodé, fluoré à 25 mg /100g (marin, ignigène ou gemme)",aides culinaires et ingrédients divers,sels,-,0,0,0,0,0,,97.8
+11005,"Curry, poudre",aides culinaires et ingrédients divers,épices,-,301,14.5,2.63,14,2.63,0,0.13
+11006,"Gingembre, poudre",aides culinaires et ingrédients divers,épices,-,336,09.05,58.3,4.24,3.39,0,0.068
+11015,"Poivre noir, poudre",aides culinaires et ingrédients divers,épices,-,330,13.3,39.3,7.5,0.64,0,0.036
+11019,"Poivre blanc, poudre",aides culinaires et ingrédients divers,épices,-,310,11.4,48.3,2.11,,0,0.013
+11020,"Poivre gris, poudre",aides culinaires et ingrédients divers,épices,-,283,12.1,38.7,3.26,0.64,0,0.05
+11025,"Cannelle, poudre",aides culinaires et ingrédients divers,épices,-,243,3.87,27.5,1.22,2.17,0,0.025
+11026,"Coriandre, graine",aides culinaires et ingrédients divers,épices,-,346,12.4,13,17.8,,0,0.088
+11039,Safran,aides culinaires et ingrédients divers,épices,-,352,11.4,61.5,5.85,42.4,0,0.37
+11042,"Cumin, graine",aides culinaires et ingrédients divers,épices,-,427,17.8,33.7,22.3,2.25,0,0.42
+11048,Noix de muscade,aides culinaires et ingrédients divers,épices,-,507,5.3,28.5,36.3,2.99,0,0.04
+11049,Paprika,aides culinaires et ingrédients divers,épices,-,319,14.1,19.1,12.9,10.3,0,0.17
+11052,Clou de girofle,aides culinaires et ingrédients divers,épices,-,335,5.97,31.6,13,2.38,0,0.69
+11053,"Laurier, feuille",aides culinaires et ingrédients divers,épices,-,353,7.61,48.6,8.36,48.6,0,0.058
+11056,Quatre épices,aides culinaires et ingrédients divers,épices,-,348,06.09,50.5,8.69,,0,0.19
+11061,"Pavot, graine",aides culinaires et ingrédients divers,épices,-,551,19.7,13.7,43.1,2.99,0,0.059
+11064,"Carvi, graine",aides culinaires et ingrédients divers,épices,-,334,19.8,11.9,14.6,0.64,0,0.043
+11065,"Vanille, extrait alcoolique",aides culinaires et ingrédients divers,épices,-,240,0.05,2.41,0,,0,0.01
+11066,"Fenouil, graine",aides culinaires et ingrédients divers,épices,-,326,15.7,12.5,14.9,12.5,0,0.22
+11074,"Gingembre, racine crue",aides culinaires et ingrédients divers,épices,-,32.9,1.1,3.4,1.1,1,0,0.016
+11075,"Cardamome, poudre",aides culinaires et ingrédients divers,épices,-,321,10.8,40.5,6.7,,0,0.045
+11077,"Fenugrec, graine",aides culinaires et ingrédients divers,épices,-,350,27.1,33.8,6.41,8.7,0,0.17
+11081,Epice (aliment moyen),aides culinaires et ingrédients divers,épices,-,340,12.1,37.6,9.9,2.31,0,0.049
+11088,Poivre de Cayenne ou piment de Cayenne,aides culinaires et ingrédients divers,épices,-,376,12,29.4,17.3,10.3,0,0.075
+11089,"Curcuma, poudre",aides culinaires et ingrédients divers,épices,-,291,9.68,44.4,3.25,3.21,0,0.068
+11098,"Vanille, extrait aqueux",aides culinaires et ingrédients divers,épices,-,57.7,0.03,14.4,0,14.4,0,0.0075
+11000,"Ail, cru",aides culinaires et ingrédients divers,herbes,herbes fraîches,,5.81,21.2,0.34,1.43,0,0.098
+11002,"Cerfeuil, frais",aides culinaires et ingrédients divers,herbes,herbes fraîches,37.9,3.21,3.63,0.6,0.6,0,0.038
+11003,"Ciboule ou Ciboulette, fraîche",aides culinaires et ingrédients divers,herbes,herbes fraîches,29.9,2.62,2.1,0.52,1.75,0,0.026
+11014,"Persil, frais",aides culinaires et ingrédients divers,herbes,herbes fraîches,42.7,3.63,3.48,0.63,0.95,0,0.59
+11016,"Raifort, cru",aides culinaires et ingrédients divers,herbes,herbes fraîches,,7.5,13,0.7,,0,0.015
+11027,"Menthe, fraîche",aides culinaires et ingrédients divers,herbes,herbes fraîches,57.7,3.54,5.3,0.84,5.3,0,0.076
+11033,"Basilic, frais",aides culinaires et ingrédients divers,herbes,herbes fraîches,34.2,3.22,2.55,0.47,0.37,0,0.028
+11068,"Romarin, frais",aides culinaires et ingrédients divers,herbes,herbes fraîches,121,3.31,6.6,5.86,,0,0.065
+11069,"Sauge, fraîche",aides culinaires et ingrédients divers,herbes,herbes fraîches,36.7,4,0.97,0.5,0.3,0,0.028
+11070,"Thym, frais",aides culinaires et ingrédients divers,herbes,herbes fraîches,107,5.56,10.5,1.68,,0,0.023
+11080,Herbes aromatiques fraîches (aliment moyen),aides culinaires et ingrédients divers,herbes,herbes fraîches,49.6,3.55,4.18,0.81,02.01,0,0.27
+11092,"Estragon, frais",aides culinaires et ingrédients divers,herbes,herbes fraîches,44,3.8,4.1,traces,1.2,,0.025
+11093,"Aneth, frais",aides culinaires et ingrédients divers,herbes,herbes fraîches,48.2,3.93,3.9,1.1,1.2,0,0.15
+11094,"Coriandre, fraiche",aides culinaires et ingrédients divers,herbes,herbes fraîches,22.3,2.13,0.87,0.52,0.87,0,0.12
+11023,"Ail séché, poudre",aides culinaires et ingrédients divers,herbes,herbes séchées,344,16.7,62.8,0.77,2.43,0,0.11
+11024,"Persil, séché",aides culinaires et ingrédients divers,herbes,herbes séchées,291,29,16.8,5.34,7.27,0,01.05
+11029,"Menthe, séchée",aides culinaires et ingrédients divers,herbes,herbes séchées,283,19.9,22.2,06.03,,0,0.86
+11032,"Basilic, séché",aides culinaires et ingrédients divers,herbes,herbes séchées,244,23,10.1,04.07,1.71,0,0.19
+11034,"Marjolaine, séchée",aides culinaires et ingrédients divers,herbes,herbes séchées,276,12.7,20.3,07.04,04.09,0,0.19
+11035,"Origan, séché",aides culinaires et ingrédients divers,herbes,herbes séchées,265,9,26.4,4.28,04.09,0,0.063
+11036,"Romarin, séché",aides culinaires et ingrédients divers,herbes,herbes séchées,328,4.88,21.5,15.2,,0,0.13
+11037,"Sauge, séchée",aides culinaires et ingrédients divers,herbes,herbes séchées,320,10.6,20.4,12.8,1.71,0,0.028
+11038,"Thym, séché",aides culinaires et ingrédients divers,herbes,herbes séchées,285,9.11,26.9,7.43,1.71,0,0.14
+11060,"Herbes de Provence, séchées",aides culinaires et ingrédients divers,herbes,herbes séchées,283,11.5,23,7.2,18.5,0,0.088
+11062,"Sarriette, séchée",aides culinaires et ingrédients divers,herbes,herbes séchées,264,6.73,23,5.91,,0,0.06
+51500,"Meloukhia, feuilles de corète séchées, en poudre",aides culinaires et ingrédients divers,herbes,herbes séchées,239,23,12.7,1.8,,,0.17
+11084,"Agar (algue), cru",aides culinaires et ingrédients divers,algues,-,28.4,0.54,6.25,0.03,0.28,0,0.023
+11086,"Spiruline (Spirulina sp.), séchée ou déshydratée",aides culinaires et ingrédients divers,algues,-,388,57.5,20.3,7.72,3.1,0,2.62
+20984,"Wakamé (Undaria pinnatifida), séchée ou déshydratée",aides culinaires et ingrédients divers,algues,-,184,14.1,5.7,2.51,,,12.9
+20985,"Laitue de mer (Ulva sp.), séchée ou déshydratée",aides culinaires et ingrédients divers,algues,-,206,15.9,13.8,02.03,,,4.93
+20986,"Kombu royal (Saccharina latissima), séchée ou déshydratée",aides culinaires et ingrédients divers,algues,-,204,10.3,23.6,01.07,,,09.08
+20987,"Nori (Porphyra sp.), séchée ou déshydratée",aides culinaires et ingrédients divers,algues,-,255,31.5,10.5,1.63,,,4.96
+20988,"Dulse (Palmaria palmata), séchée ou déshydratée",aides culinaires et ingrédients divers,algues,-,227,17.2,22.6,1.33,,,4.15
+20990,"Kombu ou kombu japonais (Laminaria japonica), séchée ou déshydratée",aides culinaires et ingrédients divers,algues,-,224,8.38,24.2,2.65,,,6.41
+20991,"Kombu breton (Laminaria digitata), séchée ou déshydratée",aides culinaires et ingrédients divers,algues,-,217,9.51,25.6,1.13,,,7.87
+20992,"Haricot de mer (Himanthalia elongata), séchée ou déshydratée",aides culinaires et ingrédients divers,algues,-,239,10.1,28.3,2.63,,,9.22
+20993,"Gracilaire ou ogonori (Gracilaria verrucosa), séchée ou déshydratée",aides culinaires et ingrédients divers,algues,-,243,16.5,18.8,3.54,,,7.8
+20994,"Fucus vésiculeux (Fucus serratus ou Fucus vesiculosus), séché ou déshydraté",aides culinaires et ingrédients divers,algues,-,194,7.41,15.7,1.33,,,10.1
+20995,"Ao-nori (Enteromorpha sp.), séchée ou déshydratée",aides culinaires et ingrédients divers,algues,-,224,13.7,18.8,2.47,,,11.9
+20996,"Lichen de mer ou pioca ou goémon rouge (Chondrus crispus), séché ou déshydraté",aides culinaires et ingrédients divers,algues,-,234,16.6,21.5,2.3,,,5.17
+20998,"Ascophylle noueux ou goémon noir (Ascophyllum nodosum), séché ou déshydraté",aides culinaires et ingrédients divers,algues,-,211,7.22,18.5,2.78,,,7.15
+20999,"Wakamé atlantique (Alaria esculenta), séchée ou déshydratée",aides culinaires et ingrédients divers,algues,-,187,12.3,6.28,1.53,,,4.81
+18350,Boisson diététique pour le sport,aides culinaires et ingrédients divers,denrées destinées à une alimentation particulière,-,,0.05,5.26,0.14,5.26,0,0.13
+42000,"Substitut de repas hypocalorique, crème dessert",aides culinaires et ingrédients divers,denrées destinées à une alimentation particulière,-,96.3,6.32,11.1,2.75,6.57,10,0.21
+42003,"Substitut de repas hypocalorique, prêt à boire",aides culinaires et ingrédients divers,denrées destinées à une alimentation particulière,-,90.6,6.79,10.4,2.45,7.2,3.4,0.19
+42004,"Substitut de repas hypocalorique, poudre reconstituée avec lait écrémé",aides culinaires et ingrédients divers,denrées destinées à une alimentation particulière,-,81.9,06.06,10.1,1.73,9.3,10,0.43
+42005,"Substitut de repas hypocalorique, poudre reconstituée avec lait écrémé, type milk-shake",aides culinaires et ingrédients divers,denrées destinées à une alimentation particulière,-,86.5,06.06,10.2,2.28,10,10,0.19
+9621,Son de blé,aides culinaires et ingrédients divers,ingrédients divers,-,279,15.4,23.6,4.35,2.46,0,0.033
+9640,Son d'avoine,aides culinaires et ingrédients divers,ingrédients divers,-,359,15.8,51,6.48,2.23,0,0.016
+9641,Son de maïs,aides culinaires et ingrédients divers,ingrédients divers,-,226,8.36,6.65,0.92,0,0,0.018
+9643,Son de riz,aides culinaires et ingrédients divers,ingrédients divers,-,398,13.9,28.1,20.9,0.9,0,0.013
+9647,Son (aliment moyen),aides culinaires et ingrédients divers,ingrédients divers,-,344,15.7,45.8,06.07,2.27,0,0.02
+9660,Germe de blé,aides culinaires et ingrédients divers,ingrédients divers,-,375,27.2,35.1,9.5,10,0,0.018
+11007,"Gélatine, sèche",aides culinaires et ingrédients divers,ingrédients divers,-,348,86.9,0,0.1,0,,0.75
+11009,Levure alimentaire,aides culinaires et ingrédients divers,ingrédients divers,-,334,40.4,21.8,4.5,2.5,0.7,0.35
+11010,"Levure de boulanger, compressée",aides culinaires et ingrédients divers,ingrédients divers,-,,8.23,11.9,1.9,0,0,0.058
+11045,"Levure de boulanger, déshydratée",aides culinaires et ingrédients divers,ingrédients divers,-,,44.5,17.9,6.37,12,0,0.56
+11046,Levure chimique ou Poudre à lever,aides culinaires et ingrédients divers,ingrédients divers,-,,1.96,33.2,0.2,0.1,0,35.4
+11507,Bicarbonate de soude,aides culinaires et ingrédients divers,ingrédients divers,-,0.4,0.1,0,0,0,0,68.4
+20916,Miso,aides culinaires et ingrédients divers,ingrédients divers,-,,10.7,18.1,5.31,6.2,0,8.35
+20917,Tempeh,aides culinaires et ingrédients divers,ingrédients divers,-,,18.5,6.4,10.8,0.9,0,0.023
+20918,Sirop pour fruits appertisés au sirop,aides culinaires et ingrédients divers,ingrédients divers,-,,0.5,18.4,0.5,14.9,,0.019
+20919,Sirop léger pour fruits appertisés au sirop,aides culinaires et ingrédients divers,ingrédients divers,-,,0.34,15,0.5,13.6,,0.011
+20920,Jus d'ananas pour ananas appertisé au jus,aides culinaires et ingrédients divers,ingrédients divers,-,,0.5,13.7,0.5,12.2,,0.0014
+31047,Gélifiant pour confitures,aides culinaires et ingrédients divers,ingrédients divers,-,278,0,62,0,62,,
+31109,"Pollen, partiellement séché",aides culinaires et ingrédients divers,ingrédients divers,-,358,21.9,52.5,4.2,36.5,,0.22
+31111,"Pollen,frais",aides culinaires et ingrédients divers,ingrédients divers,-,285,17.5,37.7,5.17,26.8,,
+37000,Base de pizza à la crème,aides culinaires et ingrédients divers,ingrédients divers,-,261,7.7,51.1,2.6,1.8,,1.75
+37002,Base de pizza tomatée,aides culinaires et ingrédients divers,ingrédients divers,-,232,6.9,44.6,2.7,1.5,,1.75
+42200,Lécithine de soja,aides culinaires et ingrédients divers,ingrédients divers,-,779,0,8,83,3.3,0,0.038

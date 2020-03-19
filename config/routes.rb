@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   scope 'users', module: 'users' do
     resources :users, only: [:show, :edit, :update]
     resources :meals
-    resources :userboards, only: [:show], as: 'userboard'
+    resources :days
+    resources :weeks
   end
 
   scope 'admin', module: 'admin', as: 'admin' do

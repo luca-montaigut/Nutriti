@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_18_060021) do
+ActiveRecord::Schema.define(version: 2020_03_19_081923) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "days", force: :cascade do |t|
+    t.string "name"
+    t.bigint "breakfast_id"
+    t.bigint "lunch_id"
+    t.bigint "dinner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["breakfast_id"], name: "index_days_on_breakfast_id"
+    t.index ["dinner_id"], name: "index_days_on_dinner_id"
+    t.index ["lunch_id"], name: "index_days_on_lunch_id"
+  end
 
   create_table "foods", id: false, force: :cascade do |t|
     t.string "alim_code", null: false
@@ -50,6 +62,7 @@ ActiveRecord::Schema.define(version: 2020_03_18_060021) do
     t.bigint "dessert_id"
     t.bigint "drink_id"
     t.bigint "complement_id"
+    t.decimal "kcal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["complement_id"], name: "index_meals_on_complement_id"
@@ -93,5 +106,26 @@ ActiveRecord::Schema.define(version: 2020_03_18_060021) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "join_recipe_foods", "recipes"
+  create_table "weeks", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "monday_id"
+    t.bigint "tuesday_id"
+    t.bigint "wednesday_id"
+    t.bigint "thursday_id"
+    t.bigint "friday_id"
+    t.bigint "saturday_id"
+    t.bigint "sunday_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["friday_id"], name: "index_weeks_on_friday_id"
+    t.index ["monday_id"], name: "index_weeks_on_monday_id"
+    t.index ["saturday_id"], name: "index_weeks_on_saturday_id"
+    t.index ["sunday_id"], name: "index_weeks_on_sunday_id"
+    t.index ["thursday_id"], name: "index_weeks_on_thursday_id"
+    t.index ["tuesday_id"], name: "index_weeks_on_tuesday_id"
+    t.index ["user_id"], name: "index_weeks_on_user_id"
+    t.index ["wednesday_id"], name: "index_weeks_on_wednesday_id"
+  end
+
+  add_foreign_key "weeks", "users"
 end
