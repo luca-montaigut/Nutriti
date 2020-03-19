@@ -8,10 +8,6 @@ class Users::MealsController < Users::ApplicationController
   def show
   end
 
-  def new
-    @meal = Meal.new
-  end
-
   def edit
   end
 

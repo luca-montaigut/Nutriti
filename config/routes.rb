@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   
   scope 'users', module: 'users' do
     resources :users, only: [:show, :edit, :update]
-    resources :meals
-    resources :days
-    resources :weeks
+    resources :meals, except: [:new]
+    resources :days, except: [:new]
+    resources :weeks, except: [:new, :index]
   end
 
   scope 'admin', module: 'admin', as: 'admin' do

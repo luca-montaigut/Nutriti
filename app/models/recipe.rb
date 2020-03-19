@@ -50,4 +50,9 @@ class Recipe < ApplicationRecord
   def total_carb
     self.join_recipe_foods.map { |food| food.carb}.sum
   end
+
+  def for_one
+    self.total_kcal / self.forhowmany
+  end
+
 end

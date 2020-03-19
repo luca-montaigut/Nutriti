@@ -1,15 +1,7 @@
 class Users::WeeksController < Users::ApplicationController
   before_action :set_users_week, only: [:show, :edit, :update, :destroy]
 
-  def index
-    @weeks = Week.all
-  end
-
   def show
-  end
-
-  def new
-    @users_week = Week.new
   end
 
   def edit

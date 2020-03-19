@@ -8,9 +8,6 @@ class Users::DaysController < Users::ApplicationController
   def show
   end
 
-  def new
-    @users_day = Day.new
-  end
 
   def edit
   end
