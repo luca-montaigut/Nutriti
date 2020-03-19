@@ -11,7 +11,9 @@ require 'faker'
 Food.destroy_all
 Recipe.destroy_all
 JoinRecipeFood.destroy_all
+Week.destroy_all
 User.destroy_all
+
 
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'foods_nutriti.csv'))
 csv = CSV.parse(csv_text, headers: true, encoding: 'ISO-8859-1')

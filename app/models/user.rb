@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  before_create :user_week
+  after_create :user_week
   after_update :get_age
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
