@@ -15,11 +15,12 @@ class Meal < ApplicationRecord
   def generate(category)
     recipes = Recipe.all
     foods = Food.all
+    
     if category == "Breakfast"
       self.category = "Breakfast"
-    if category == "Lunch"
+    elsif category == "Lunch"
       self.category = "Lunch"
-    elsif category == "Diner"
+    else category == "Diner"
       self.category = "Dinner"
     end
 
