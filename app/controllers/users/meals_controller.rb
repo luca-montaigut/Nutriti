@@ -1,30 +1,22 @@
 class Users::MealsController < Users::ApplicationController
   before_action :set_meal, only: [:show, :edit, :update, :destroy]
 
-  # GET /users/meals
-  # GET /users/meals.json
   def index
     @meals = Meal.all
   end
 
-  # GET /users/meals/1
-  # GET /users/meals/1.json
   def show
   end
 
-  # GET /users/meals/new
   def new
     @meal = Meal.new
   end
 
-  # GET /users/meals/1/edit
   def edit
   end
 
-  # POST /users/meals
-  # POST /users/meals.json
   def create
-    category = ['Breakfast','Dish','Dinner']
+    category = ['Breakfast','Lunch','Dinner']
     @meal = Meal.new.generate(category.sample)
 
     respond_to do |format|
@@ -36,8 +28,6 @@ class Users::MealsController < Users::ApplicationController
     end
   end
 
-  # PATCH/PUT /users/meals/1
-  # PATCH/PUT /users/meals/1.json
   def update
     respond_to do |format|
       if @meal.update(meal_params)
@@ -48,8 +38,6 @@ class Users::MealsController < Users::ApplicationController
     end
   end
 
-  # DELETE /users/meals/1
-  # DELETE /users/meals/1.json
   def destroy
     @meal.destroy
     respond_to do |format|
@@ -58,12 +46,10 @@ class Users::MealsController < Users::ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_meal
       @meal = Meal.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def meal_params
       params.fetch(:meal, {})
     end
