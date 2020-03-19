@@ -3,6 +3,7 @@ class Meal < ApplicationRecord
 
   has_many :join_meal_days
   has_many :food, though: :join_meal_days
+  
   belongs_to :starter, class_name: 'Recipe'
   belongs_to :dish, class_name: 'Recipe'
   belongs_to :dessert, class_name: 'Recipe'
@@ -15,9 +16,7 @@ class Meal < ApplicationRecord
 
 
   def generate(category)
-    recipes = Recipe.all
-    foods = Food.all
-    
+
     if category == "Breakfast"
       self.category = "Breakfast"
     elsif category == "Lunch"
@@ -26,17 +25,17 @@ class Meal < ApplicationRecord
       self.category = "Dinner"
     end
 
-    self.starter_id = recipes.where(category: "Starter").sample.id
-    self.dish_id = recipes.where(category: "Dish").sample.id
-    self.dessert_id = recipes.where(category: "Dessert").sample.id
-    self.drink_id = recipes.where(category: "Drink").sample.id # Eau minérale
-    self.complement_id = recipes.where(category: "Complement").sample.id # Pain
+    self.starter = Recipe.all.where(category: "Starter").sample
+    self.dish_id = Recipe.all.where(category: "Dish").sample.id
+    self.dessert_id = Recipe.all.where(category: "Dessert").sample.id
+    self.drink_id = Recipe.all.where(category: "Drink").sample.id # Eau minérale
+    self.complement_id = Recipe.all.where(category: "Complement").sample.id # Pain
 
     return self
   end
 
   private
   def total_kcal
-    self.update(kcal: self.starter.total_kcal + self.dish.total_kcal + self.dessert.total_kcal + self.drink.total_kcal + self.complement.total_kcal)
+    self.update(kcal: self.starter.for_one + self.dish.for_one + self.dessert.for_one + self.drink.for_one + self.complement.for_one)
   end
 end

@@ -13,4 +13,40 @@ class Day < ApplicationRecord
   has_many :friday_weeks, foreign_key: 'friday_id', class_name: 'Week'
   has_many :saturday_weeks, foreign_key: 'saturday_id', class_name: 'Week'
   has_many :sunday_weeks, foreign_key: 'sunday_id', class_name: 'Week'
+
+  def generate(day)
+
+    case day
+    when "Monday"
+      self.name = "Monday"
+    when "Tuesday"
+      self.name = "Tuesday"
+    when "Wednesday"
+      self.name = "Wednesday"
+    when "Thursday"
+      self.name = "Thursday"
+    when "Friday"
+      self.name = "Friday"
+    when "Saturday"
+      self.name = "Saturday"
+    else
+      self.name = "Sunday"
+    end
+
+    @breakfast = Meal.new.generate("Breakfast")
+    @breakfast.save
+
+    @lunch = Meal.new.generate("Lunch")
+    @lunch.save
+
+    @dinner = Meal.new.generate("Dinner")
+    @dinner.save
+
+
+    self.breakfast = @breakfast
+    self.lunch = @lunch
+    self.dinner = @dinner
+
+    return self
+  end
 end

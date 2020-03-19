@@ -1,10 +1,15 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Users Days</h1>
 
-<table>
+<%= link_to "Generate Day", days_path, data:{method: 'post'}, class:'btn btn-info'%>
+<br>
+
+<table class="table table-striped">
   <thead>
     <tr>
+      <th>Jour</th>
+      <th>Petit Déjeuner</th>
+      <th>Déjeuner</th>
+      <th>Diner</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,8 +17,30 @@
   <tbody>
     <% @users_days.each do |users_day| %>
       <tr>
+        <td><%= users_day.name %></td>
+        <td>
+          <ul>
+            <li><%= users_day.breakfast.starter.title %></li>
+            <li><%= users_day.breakfast.dish.title %></li>
+            <li><%= users_day.breakfast.dessert.title %></li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li><%= users_day.lunch.starter.title %></li>
+            <li><%= users_day.lunch.dish.title %> </li>
+            <li><%= users_day.lunch.dessert.title  %></li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li><%= users_day.dinner.starter.title %></li>
+            <li><%= users_day.dinner.dish.title %> </li>
+            <li><%= users_day.dinner.dessert.title  %></li>
+          </ul>
+        </td>
         <td><%= link_to 'Show', users_day %></td>
-        <td><%= link_to 'Edit', edit_users_day_path(users_day) %></td>
+        <td><%= link_to 'Edit', edit_day_path(users_day) %></td>
         <td><%= link_to 'Destroy', users_day, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -22,4 +49,4 @@
 
 <br>
 
-<%= link_to 'New Users Day', new_users_day_path %>
+

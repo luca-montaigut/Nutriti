@@ -6,8 +6,9 @@
   <li><%= @meal.dessert.title %></li>
   <li><%= @meal.drink.title %></li>
   <li><%= @meal.complement.title %></li>
-  <li>kcal:<%= @meal.kcal %></li>
+  <li>Calories pour une personne : <%= @meal.kcal %> kcal</li>
 </ul>
 
 <%= link_to 'Edit', meal_path(@meal.id) %> |
-<%= link_to 'Back', meals_path %>
+<%= link_to 'Index', meals_path %> |
+<%= link_to 'Back', root_path %>
