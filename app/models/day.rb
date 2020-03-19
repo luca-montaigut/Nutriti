@@ -1,14 +1,13 @@
 class Day < ApplicationRecord
-  after_create :create_day
+  belongs_to :breakfast, class_name: 'Meal'
+  belongs_to :lunch, class_name: 'Meal'
+  belongs_to :dinner, class_name: 'Meal'
 
-  has_many :join_meal_days
-  has_many :meal, through: :join_meal_days
-
-  private
-
-  def create_day
-    JoinMealDay.create(meal_name: "breakfast", day_id: self.id, meal_id: Meal.all.sample.id)
-    JoinMealDay.create(meal_name: "dinner", day_id: self.id, meal_id: Meal.all.sample.id) 
-    JoinMealDay.create(meal_name: "supper", day_id: self.id, meal_id: Meal.all.sample.id)
-  end
+  has_many :monday_weeks, foreign_key: 'monday_id', class_name: 'Week'
+  has_many :tuesay_weeks, foreign_key: 'tuesay_id', class_name: 'Week'
+  has_many :wednesday_weeks, foreign_key: 'wednesday_id', class_name: 'Week'
+  has_many :thusday_weeks, foreign_key: 'thusday_id', class_name: 'Week'
+  has_many :friday_weeks, foreign_key: 'friday_id', class_name: 'Week'
+  has_many :saturday_weeks, foreign_key: 'saturday_id', class_name: 'Week'
+  has_many :sunday_weeks, foreign_key: 'sunday_id', class_name: 'Week'
 end
