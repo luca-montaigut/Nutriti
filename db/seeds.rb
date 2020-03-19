@@ -6,9 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'csv'
+require 'faker'
+
 Food.destroy_all
 Recipe.destroy_all
 JoinRecipeFood.destroy_all
+User.destroy_all
 
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'foods_nutriti.csv'))
 csv = CSV.parse(csv_text, headers: true, encoding: 'ISO-8859-1')
@@ -70,3 +73,16 @@ JoinRecipeFood.create(recipe_id: Recipe.find_by(title: "Croque-monsieur").id, fo
 JoinRecipeFood.create(recipe_id: Recipe.find_by(title: "Pain").id, food_id: 7000, quantity: 70)
 
 puts "There are now #{JoinRecipeFood.count} ingredients to complete yours recipes in database"
+
+User.create(
+  first_name: "Lazy",
+  last_name: "Rabbit",
+  email: "lazyrabbit@yopmail.com",
+  password: 123456,
+  height: 35,
+  weight: 5,
+  birthdate: Faker::Date.birthday(min_age: 18, max_age: 65),
+  physical_activity: 1.37
+)
+
+puts "There are now an user who is admin in database"

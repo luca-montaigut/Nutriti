@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_18_170342) do
+ActiveRecord::Schema.define(version: 2020_03_19_081923) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -105,4 +105,26 @@ ActiveRecord::Schema.define(version: 2020_03_18_170342) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "weeks", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "monday_id"
+    t.bigint "tuesday_id"
+    t.bigint "wednesday_id"
+    t.bigint "thursday_id"
+    t.bigint "friday_id"
+    t.bigint "saturday_id"
+    t.bigint "sunday_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["friday_id"], name: "index_weeks_on_friday_id"
+    t.index ["monday_id"], name: "index_weeks_on_monday_id"
+    t.index ["saturday_id"], name: "index_weeks_on_saturday_id"
+    t.index ["sunday_id"], name: "index_weeks_on_sunday_id"
+    t.index ["thursday_id"], name: "index_weeks_on_thursday_id"
+    t.index ["tuesday_id"], name: "index_weeks_on_tuesday_id"
+    t.index ["user_id"], name: "index_weeks_on_user_id"
+    t.index ["wednesday_id"], name: "index_weeks_on_wednesday_id"
+  end
+
+  add_foreign_key "weeks", "users"
 end
