@@ -4,7 +4,7 @@ class Users::WeeksController < Users::ApplicationController
   # GET /users/weeks
   # GET /users/weeks.json
   def index
-    @users_weeks = Week.all
+    @weeks = Week.all
   end
 
   # GET /users/weeks/1
