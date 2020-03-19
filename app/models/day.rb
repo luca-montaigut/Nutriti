@@ -49,4 +49,12 @@ class Day < ApplicationRecord
 
     return self
   end
+
+  def meals
+    [
+      self.breakfast,
+      self.lunch,
+      self.dinner
+    ]
+  end
 end

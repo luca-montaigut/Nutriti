@@ -79,6 +79,22 @@ class User < ApplicationRecord
   def dinner
     (self.drc / 100) * 30
   end
+
+  def shopping_cart
+    array = []
+    sorted = []
+    self.week.days.each  do |day|
+      day.meals.each do |meal|
+        meal.recipes.each do |recipe|
+          recipe.join_recipe_foods.each do |join|
+            array << {:alim_name => join.food.alim_name, :quantity => join.quantity.to_i}
+          end
+        end
+      end
+    end
+
+    array
+  end
   
   private
   
@@ -86,5 +102,4 @@ class User < ApplicationRecord
     user_week = Week.create(user_id: self.id)
     user_week.generate
   end
-  
 end
