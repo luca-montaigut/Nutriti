@@ -1,88 +1,93 @@
-# 🍽️ Nutriti 📅
+# 🍊 Nutriti 📅 🛒
 
-## 1. Présentation
+## Présentation
 
-Une appli qui te propose des repas pour la semaine selon tes objectifs et génère la liste des courses correspondante avec les quantités.
+Nutriti est une application qui propose des repas pour la semaine à l'utilisateur selon ses objectifs et lui génère la liste des courses correspondante avec les quantités.
 
-## 2. Parcours utilisateur
+![Image of site](https://i.imgur.com/ClPuT20.jpg)
 
-Le moins de paramétrage possible pour être direct dans le concret
+## Visite en ligne http://nutriti.herokuapp.com/
 
-L'utilisateur entre ses informations :
+### Compte Administrateur
+Connectez-vous avec :
+login : lazyrabbit@yopmail.com |
+password : 123456
 
-- 🆔 taille + poids (=calcul de l'IMC) 
+Vous aurez ainsi accès à la partie "Dashboard Admin" depuis le menu déroulant de votre navbar
 
-- 🏃 activité physique (nulle, modérée, régulière, intense ...) 
+## Etat d'avancement du projet 
 
-- 🎯 objectif : maigrir, grossir ou seulement équilibrer ses repas)
+MVP fonctionnel : 
+- l'application est capable de générer des repas sur une semaine et de proposer la liste des courses correspondantes.
+- les administrateurs ont accès à un générateur de recettes leur permettant de construire des recettes saines sur la bases des aliments présents dans la table Ciqual
+- Les utilisateurs peuvent également générer un repas seul ou une journée de repas unique.
 
-L'appli génère une semaine de repas type avec les quantités et la liste de courses 
+### Schéma de la BDD
 
-L'utilisateur voit son planning de repas
+![Image of site](https://i.imgur.com/ETawP7B.png)
 
-Il peut cliquer sur les repas pour les modifier (ex : changer un aliment qu'il n'aime pas etc...)
+### Prochaines étapes
+- continuer de compléter notre base de données de recettes
+- améliorer le front et l'UI
+- gérer l'envoi de la liste des courses par mail
+- séparer le petit déjeuner des autres repas de la journée et le rendre configurable pour l'utilisateur
+- générer les repas non plus de façon aléatoire, mais adaptés aux besoins de l'utilisateur
+- prendre en compte les préférences de l'utilisateur (régimes spéciaux, allergies)
 
-Il peut s'envoyer sa liste de courses par mail ou l'imprimer
+Certaines limites techniques nous empèchent de proposer une application plus intéressante économiquement parlant, voir ci-après.
 
-Fonctionnalités avancées : 
+### Limites
 
-- Tuto cuisson aliments / recettes
+Notre site est basé sur les aliments de la tables Ciqual qui est est un jeu de données produit par l'Agence nationale de sécurité sanitaire de l'alimentation, de l'environnement et du travail sur la composition nutritionnelle des aliments. 
+C'est une référence pour les nutritionnistes toutefois les aliments présentés sont des aliments génériques et non des produits.
 
-- Possibilité d'associer les aliments avec des produits de supermarché pour générer un drive prêt a emporter 
+En nous basant sur la base Open Food Facts nous pourrions proposez bien plus qu'une liste de courses, notamment des drives prêt à emporter chez un distributeurs ! Malheuresement aucun des membres de notre équipe n'a d'ordinateur assez puissant pour ouvrir et manipuler cette immense base de données...
 
-Loin dans le futur : 🗺️ applicable à divers pays (langue + aliments et recettes locales)
 
-## 3. Concrètement et techniquement
+## :wrench: Installation en local
 
-L'appli doit apprendre de l'utilisateur : possibilité de paramétrer les aliments petit à petit
+### Configuration
+Entrez les commandes suivantes dans votre terminal préféré :
 
-- ne pas me proposer (j'aime pas)
+`git clone git@github.com:luca-montaigut/Nutriti.git`
 
-- ne plus me le proposer pendant quelques temps (j'en ai trop mangé dernièrement)
+`cd Projet_Chatons`
 
-- augmenter la fréquence (j'en voudrais plus souvent, quitte à diminuer un aliment de la même catégorie)
+`bundle install`
 
-- etc...
+### Database creation
 
-Les régimes alimentaires doivent être pris en compte : végétarien 🥬, végétalien 🥕, religieux 🧕 etc...
+`rails db:create`
 
-L'appli doit proposer des aliments de saison et si possible locaux 
+`rails db:migrate`
 
-L'appli doit proposer des programmes sur :
-- 1 repas
-- 1 jour
-- 1 semaine
-- 2 semaines
-- 1 mois
+### Database initialisation
 
-💰 Modèle économique : appli gratuite + feature additionnelle payante
+`rails db:seed`
 
-### 3.1. Base de données
-* Utilisateurs
-* Aliments et/ou Recette complète ? (pour proposer autre chose que des combinaisons d'aliments simples)
-* Planning
+## 🔥 Connexion au site
 
-### 3.2. Front
+`rails server`
 
-Bootstrap avec ou sans thème + sûrement du Javascript mais nous n'avons pas encore vu le cours dessus
+Une fois le server connecté, rendez-vous sur :
 
-### 3.3. Backend
+http://localhost:3000/
 
-Rails, Devise, Letter-Opener, Table Print, Mailjet
+### (Rappel) Compte Administrateur
+Connectez-vous avec :
+login : lazyrabbit@yopmail.com |
+password : 123456
 
-### 3.4. Mes besoins techniques
+Bonne visite !
 
-La partie qui m'inquiète le plus concerne la création des repas et les relations de la base de données.
+## 🐰 Auteurs
+Luca Montaigut : https://github.com/luca-montaigut
 
-L'appli a été pensée de base pour mobile. Je n'ai pas spécialement d'idées pour la charte graphique du front.
+Marius Le Houezec Lacaze : https://github.com/MariusLHL
 
-## 4. La version minimaliste mais fonctionnelle qu'il faut avoir livré la première semaine
+Baptiste Igier : https://github.com/BaptisteIg
 
-MVP = L'appli génère des repas (équilibrés ou non) et une liste de courses sans prise en compte des régimes particuliers et du paramétrage des aliments + compte utilisateur
+Thibault Perchicot : https://github.com/Azaeps
 
-## 5. La version que l'on présentera au jury
+### Notre mentor : 🧙‍♂️ Manuel Cartier https://github.com/neolectron
 
-Paramétrage des aliments pour s'adapter à l'utilisateur + "beau" front
-
-## 6. Notre mentor
-🧙‍♂️ Manuel Cartier https://www.linkedin.com/in/manucartier
