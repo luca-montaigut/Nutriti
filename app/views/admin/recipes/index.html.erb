@@ -1,6 +1,8 @@
 <div class="text-center">
   <h1>Liste des Recettes</h1>
   <%= link_to 'Nouvelle Recette', new_admin_recipe_path, class:"btn btn-primary btn-lg" %>
+  <%= link_to 'CSV Recipes', admin_recipes_path(notice: "recipe", format: :csv), class:"btn btn-success btn-lg" %>
+  <%= link_to 'CSV Joins', admin_recipes_path(notice: "join", format: :csv), class:"btn btn-success btn-lg" %>
 </div>
 
 
