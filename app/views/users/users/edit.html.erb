@@ -1,6 +1,6 @@
 <div class="container">
 
-<%= form_with(model: current_user, method: "put") do |f|%>
+<%= form_with(model: current_user, method: "put", local: true ) do |f|%>
 
 <div class="form-group">
   <%= f.label :first_name %>
@@ -37,7 +37,7 @@
   <%= f.select :physical_activity, [['Sedentaire', '1.37'],['Actif', '1.50'],['Tres Actif', '1.80']] ,required: true, class:"form-control"%>
 </div>
 
-  <%= submit_tag("Mettre a jour mon profil") %>
+  <%= submit_tag("Mettre a jour mon profil" )%>
 <% end %>
 
 <%= link_to "Modifier votre email et Mot de passe", edit_user_registration_path %>
