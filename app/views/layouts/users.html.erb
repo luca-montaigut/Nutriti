@@ -64,7 +64,7 @@
     <% if current_user%>
       <% if current_user.incomplete_profile? %>
         <div class="alert alert-warning" role="alert">
-         Veuillez remple vos information <%= link_to "cliquer ici",edit_user_path(current_user.id)%>.  
+         Veuillez remplir vos informations en <%= link_to "cliquant ici",edit_user_path(current_user.id)%> pour profiter pleinement de nos fonctionnalités.  
         </div>
       <% end %>
     <%end%>

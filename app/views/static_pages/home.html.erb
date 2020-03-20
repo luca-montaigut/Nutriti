@@ -17,7 +17,7 @@
         <div class="col-md-1"></div>
         <div class="col-md-6 mt-5">
           <h1 class="display-2 text-white"> <b>Vous êtes à deux clics de bien manger</b> </h1>
-          <button type="button mt-2" class="btn btn-warning btn-lg text-center">Essayer maintenant !</button>
+          <button type="button mt-2" class="btn btn-warning btn-lg text-center">Essayez maintenant !</button>
         </div>
         <div class="col-md-5"></div>
       </div>
@@ -30,9 +30,9 @@
     <div class="row icons-container text-center mb-5">
       <div class="col-md-4">
         <div class="incon-box-2 with-line">
-          <h3 class="mb-2 text-success">Simplicité à toutes épreuves</h3>
+          <h3 class="mb-2 text-success">Simplicité à toute épreuve</h3>
           <i class="fas fa-lemon fa-2x fa-spin" style="color: yellow"></i>
-          <p class="mt-3">Le but est simple : après avoir rentré quelques données essentielles pour le fonctionnement de l'application telles que votre poids, votre taille, votre activité physique et vos objectifs, Nutriti vous présentera une liste de course ainsi que des recettes pour chaque repas de la journée sur une semaine. :) </p>
+          <p class="mt-3">Le but est simple : après avoir rentré quelques données essentielles pour le fonctionnement de l'application telles que votre poids, votre taille, votre activité physique et vos objectifs, Nutriti vous proposera un planning de repas pour votre semaine. </p>
         </div>
 
 
@@ -41,15 +41,15 @@
         <div class="incon-box-2 with-line">
           <h3 class="mb-2 text-success">Prise en main de sa santé</h3>
           <i class="fas fa-carrot fa-2x fa-spin" style="color: orange"></i>
-          <p class="mt-3"> Nutriti vous propse des recettes diètétiques crées et dosées en fonction des données que vous avez informées à l'inscription. Nutriti est basé sur la formule de Harris et Benedict permettant ainsi des vous présentez des plats vous faisant aimé le mot diet !</p>
+          <p class="mt-3"> Nutriti vous propose des recettes dosées en fonction de vos besoins caloriques. Ces derniers sont basés sur la formule de Harris et Benedict permettant ainsi de vous présenter des plats aux proportions adaptées à votre corps.</p>
         </div>
   
       </div>
       <div class="col-md-4">
         <div class="incon-box-2 with-line">
-          <h3 class="mb-2 text-success">Fonctionnalité Prenium</h3>
+          <h3 class="mb-2 text-success">Des courses clef en main</h3>
           <i class="fas fa-pepper-hot fa-2x fa-spin" style="color: red"></i>
-          <p class="mt-3"> Sous son aspect Prenium Nutriti vous propose de nouvelles fonctionnalités telles que la liste et préparation des recettes sur un mois, un version familliale pour les quantités des recttes et bien plus encore.. </p>
+          <p class="mt-3"> Avoir un planning c'est bien, avoir les aliments pour faire les recettes c'est mieux ! La grande force de Nutriti est de vous fournir la liste de courses nécessaires à la réalisation des plats de votre planning </p>
         </div>
       </div>
     </div>
@@ -62,12 +62,20 @@
 
     <div class="row mb-5">
       <div class="card-deck">
+        <div class="card text-center">
+          <img src="https://images.pexels.com/photos/572056/pexels-photo-572056.jpeg?cs=srgb&dl=a-l-interieur-activites-affaires-afficher-572056.jpg&fm=jpg" class="card-img-top" alt="Progression">
+          <div class="card-body">
+            <h5 class="card-title text-success">Votre planning</h5>
+            <p class="card-text">Générez rapidement le planning de votre semaine de repas et modifiez-le à votre guise</p>
+            <button type="button" class="btn btn-lg btn-warning" disabled>Voir</button>
+            <%= link_to "M'inscrire", new_user_registration_path, class:"btn btn-outline-warning btn-lg" %>
+          </div>
+        </div>
         <div class="card">
           <img src="https://images.pexels.com/photos/2168783/pexels-photo-2168783.jpeg?cs=srgb&dl=a-l-interieur-femme-fruits-interieur-2168783.jpg&fm=jpg" class="card-img-top" alt="Recettes">
           <div class="card-body text-center">
             <h5 class="card-title text-success">Vos recettes</h5>
-            <p class="card-text">Vous pouvez ici voir une démonstration d'une de nos recettes les plus prisées.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <p class="card-text">Retrouvez des recettes saines et faciles à réalisés. Vous suivez un régime alimentaire spécifique ou êtes allergique à un aliment ? Pas de problèmes, nous ne vous proposerons que des recettes répondant à vos critères</p>
             <button type="button" class="btn btn-lg btn-warning" disabled>Voir</button>
             <%= link_to "M'inscrire", new_user_registration_path, class:"btn btn-outline-warning btn-lg" %>
           </div>
@@ -76,18 +84,7 @@
           <img src="https://images.pexels.com/photos/416322/pexels-photo-416322.jpeg?cs=srgb&dl=argent-checklist-commerce-communication-416322.jpg&fm=jpg" class="card-img-top" alt="Liste de course">
           <div class="card-body text-center">
             <h5 class="card-title text-success">Vos listes de courses</h5>
-            <p class="card-text">Voici à quoi ressemblerai votre liste de courses pour la semaine après avoir essayé Nutriti. Voyez par vous même la simplicité à comprendre le fonctionnement de Nutriti ! ;)</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            <button type="button" class="btn btn-lg btn-warning" disabled>Voir</button>
-            <%= link_to "M'inscrire", new_user_registration_path, class:"btn btn-outline-warning btn-lg" %>
-          </div>
-        </div>
-        <div class="card text-center">
-          <img src="https://images.pexels.com/photos/572056/pexels-photo-572056.jpeg?cs=srgb&dl=a-l-interieur-activites-affaires-afficher-572056.jpg&fm=jpg" class="card-img-top" alt="Progression">
-          <div class="card-body">
-            <h5 class="card-title text-success">Votre progression</h5>
-            <p class="card-text">Dans cette vue, vous pouvez accèder à un dashboard récapitultif de vos résultats depuis l'acquisition de Nutriti. Ce suivi vous permettera entre autre de regardez votre dépense calorique et vos résultats par rapport à vos objectifs. Pensez bien à mettre vos objectifs à jour. </p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <p class="card-text">Grâce à Nutriti, vous aurez toujours les bons aliments dans vos placards pour réaliser vos repas.</p>
             <button type="button" class="btn btn-lg btn-warning" disabled>Voir</button>
             <%= link_to "M'inscrire", new_user_registration_path, class:"btn btn-outline-warning btn-lg" %>
           </div>
