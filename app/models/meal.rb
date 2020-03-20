@@ -1,9 +1,6 @@
 class Meal < ApplicationRecord
   after_create :total_kcal
 
-  has_many :join_meal_days
-  has_many :food, through: :join_meal_days
-
   belongs_to :starter, class_name: 'Recipe'
   belongs_to :dish, class_name: 'Recipe'
   belongs_to :dessert, class_name: 'Recipe'
