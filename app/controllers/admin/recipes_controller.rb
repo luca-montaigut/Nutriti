@@ -7,7 +7,11 @@ class Admin::RecipesController < Admin::ApplicationController
     @categories = ["Starter", "Dish", "Dessert", "Drink", "Complement"]
     respond_to do |format|
       format.html
-      format.csv { send_data @join_recipes.join_to_csv }
+      if params[:notice] == "recipe"
+        format.csv { send_data @admin_recipes.recipes_to_csv }
+      else params[:notice] == "join"
+        format.csv { send_data @join_recipes.join_to_csv }
+      end
     end
   end
 
