@@ -3,6 +3,9 @@ class Day < ApplicationRecord
   belongs_to :lunch, class_name: 'Meal'
   belongs_to :dinner, class_name: 'Meal'
 
+  has_many :meal
+  has_many :recipe, through: :meal
+
   has_many :monday_weeks, foreign_key: 'monday_id', class_name: 'Week'
   has_many :tuesay_weeks, foreign_key: 'tuesay_id', class_name: 'Week'
   has_many :wednesday_weeks, foreign_key: 'wednesday_id', class_name: 'Week'
@@ -15,19 +18,19 @@ class Day < ApplicationRecord
 
     case day
     when "Monday"
-      self.name = "Monday"
+      self.name = "Lundi"
     when "Tuesday"
-      self.name = "Tuesday"
+      self.name = "Mardi"
     when "Wednesday"
-      self.name = "Wednesday"
+      self.name = "Mercredi"
     when "Thursday"
-      self.name = "Thursday"
+      self.name = "Jeudi"
     when "Friday"
-      self.name = "Friday"
+      self.name = "Vendredi"
     when "Saturday"
-      self.name = "Saturday"
+      self.name = "Samedi"
     else
-      self.name = "Sunday"
+      self.name = "Dimanche"
     end
 
     @breakfast = Meal.new.generate("Breakfast")
@@ -45,5 +48,13 @@ class Day < ApplicationRecord
     self.dinner = @dinner
 
     return self
+  end
+
+  def meals
+    [
+      self.breakfast,
+      self.lunch,
+      self.dinner
+    ]
   end
 end

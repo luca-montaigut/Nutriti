@@ -12,6 +12,8 @@ JoinRecipeFood.destroy_all
 Food.destroy_all
 Recipe.destroy_all
 Week.destroy_all
+Day.destroy_all
+Meal.destroy_all
 User.destroy_all
 
 
@@ -32,47 +34,34 @@ csv.each do |row|
   food.cholesterolfor100g = row['cholesterolfor100g']
   food.saltfor100g = row['saltfor100g']
   food.save
-
 end
 
 puts "There are now #{Food.count} foods in database"
 
-Recipe.create(title: "Eau minérale", forhowmany: 1, cookingtime: 1, budget:  "Bon Marché", category:  "Drink", url: "") 
-Recipe.create(title: "Pain", forhowmany: 1, cookingtime: 1, budget:  "Bon Marché", category:  "Complement", url: "")  
-Recipe.create(title: "Pomme", forhowmany: 1, cookingtime: 1, budget:  "Bon Marché", category:  "Dessert", url: "")  
-Recipe.create(title: "Banane", forhowmany: 1, cookingtime: 1, budget:  "Bon Marché", category:  "Dessert", url: "")  
-Recipe.create(title: "Tian de légumes du soleil", forhowmany: 4, cookingtime: 10, budget:  "Bon marché", category:  "Starter", url:  "https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Tian-de-legumes-du-soleil-3145546")
-Recipe.create(title: "Petit salé aux lentilles" , forhowmany: 6, cookingtime: 15, budget:  "Bon marché", category:  "Dish", url:  "https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Le-petit-sale-aux-lentilles-2634663")
-Recipe.create(title: "Croque-monsieur" , forhowmany: 6, cookingtime: 10, budget:  "Bon marché", category:  "Dish", url:  "https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Croque-monsieur-2280962")
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'recipes_nutriti.csv'))
+csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+csv.each do |row|
+  r = Recipe.new
+  r.title = row['title']
+  r.forhowmany = row['forhowmany']
+  r.cookingtime = row['cookingtime']
+  r.budget = row['budget']
+  r.category = row['category']
+  r.url = row['url']
+  r.save
+end
 
 puts "There are now #{Recipe.count} recipes in database"
 
-JoinRecipeFood.create(recipe_id: Recipe.find_by(title: "Pomme").id, food_id: 13050, quantity: 150)
-JoinRecipeFood.create(recipe_id: Recipe.find_by(title: "Eau minérale").id, food_id: 18044, quantity: 500)
-JoinRecipeFood.create(recipe_id: Recipe.find_by(title: "Banane").id, food_id: 13005, quantity: 120)
-JoinRecipeFood.create(recipe_id: Recipe.find_by(title: "Tian de légumes du soleil").id, food_id: 20002, quantity: 250)
-JoinRecipeFood.create(recipe_id: Recipe.find_by(title: "Tian de légumes du soleil").id, food_id: 20047, quantity: 300)
-JoinRecipeFood.create(recipe_id: Recipe.find_by(title: "Tian de légumes du soleil").id, food_id: 11070, quantity: 1)
-JoinRecipeFood.create(recipe_id: Recipe.find_by(title: "Tian de légumes du soleil").id, food_id: 11000, quantity: 16)
-JoinRecipeFood.create(recipe_id: Recipe.find_by(title: "Tian de légumes du soleil").id, food_id: 11058, quantity: 1)
-JoinRecipeFood.create(recipe_id: Recipe.find_by(title: "Tian de légumes du soleil").id, food_id: 11015, quantity: 1)
-JoinRecipeFood.create(recipe_id: Recipe.find_by(title:"Petit salé aux lentilles").id, food_id: 28550, quantity: 1200)
-JoinRecipeFood.create(recipe_id: Recipe.find_by(title:"Petit salé aux lentilles").id, food_id: 30104, quantity: 300)
-JoinRecipeFood.create(recipe_id: Recipe.find_by(title:"Petit salé aux lentilles").id, food_id: 20587, quantity: 400)
-JoinRecipeFood.create(recipe_id: Recipe.find_by(title:"Petit salé aux lentilles").id, food_id: 11174, quantity: 10)
-JoinRecipeFood.create(recipe_id: Recipe.find_by(title:"Petit salé aux lentilles").id, food_id: 20008, quantity: 125)
-JoinRecipeFood.create(recipe_id: Recipe.find_by(title:"Petit salé aux lentilles").id, food_id: 11052, quantity: 1)
-JoinRecipeFood.create(recipe_id: Recipe.find_by(title:"Petit salé aux lentilles").id, food_id: 11053, quantity: 1)
-JoinRecipeFood.create(recipe_id: Recipe.find_by(title: "Croque-monsieur").id, food_id: 16400, quantity: 50)
-JoinRecipeFood.create(recipe_id: Recipe.find_by(title: "Croque-monsieur").id, food_id: 9545, quantity: 50)
-JoinRecipeFood.create(recipe_id: Recipe.find_by(title: "Croque-monsieur").id, food_id: 19041, quantity: 1000)
-JoinRecipeFood.create(recipe_id: Recipe.find_by(title: "Croque-monsieur").id, food_id: 11058, quantity: 1)
-JoinRecipeFood.create(recipe_id: Recipe.find_by(title: "Croque-monsieur").id, food_id: 11015, quantity: 1)
-JoinRecipeFood.create(recipe_id: Recipe.find_by(title: "Croque-monsieur").id, food_id: 7200, quantity: 170)
-JoinRecipeFood.create(recipe_id: Recipe.find_by(title: "Croque-monsieur").id, food_id: 12118, quantity: 80)
-JoinRecipeFood.create(recipe_id: Recipe.find_by(title: "Croque-monsieur").id, food_id: 11013, quantity: 40)
-JoinRecipeFood.create(recipe_id: Recipe.find_by(title: "Croque-monsieur").id, food_id: 28925, quantity: 300)
-JoinRecipeFood.create(recipe_id: Recipe.find_by(title: "Pain").id, food_id: 7000, quantity: 70)
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'join_recipe_foods_nutriti.csv'))
+csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+csv.each do |row|
+  j = JoinRecipeFood.new
+  j.recipe_id = Recipe.find_by(title: row['recipe_id']).id
+  j.food_id = row['food_id']
+  j.quantity = row['quantity']
+  j.save
+end
 
 puts "There are now #{JoinRecipeFood.count} ingredients to complete yours recipes in database"
 

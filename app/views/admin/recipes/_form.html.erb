@@ -15,10 +15,10 @@
   <%= f.text_field :title, class:"form-control"%>
   <br>
   <%= f.label :forhowmany%>
-  <%= f.number_field :forhowmany, class:"form-control"%>
+  <%= f.number_field :forhowmany, min: 1, class:"form-control"%>
   <br>
   <%= f.label :cookingtime%>
-  <%= f.number_field :cookingtime, class:"form-control"%>
+  <%= f.number_field :cookingtime, step: 5, class:"form-control"%>
   <div class="d-flex flex-row mt-2">
     <div class="mr-5">
     <%= f.label :category, "Type de recette"%>

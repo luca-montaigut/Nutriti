@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   after_create :user_week
+  after_create :welcome_mail
   after_update :get_age
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -15,7 +17,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
 
-  after_create :welcome_mail
+  has_one :week
 
   def self.new_with_session(params, session)
     super.tap do |user|
@@ -78,6 +80,22 @@ class User < ApplicationRecord
   def dinner
     (self.drc / 100) * 30
   end
+
+  def shopping_cart
+    array = []
+    sorted = []
+    self.week.days.each  do |day|
+      day.meals.each do |meal|
+        meal.recipes.each do |recipe|
+          recipe.join_recipe_foods.each do |join|
+            array << {join.food.alim_name => join.quantity.to_f * (1.0/join.recipe.forhowmany.to_f).to_f}
+          end
+        end
+      end
+    end
+
+    array.reduce {|acc, h| acc.merge(h) {|_,v1,v2| v1 + v2 }}
+  end
   
   private
   
@@ -85,5 +103,4 @@ class User < ApplicationRecord
     user_week = Week.create(user_id: self.id)
     user_week.generate
   end
-  
 end

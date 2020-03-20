@@ -1,6 +1,7 @@
 class Recipe < ApplicationRecord
   has_many :join_recipe_foods
   has_many :foods, through: :join_recipe_foods
+  
   accepts_nested_attributes_for :join_recipe_foods, allow_destroy: true, reject_if: ['food_id'].blank?
 
   has_many :starter_meal, foreign_key: 'starter_id', class_name: 'Meal'
@@ -53,6 +54,18 @@ class Recipe < ApplicationRecord
 
   def for_one
     self.total_kcal / self.forhowmany
+  end
+
+  def self.recipes_to_csv
+	attributes = %w{id title forhowmany cookingtime budget category url}
+
+	CSV.generate(headers: true) do |csv|
+	  csv << attributes
+
+	  all.find_each do |recipe|
+		csv << attributes.map{ |attr| recipe.send(attr) }
+	  end
+	end
   end
 
 end
