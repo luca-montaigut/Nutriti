@@ -12,10 +12,9 @@
         <% end %>
       </tbody>
     </table>
-    <br><br><br>
+    <br><br><br><br>
   </nav>
-  <div class="blur">
-    <i class="far fa-times-circle fa-4x" style="color: white; opacity: 1;" id="close"></i>
+  <div class="blur" id="close">
   </div>
 </div>
 <div class="d-flex flex-row my-3">
@@ -75,15 +74,6 @@
   background-color: white; 
   height: 100%;
 }
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  [class*="sidenav-"] {
-    width: 100vh;
-  }
-  [class*="sidenav-"] {
-    width: 0vh;
-  }
-}
 
 .blur{
   float: left;
@@ -129,6 +119,7 @@
     width: 65%;
   }
 }
+
 </style>
 
 <script>
