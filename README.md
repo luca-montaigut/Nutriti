@@ -2,7 +2,7 @@
 
 ## Présentation
 
-Nutriti est une application qui propose des repas pour la semaine à l'utilisateur selon ses objectifs et lui génère la liste des courses correspondante avec les quantités.
+Nutriti est une application qui propose des repas pour la semaine à son utilisateur selon ses besoins et lui génère la liste des courses correspondante avec les quantités.
 
 ![Image of site](https://i.imgur.com/ClPuT20.jpg)
 
@@ -26,8 +26,7 @@ MVP fonctionnel :
 
 ![Image of site](https://i.imgur.com/ETawP7B.png)
 
-
-### Prochaines étapes
+***Prochaines étapes :***
 - continuer de compléter notre base de données de recettes
 - améliorer le front et l'UI
 - gérer l'envoi de la liste des courses par mail
