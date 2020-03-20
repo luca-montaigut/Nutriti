@@ -1,8 +1,8 @@
-﻿title;forhowmany;cookingtime;budget;category;url
- Eau minérale;1;1; Bon Marché; Drink;
- Pain;1;1; Bon marché; Complement; 
- Pomme;1;1; Bon marché; Dessert; 
- Banane;1;1; Bon marché; Dessert; 
- Tian de légumes du soleil;4;10; Bon marché; Starter; https://www.elle.fr/Elle-a-Table/Recettes-de-cuisi...
- Petit salé aux lentilles ;6;15; Bon marché; Dish; https://www.elle.fr/Elle-a-Table/Recettes-de-cuisi...
- Croque-monsieur ;6;10; Bon marché; Dish; https://www.elle.fr/Elle-a-Table/Recettes-de-cuisi...
+id,title,forhowmany,cookingtime,budget,category,url
+106,Eau minérale,1,1,Bon Marché,Drink,""
+107,Pain,1,1,Bon Marché,Complement,""
+108,Pomme,1,1,Bon Marché,Dessert,""
+109,Banane,1,1,Bon Marché,Dessert,""
+110,Tian de légumes du soleil,4,10,Bon marché,Starter,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Tian-de-legumes-du-soleil-3145546
+111,Petit salé aux lentilles,6,15,Bon marché,Dish,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Le-petit-sale-aux-lentilles-2634663
+112,Croque-monsieur,6,10,Bon marché,Dish,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Croque-monsieur-2280962
