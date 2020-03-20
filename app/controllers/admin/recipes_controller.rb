@@ -5,6 +5,11 @@ class Admin::RecipesController < Admin::ApplicationController
   # GET /admin/recipes.json
   def index
     @admin_recipes = Recipe.all
+
+	respond_to do |format|
+	  format.html
+	  format.csv { send_data @admin_recipes.recipes_to_csv }
+	end
   end
 
   # GET /admin/recipes/1

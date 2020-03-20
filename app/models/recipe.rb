@@ -55,4 +55,16 @@ class Recipe < ApplicationRecord
     self.total_kcal / self.forhowmany
   end
 
+  def self.recipes_to_csv
+	attributes = %w{title forhowmany cookingtime budget category url}
+
+	CSV.generate(headers: true) do |csv|
+	  csv << attributes
+
+	  all.find_each do |recipe|
+		csv << attributes.map{ |attr| recipe.send(attr) }
+	  end
+	end
+  end
+
 end
