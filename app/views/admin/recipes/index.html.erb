@@ -1,14 +1,14 @@
-<p id="notice"><%= notice %></p>
+<div class="text-center">
+  <h1>Liste des Recettes</h1>
+  <%= link_to 'Nouvelle Recette', new_admin_recipe_path, class:"btn btn-primary btn-lg" %>
+</div>
 
-<h1>Liste des Recettes</h1>
-
-<%= link_to 'Nouvelle Recette', new_admin_recipe_path, class:"btn btn-primary" %>
-<br>
+<% @categories.each do |item| %>
+  <h4><%= item %></h4>
 <table class="table table-striped">
   <thead>
     <tr>
       <th>Nom de la recette</th>
-      <th>Type</th>
       <th>Pour combien de personnes</th>
       <th>Temps de préparation</th>
       <th>Budget</th>
@@ -20,21 +20,23 @@
 
   <tbody>
     <% @admin_recipes.each do |admin_recipe| %>
-      <tr>
-        <td><%= admin_recipe.title %></td>
-        <td><%= admin_recipe.category %></td>
-        <td><%= admin_recipe.forhowmany %></td>
-        <td><%= admin_recipe.cookingtime %></td>
-        <td><%= admin_recipe.budget %></td>
-        <td><%= admin_recipe.total_kcal %></td>
-        <td><%= admin_recipe.url %></td>
-        <td><%= link_to 'Show', admin_recipe_path(admin_recipe.id) %></td>
-        <td><%= link_to 'Edit', edit_admin_recipe_path(admin_recipe.id) %></td>
-        <td><%= link_to 'Destroy', admin_recipe_path(admin_recipe.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% if admin_recipe.category ==  item %>
+        <tr>
+          <td><%= admin_recipe.title %></td>
+          <td><%= admin_recipe.forhowmany %></td>
+          <td><%= admin_recipe.cookingtime %></td>
+          <td><%= admin_recipe.budget %></td>
+          <td><%= admin_recipe.total_kcal %></td>
+          <td><%= admin_recipe.url %></td>
+          <td><%= link_to 'Show', admin_recipe_path(admin_recipe.id) %></td>
+          <td><%= link_to 'Edit', edit_admin_recipe_path(admin_recipe.id) %></td>
+          <td><%= link_to 'Destroy', admin_recipe_path(admin_recipe.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
+<% end %>
 
 <br>
 
