@@ -1,4 +1,40 @@
 recipe_id,food_id,quantity
+Ratatouille provençale,20034,400
+Ratatouille provençale,13004,400
+Ratatouille provençale,20053,450
+Ratatouille provençale,20021,1250
+Ratatouille provençale,20047,600
+Ratatouille provençale,20168,80
+Ratatouille provençale,17270,10
+Ratatouille provençale,11015,1
+Ratatouille provençale,11058,1
+Poulet curry et oignons,36017,680
+Poulet curry et oignons,20034,200
+Poulet curry et oignons,18041,25
+Poulet curry et oignons,11005,5
+Poulet curry et oignons,11042,5
+Poulet curry et oignons,20151,1
+Poulet curry et oignons,11015,1
+Poulet curry et oignons,11058,1
+Pâtes carbonara,9816,500
+Pâtes carbonara,28725,250
+Pâtes carbonara,22000,378
+Pâtes carbonara,12120,60
+Pâtes carbonara,11015,1
+Pâtes carbonara,11058,1
+"Quiche poireaux, chèvre lardons",23412,250
+"Quiche poireaux, chèvre lardons",20040,450
+"Quiche poireaux, chèvre lardons",28725,100
+"Quiche poireaux, chèvre lardons",22000,189
+"Quiche poireaux, chèvre lardons",18041,20
+"Quiche poireaux, chèvre lardons",19039,10
+"Quiche poireaux, chèvre lardons",11015,1
+"Quiche poireaux, chèvre lardons",11058,1
+Galettes bretonnes complètes,23801,80
+Galettes bretonnes complètes,22000,126
+Galettes bretonnes complètes,28900,80
+Galettes bretonnes complètes,12118,40
+Clémentine,13082,55
 Pomme,13050,150
 Eau minérale,18044,500
 Banane,13005,120
@@ -25,3 +61,50 @@ Croque-monsieur,12118,80
 Croque-monsieur,11013,40
 Croque-monsieur,28925,300
 Pain,7000,70
+Amuse-bouche au camembert et jambon cru,12001,250
+Amuse-bouche au camembert et jambon cru,28812,200
+Amuse-bouche au camembert et jambon cru,13033,80
+Carottes et courgettes râpées aux épices,20009,500
+Carottes et courgettes râpées aux épices,20020,250
+Carottes et courgettes râpées aux épices,2013,15
+Carottes et courgettes râpées aux épices,2028,15
+Carottes et courgettes râpées aux épices,11090,15
+Carottes et courgettes râpées aux épices,17270,30
+Carottes et courgettes râpées aux épices,11058,1
+Carottes et courgettes râpées aux épices,11000,40
+Carottes et courgettes râpées aux épices,11042,5
+Carottes et courgettes râpées aux épices,11025,2
+Carottes et courgettes râpées aux épices,11094,0
+Carottes et courgettes râpées aux épices,13013,100
+Asperges à la milanaise,20279,250
+Asperges à la milanaise,22000,240
+Asperges à la milanaise,16404,4
+Asperges à la milanaise,11017,1
+Asperges à la milanaise,11015,1
+Salade japonaise,20116,500
+Salade japonaise,15038,1
+Salade japonaise,11090,30
+Salade japonaise,31017,45
+Salade japonaise,11058,1
+Salade japonaise,11194,30
+Salade japonaise,17001,45
+Salade japonaise,11104,5
+Terrine aux deux saumons,22000,180
+Terrine aux deux saumons,19430,20
+Terrine aux deux saumons,26037,150
+Terrine aux deux saumons,26036,500
+Terrine aux deux saumons,11080,45
+Terrine aux deux saumons,11058,1
+Terrine aux deux saumons,11015,1
+Terrine aux deux saumons,11049,5
+Pâté de volaille maison,36900,500
+Pâté de volaille maison,28300,200
+Pâté de volaille maison,28800,100
+Pâté de volaille maison,22000,120
+Pâté de volaille maison,20034,100
+Pâté de volaille maison,20097,100
+Pâté de volaille maison,1023,200
+Pâté de volaille maison,11058,1
+Pâté de volaille maison,11015,1
+Pâté de volaille maison,11070,1
+Pâté de volaille maison,11014,1
