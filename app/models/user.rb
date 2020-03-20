@@ -95,7 +95,6 @@ class User < ApplicationRecord
     end
 
     array.reduce {|acc, h| acc.merge(h) {|_,v1,v2| v1 + v2 }}
-    # https://stackoverflow.com/questions/36004998/add-values-of-same-key-in-array-of-hashes
   end
   
   private
