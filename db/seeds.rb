@@ -57,7 +57,7 @@ csv_text = File.read(Rails.root.join('lib', 'seeds', 'join_recipe_foods_nutriti.
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
   j = JoinRecipeFood.new
-  j.recipe_id = row['recipe_id']
+  j.recipe_id = Recipe.find_by(title: row['recipe_id']).id
   j.food_id = row['food_id']
   j.quantity = row['quantity']
   j.save
