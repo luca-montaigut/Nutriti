@@ -26,6 +26,7 @@ MVP fonctionnel :
 
 ![Image of site](https://i.imgur.com/ETawP7B.png)
 
+
 ### Prochaines étapes
 - continuer de compléter notre base de données de recettes
 - améliorer le front et l'UI
@@ -38,7 +39,7 @@ Certaines limites techniques nous empèchent de proposer une application plus in
 
 ### Limites
 
-Notre site est basé sur les aliments de la tables Ciqual qui est est un jeu de données produit par l'Agence nationale de sécurité sanitaire de l'alimentation, de l'environnement et du travail sur la composition nutritionnelle des aliments. 
+Notre site est basé sur les aliments de la tables Ciqual qui est un jeu de données produit par l'Agence nationale de sécurité sanitaire de l'alimentation, de l'environnement et du travail sur la composition nutritionnelle des aliments. 
 C'est une référence pour les nutritionnistes toutefois les aliments présentés sont des aliments génériques et non des produits.
 
 En nous basant sur la base Open Food Facts nous pourrions proposez bien plus qu'une liste de courses, notamment des drives prêt à emporter chez un distributeurs ! Malheuresement aucun des membres de notre équipe n'a d'ordinateur assez puissant pour ouvrir et manipuler cette immense base de données...

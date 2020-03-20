@@ -18,19 +18,19 @@ class Day < ApplicationRecord
 
     case day
     when "Monday"
-      self.name = "Monday"
+      self.name = "Lundi"
     when "Tuesday"
-      self.name = "Tuesday"
+      self.name = "Mardi"
     when "Wednesday"
-      self.name = "Wednesday"
+      self.name = "Mercredi"
     when "Thursday"
-      self.name = "Thursday"
+      self.name = "Jeudi"
     when "Friday"
-      self.name = "Friday"
+      self.name = "Vendredi"
     when "Saturday"
-      self.name = "Saturday"
+      self.name = "Samedi"
     else
-      self.name = "Sunday"
+      self.name = "Dimanche"
     end
 
     @breakfast = Meal.new.generate("Breakfast")

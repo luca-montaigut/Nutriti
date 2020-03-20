@@ -5,7 +5,7 @@ class Users::UsersController < Users::ApplicationController
   def update  
     current_user.update(user_params)
 
-    redirect_to user_path(current_user.id), flash:{notice: "Votre profil a été mis à jours"}
+    redirect_to users_path(current_user.id), flash:{notice: "Votre profil a été mis à jours"}
   end
 
 private
