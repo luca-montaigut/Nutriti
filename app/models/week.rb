@@ -1,5 +1,6 @@
 class Week < ApplicationRecord
   belongs_to :user
+
   belongs_to :monday, class_name: 'Day', optional: true
   belongs_to :tuesday, class_name: 'Day', optional: true
   belongs_to :wednesday, class_name: 'Day', optional: true
@@ -32,5 +33,15 @@ class Week < ApplicationRecord
     self.update(sunday: @sunday)
 
     return self
+  end
+
+  def days
+    [self.monday,
+    self.tuesday,
+    self.wednesday,
+    self.thursday,
+    self.friday,
+    self.saturday,
+    self.sunday]
   end
 end

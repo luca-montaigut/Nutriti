@@ -31,6 +31,16 @@ class Meal < ApplicationRecord
     return self
   end
 
+  def recipes
+  [
+    self.starter,
+    self.dish,
+    self.dessert,
+    self.drink,
+    self.complement
+  ]
+  end
+
   private
   def total_kcal
     self.update(kcal: self.starter.for_one + self.dish.for_one + self.dessert.for_one + self.drink.for_one + self.complement.for_one)
