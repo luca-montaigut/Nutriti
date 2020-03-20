@@ -57,7 +57,7 @@ class Recipe < ApplicationRecord
   end
 
   def self.recipes_to_csv
-	attributes = %w{title forhowmany cookingtime budget category url}
+	attributes = %w{id title forhowmany cookingtime budget category url}
 
 	CSV.generate(headers: true) do |csv|
 	  csv << attributes
