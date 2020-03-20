@@ -29,4 +29,17 @@ class JoinRecipeFood < ApplicationRecord
   def lipid
     (self.food.ipidfor100g.to_f / 100) * self.quantity
   end
+
+  def self.join_to_csv
+	join_attributes = %w{recipe_id food_id quantity}
+
+	CSV.generate(headers: true) do |csv|
+	  csv << join_attributes
+
+	  all.find_each do |join|
+		csv << join_attributes.map{ |attr| join.send(attr) }
+	  end
+	end
+  end
+
 end
