@@ -51,7 +51,7 @@ Entrez les commandes suivantes dans votre terminal préféré :
 
 `git clone git@github.com:luca-montaigut/Nutriti.git`
 
-`cd Projet_Chatons`
+`cd Nutriti`
 
 `bundle install`
 
