@@ -1,37 +1,41 @@
-
+<div class="container">
   
-  <h1 class="text-center mt-4"> Bienvenue sur votre profil <%=current_user.first_name%> <%=current_user.last_name%></h1>
-  
-  
-<div class="d-flex justify-content-center mt-5">
-        <div class="card w-50">
-          <div class="card-body">
-            <h5 class="card-title"><%= current_user.first_name %> <%= current_user.last_name %></h5>
-            <p class="card-text"><%= current_user.gender %></p>
-            <p class="card-text"><%= current_user.birthdate %></p>
-            <p class="card-text"><%= current_user.get_age %></p>
-            <p class="card-text">Métabolisme Basal : <%= current_user.mb %> kcal</p>
-            <p class="card-text">Besoin Calorique quotidien : <%= current_user.drc %> kcal</p>
-
+    <h1 class="text-center mt-4 text-success border-bottom pb-3"> Bienvenue sur votre profil <%=current_user.first_name%> <%=current_user.last_name%></h1>
+    
+    
+    <div class="d-flex justify-content-center mt-5">
+          <div class="card w-50">
+            <div class="card-body">
+              <h5 class="card-title"><%= current_user.first_name %> <%= current_user.last_name %></h5>
+              <p class="card-text"><%= current_user.gender %></p>
+              <p class="card-text"><%= current_user.birthdate %></p>
+              <p class="card-text"><%= current_user.get_age %></p>
+              <p class="card-text"></p>
+              <p class="card-text">Métabolisme Basal : <%= current_user.mb %> kcal</p>
+              <p class="card-text">Besoin Calorique quotidien : <%= current_user.drc %> kcal</p>
+    
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><%= current_user.email %></li>
+              <li class="list-group-item"><%= current_user.height %></li>
+              <li class="list-group-item"><%= current_user.weight %></li>
+              <li class="list-group-item"><%= current_user.physical_activity %></li>
+            </ul>
+            <div class="card-body text-center">
+              <%if current_user.id == current_user.id %>
+                <%= link_to 'Editer le compte', edit_user_registration_path, class:"btn btn-outline-success" %> |
+                <%= link_to 'Editer le profil', edit_user_path, class:"btn btn-success" %>
+              <% end %>
+            </div>
           </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item"><%= current_user.email %></li>
-            <li class="list-group-item"><%= current_user.height %></li>
-            <li class="list-group-item"><%= current_user.weight %></li>
-            <li class="list-group-item"><%= current_user.physical_activity %></li>
-          </ul>
-          <div class="card-body text-center">
-            <%if current_user.id == current_user.id %>
-              <%= link_to 'Editer le compte', edit_user_registration_path, class:"btn btn-outline-success" %> |
-              <%= link_to 'Editer le profil', edit_user_path, class:"btn btn-success" %>
-            <% end %>
-          </div>
-        </div>
+      </div>
+    
+      <div class="text-center mt-3">
+          <%= link_to '« Retour Accueil', root_path, class:"btn btn-outline-warning" %>
+      </div>
+    <br>
+    
     </div>
-
-    <div class="text-center mt-3">
-        <%= link_to '« Retour Accueil', root_path, class:"btn btn-warning" %>
-    </div>
-  <br>
 
 </div>
+  
