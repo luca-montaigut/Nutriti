@@ -44,4 +44,5 @@ class Week < ApplicationRecord
     self.saturday,
     self.sunday]
   end
+
 end
