@@ -8,7 +8,7 @@
           <div>
           </div>
           <% current_user.shopping_cart.each do |elem|%>
-            <% if Food.where(alim_group: alim_group).include?(Food.find_by("alim_name like?", "%#{elem[0]}%")) %>            
+            <% if alim_group == Food.find_by("alim_name like?", "%#{elem[0]}%").alim_group %>            
               <tr>
                 
                 <td class="bold"><%= alim_group %></td>
