@@ -20,7 +20,7 @@
     <% @recipe.join_recipe_foods.each do |food| %>
       <li>
         <%= food.food.alim_name %> =
-        <%= food.quantity * @user_ratio%> gramme(s)
+        <%= food.quantity/@recipe.forhowmany * @user_ratio%> gramme(s)
       </li>
     <% end %>
   </ul>
