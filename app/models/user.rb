@@ -69,6 +69,16 @@ class User < ApplicationRecord
     self.drc == 0.0
   end
 
+  def needbymeal(meal)
+    if meal == "Breakfast"
+      self.breakfast
+    elsif meal == "Lunch"
+      self.lunch
+    else meal == "Dinner"
+      self.dinner
+    end
+  end
+
   def breakfast
     (self.drc / 100) * 25
   end
