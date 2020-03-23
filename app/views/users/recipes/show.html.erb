@@ -5,8 +5,9 @@
   Pour <%= @recipe.forhowmany %> personne(s) |
   <%= @recipe.cookingtime %> minute(s) |
   Budget : <%= @recipe.budget %>
-  <div>
-  Voir la recette sur : <%= @recipe.url %>
+  <br>
+  <div class="mt-2">
+  <%= link_to "Voir la recette", @recipe.url, target: :_blank, class:"btn btn-danger" %>
   </div>
 </div>
 <br>
