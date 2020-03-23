@@ -29,7 +29,7 @@ class Day < ApplicationRecord
       self.name = "Vendredi"
     when "Saturday"
       self.name = "Samedi"
-    else
+    else "Sunday"
       self.name = "Dimanche"
     end
 

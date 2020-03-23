@@ -1,0 +1,33 @@
+<div class="container">
+
+<h1 class=text-center><%= @recipe.title %></h1>
+<div class="text-center">
+  Pour <%= @recipe.forhowmany %> personne(s) |
+  <%= @recipe.cookingtime %> minute(s) |
+  Budget : <%= @recipe.budget %>
+  <br>
+  <div class="mt-2">
+  <%= link_to "Voir la recette", @recipe.url, target: :_blank, class:"btn btn-danger" %>
+  </div>
+</div>
+<br>
+<h2>Valeure nutritionnelle pour <%= @recipe.forhowmany %> personnes : <%= @recipe.total_kcal %> kcal</h2>
+<div>Soit : <%= @recipe.total_kcal / @recipe.forhowmany %> kcal par personne</div>
+<div>dont : <%= @recipe.total_prot / @recipe.forhowmany %> gramme de proteine(s) par personne</div>
+
+<br>
+<h2>Liste des ingrédients proportionnés pour vous :</h2>
+  <ul>
+    <% @recipe.join_recipe_foods.each do |food| %>
+      <li>
+        <%= food.food.alim_name %> =
+        <%= food.quantity/@recipe.forhowmany * @user_ratio%> gramme(s)
+      </li>
+    <% end %>
+  </ul>
+
+<hr>
+<div class="text-center">
+  <%= link_to 'Back', root_path, class:"btn btn-primary" %>
+</div>
+</div>
