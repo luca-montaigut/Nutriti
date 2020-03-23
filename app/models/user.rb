@@ -83,18 +83,19 @@ class User < ApplicationRecord
 
   def shopping_cart
     array = []
-    sorted = []
+    group = []
     self.week.days.each  do |day|
       day.meals.each do |meal|
         meal.recipes.each do |recipe|
           recipe.join_recipe_foods.each do |join|
-            array << {join.food.alim_name.match('^[^\(]*') => join.quantity.to_f * (1.0/join.recipe.forhowmany.to_f).to_f}
+            array << {join.food.alim_name.match('^[^\,(]*') => join.quantity.to_f * (1.0/join.recipe.forhowmany.to_f).to_f}
           end
         end
       end
     end
 
-    array.reduce {|acc, h| acc.merge(h) {|_,v1,v2| v1 + v2 }}
+    reduced = array.reduce {|acc, h| acc.merge(h) {|_,v1,v2| v1 + v2 }}
+    reduced 
   end
   
   private
@@ -104,3 +105,4 @@ class User < ApplicationRecord
     user_week.generate
   end
 end
+

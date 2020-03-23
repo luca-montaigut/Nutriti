@@ -2,6 +2,7 @@ class Users::WeeksController < Users::ApplicationController
   before_action :set_users_week, only: [:show, :edit, :update, :destroy]
 
   def show
+    @category = Food.all.map {|alim| alim.alim_group}.uniq
   end
 
   def edit

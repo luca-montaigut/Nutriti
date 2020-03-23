@@ -4,10 +4,10 @@
       <h3 class="text-center">Liste de course</h3>
       <hr style="margin: 25px;" class="bold">
       <tbody>
-        <% current_user.shopping_cart.each do |elem|%>
+        <% current_user.shopping_cart.each do |elem |%>
         <tr>
           <td class="bold"><%= elem[0]%></td>
-          <td><%= elem[1].round%> g</td>
+          <td><%= elem[1]%>g</td>
         </tr>
         <% end %>
       </tbody>
