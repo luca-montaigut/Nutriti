@@ -4,11 +4,19 @@
       <h3 class="text-center">Liste de course</h3>
       <hr style="margin: 25px;" class="bold">
       <tbody>
-        <% current_user.shopping_cart.each do |elem|%>
-        <tr>
-          <td class="bold"><%= elem[0]%></td>
-          <td><%= elem[1].round%> g</td>
-        </tr>
+        <% @alim_groups.each do |alim_group| %>
+          <div>
+          </div>
+          <% current_user.shopping_cart.each do |elem|%>
+            <% if Food.where(alim_group: alim_group).include?(Food.find_by("alim_name like?", "%#{elem[0]}%")) %>            
+              <tr>
+                
+                <td class="bold"><%= alim_group %></td>
+                <td class="bold"><%= elem[0]%></td>
+                <td><%= elem[1].round%> g</td>
+              </tr>
+            <% end %>
+          <% end %>
         <% end %>
       </tbody>
     </table>
