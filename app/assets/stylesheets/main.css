@@ -17,3 +17,7 @@
 .fa-pepper-hot{
     color: red;
 }
+
+.no_dot_ul {
+    list-style-type: none;
+}
