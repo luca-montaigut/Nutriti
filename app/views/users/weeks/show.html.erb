@@ -4,6 +4,10 @@
       <h3 class="text-center">Liste de course</h3>
       <hr style="margin: 25px;" class="bold">
       <tbody>
+		<div class="d-flex flex-row justify-content-center">
+		  <%= link_to "Recevoir la liste de course par email", shopping_email_path, data: { confirm: "Voulez vous recevoir votre liste par email ?" }, class:'btn btn-warning'%>
+		</div>
+		<br/>
         <% @alim_groups.each do |alim_group| %>
           <div>
           </div>
@@ -64,8 +68,7 @@
   <%= link_to "Generate Meal", meals_path, data:{method: 'post'}, class:'btn btn-warning'%> |
   <%= link_to "Generate Day", days_path, data:{method: 'post'}, class:'btn btn-info'%> |
   <%= link_to "Generate Week", week_path(@users_week.id), data:{method: 'put'}, class:'btn btn-success'%>|
-  <button name="button" id="shopping-list"class="btn btn-danger">Afficher Liste de Course</button> |
-  <%= link_to "Recevoir la liste de course par email", shopping_email_path, class:'btn btn-danger'%>
+  <button name="button" id="shopping-list"class="btn btn-danger">Afficher Liste de Course</button>
 </div>
 
 <style>
