@@ -1,19 +1,23 @@
-<b>Votre : <%= @meal.category %></b>
-<hr>
-<ul>
-  <li>Calories de ce repas pour une personne : <%= @meal.kcal %> kcal</li>
-  <li>Votre besoin à ce moment de la journée : <%= current_user.needbymeal(@meal.category) %> kcal</li>
-  <li>Nous vous conseillons de multiplier les proportions de la recette par : <%= current_user.needbymeal(@meal.category)/@meal.kcal %> pour coller à vos besoins réels</li>
-</ul>
-<ul>
-  <li><%= @meal.starter.title %> <%= link_to "Voir la recette proportionnée", recipe_path(@meal.starter.id, ratio: current_user.needbymeal(@meal.category)/@meal.kcal), class:"btn btn-warning" %> </li>
-  <li><%= @meal.dish.title %> <%= link_to "Voir la recette proportionnée", recipe_path(@meal.dish.id, ratio: current_user.needbymeal(@meal.category)/@meal.kcal), class:"btn btn-warning" %> </li></li>
-  <li><%= @meal.dessert.title %></li>
-  <li><%= @meal.drink.title %></li>
-  <li><%= @meal.complement.title %></li>
-</ul>
+<div class="container">
+    <h1 class="mt-4 text-success">Votre : <%= @meal.category %></h1>
+  <hr>
+  <ul>
+    <li class="my-2 ">Calories de ce repas pour une personne : <%= @meal.kcal %> kcal</li>
+    <li class="my-2">Votre besoin à ce moment de la journée : <%= current_user.needbymeal(@meal.category) %> kcal</li>
+    <li class="my-2">Nous vous conseillons de multiplier les proportions de la recette par <%= current_user.needbymeal(@meal.category)/@meal.kcal %> pour coller à vos besoins réels</li>
+  </ul>
+  <h2 class="mt-5 text-success border-bottom py-3"> Le repas </h2>
+  <ul class="no_dot_ul">
+    <li class="d-flex justify-content-between mt-4 mb-1"><%= @meal.starter.title %> <%= link_to "Voir la recette proportionnée", recipe_path(@meal.starter.id, ratio: current_user.needbymeal(@meal.category)/@meal.kcal), class:"btn btn-outline-warning" %> </li>
+    <li class="d-flex justify-content-between my-1"><%= @meal.dish.title %> <%= link_to "Voir la recette proportionnée", recipe_path(@meal.dish.id, ratio: current_user.needbymeal(@meal.category)/@meal.kcal), class:"btn btn-outline-warning" %> </li>
+    <li class="mt-1 mb-2"><%= @meal.dessert.title %></li>
+    <li class="my-2"><%= @meal.drink.title %></li>
+    <li class="my-2"><%= @meal.complement.title %></li>
+  </ul>
 
-
-<%= link_to 'Edit', meal_path(@meal.id) %> |
-<%= link_to 'Index', meals_path %> |
-<%= link_to 'Back', root_path %>
+  <div class="text-center mt-5">
+    <%= link_to 'Edit', meal_path(@meal.id), class:"text-warning" %> |
+    <%= link_to 'Index', meals_path, class:"text-warning" %> |
+    <%= link_to 'Back', :back, class:"text-warning" %>
+  </div>
+</div>
