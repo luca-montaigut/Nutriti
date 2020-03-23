@@ -1,0 +1,4 @@
+<% @user.shopping_cart.each do |item| %>
+  <%= item[0] %>, <%= item[1].to_i + 1 %> g
+
+<% end %>
