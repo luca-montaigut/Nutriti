@@ -1,0 +1,23 @@
+.jumbotron{
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url("home.jpg");
+    background-position: center;    
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.fa-lemon{
+    color: yellow
+}
+
+.fa-carrot{
+    color: orange;
+}
+
+.fa-pepper-hot{
+    color: red;
+}
+
+.no_dot_ul {
+    list-style-type: none;
+}

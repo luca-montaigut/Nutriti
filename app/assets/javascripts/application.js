@@ -15,4 +15,8 @@
 //= require activestorage
 
 //= require cocoon
-//= require_tree .
+
+//= require bootstrap
+//= require jquery
+//= require main
+//= require cable
