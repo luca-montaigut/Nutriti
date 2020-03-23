@@ -16,7 +16,7 @@ class Week < ApplicationRecord
     @tuesday.save
     @wednesday = Day.new.generate("Wednesday")
     @wednesday.save
-    @thursday = Day.new.generate("Thursay")
+    @thursday = Day.new.generate("Thursday")
     @thursday.save
     @friday = Day.new.generate("Friday")
     @friday.save
@@ -25,7 +25,8 @@ class Week < ApplicationRecord
     @sunday = Day.new.generate("Sunday")
     @sunday.save
 
-    self.update(monday: @monday, tuesday: @tuesday)
+    self.update(monday: @monday)
+    self.update(tuesday: @tuesday)
     self.update(wednesday: @wednesday)
     self.update(thursday: @thursday)
     self.update(friday: @friday)
