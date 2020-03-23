@@ -17,5 +17,7 @@
 //= require cocoon
 
 //= require bootstrap
+//= require bootstrap.bundle
+//= require jquery
 //= require main
 //= require cable

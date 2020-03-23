@@ -11,6 +11,8 @@
  * It is generally better to create a new file per style scope.
  *
  *= require bootstrap
+ *= require bootstrap-grid
+ *= require bootstrap-reboot
  *= require yeti
  *= require main
  */
