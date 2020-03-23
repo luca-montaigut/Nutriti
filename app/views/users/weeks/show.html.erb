@@ -8,11 +8,19 @@
 		  <%= link_to "Recevoir la liste de course par email", shopping_email_path, data: { confirm: "Voulez vous recevoir votre liste par email ?" }, class:'btn btn-warning'%>
 		</div>
 		<br/>
-        <% current_user.shopping_cart.each do |elem|%>
-        <tr>
-          <td class="bold"><%= elem[0]%></td>
-          <td><%= elem[1].round%> g</td>
-        </tr>
+        <% @alim_groups.each do |alim_group| %>
+          <div>
+          </div>
+          <% current_user.shopping_cart.each do |elem|%>
+            <% if alim_group == Food.find_by("alim_name like?", "%#{elem[0]}%").alim_group %>            
+              <tr>
+                
+                <td class="bold"><%= alim_group %></td>
+                <td class="bold"><%= elem[0]%></td>
+                <td><%= elem[1].round%> g</td>
+              </tr>
+            <% end %>
+          <% end %>
         <% end %>
       </tbody>
     </table>
