@@ -1,13 +1,18 @@
 <b>Votre : <%= @meal.category %></b>
 <hr>
 <ul>
-  <li><%= @meal.starter.title %></li>
-  <li><%= @meal.dish.title %></li>
+  <li>Calories de ce repas pour une personne : <%= @meal.kcal %> kcal</li>
+  <li>Votre besoin à ce moment de la journée : <%= current_user.needbymeal(@meal.category) %> kcal</li>
+  <li>Nous vous conseillons de multiplier les proportions de la recette par : <%= current_user.needbymeal(@meal.category)/@meal.kcal %> pour coller à vos besoins réels</li>
+</ul>
+<ul>
+  <li><%= @meal.starter.title %> <%= link_to "Voir la recette proportionnée", recipe_path(@meal.starter.id, ratio: current_user.needbymeal(@meal.category)/@meal.kcal), class:"btn btn-warning" %> </li>
+  <li><%= @meal.dish.title %> <%= link_to "Voir la recette proportionnée", recipe_path(@meal.dish.id, ratio: current_user.needbymeal(@meal.category)/@meal.kcal), class:"btn btn-warning" %> </li></li>
   <li><%= @meal.dessert.title %></li>
   <li><%= @meal.drink.title %></li>
   <li><%= @meal.complement.title %></li>
-  <li>Calories pour une personne : <%= @meal.kcal %> kcal</li>
 </ul>
+
 
 <%= link_to 'Edit', meal_path(@meal.id) %> |
 <%= link_to 'Index', meals_path %> |
