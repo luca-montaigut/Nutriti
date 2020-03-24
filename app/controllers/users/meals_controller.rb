@@ -6,6 +6,9 @@ class Users::MealsController < Users::ApplicationController
   end
 
   def show
+    @meal = Meal.find(params[:id])
+    @alim_groups = Food.all.map(&:alim_group).uniq
+
   end
 
   def edit

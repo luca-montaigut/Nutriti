@@ -2,7 +2,9 @@ class Users::BreakfastController < ApplicationController
   before_action :set_users_breakfast, only: [:show, :edit, :update]
 
   def show
-    
+    @meal = Breakfast.find(params[:id])
+    @alim_groups = Food.all.map(&:alim_group).uniq
+  
   end
 
   def edit

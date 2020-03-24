@@ -39,6 +39,17 @@ class Meal < ApplicationRecord
     ]
   end
 
+  def list 
+    array = []
+    self.recipes.each do |join|
+      join.join_recipe_foods.each do |m|
+        array << {m.food.alim_name.match('^[^\(]*') => m.quantity.to_f * (1.0/m.recipe.forhowmany.to_f).to_f}
+      end
+    end
+
+    array.reduce {|acc, h| acc.merge(h) {|_,v1,v2| v1 + v2 }}
+  end
+
   private
   def total_kcal
     self.update(kcal: self.starter.for_one + self.dish.for_one + self.dessert.for_one + self.drink.for_one + self.complement.for_one)
