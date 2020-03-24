@@ -1,5 +1,4 @@
-<hr>
-<div class="sidebar-wrapper mt-5"  hidden="true" id="nav">
+<div class="sidebar-wrapper"  hidden="true" id="nav">
   <nav class="sidenav flex-column scrollable" style="">
     <table class="table table-borderless" >
       <h3 class="text-center">Liste de course</h3>
@@ -37,8 +36,13 @@
   <div class="blur" id="close">
   </div>
 </div>
-<div class="d-flex flex-row my-3">
 
+<div class="text-center flex-row mt-3">
+  <%= link_to "Generate Week", week_path(@users_week.id), data:{method: 'put'}, class:'btn btn-success'%> |
+  <button name="button" id="shopping-list"class="btn btn-danger">Afficher Liste de Course</button>
+</div>
+
+<div class="d-flex flex-row my-3">
 <% current_user.week.days.each do |day|%>
   <div class="card" style="width: 18rem;">
     <div class="card-header d-flex justify-content-between">
@@ -78,6 +82,9 @@
   </div>
   <% end %>
 </div>
+
+
+
 
 
 

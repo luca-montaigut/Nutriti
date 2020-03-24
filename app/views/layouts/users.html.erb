@@ -27,9 +27,7 @@
           </li> |
           <li class="nav-item"><%= link_to "Edit Breakfast", edit_breakfast_path(current_user.breakfast.id), class:'btn btn-success'%></li>  |
           <li class="nav-item"><%= link_to "Generate Meal", meals_path, data:{method: 'post'}, class:'btn btn-warning'%></li> |
-          <li class="nav-item"><%= link_to "Generate Day", days_path, data:{method: 'post'}, class:'btn btn-info'%></li> |
-          <li class="nav-item"><%= link_to "Generate Week", week_path(@users_week.id), data:{method: 'put'}, class:'btn btn-success'%></li>|
-          <li class="nav-item"><button name="button" id="shopping-list"class="btn btn-danger">Afficher Liste de Course</button></li>
+          <li class="nav-item"><%= link_to "Generate Day", days_path, data:{method: 'post'}, class:'btn btn-info'%></li> 
         </ul>
         <ul class="navbar-nav">
           <% if user_signed_in? %>
@@ -62,8 +60,8 @@
         </ul>
       </div>
     </nav>
+    
     <!-- End of Navbar-->
-
     <% if current_user%>
       <% if current_user.incomplete_profile? %>
         <div class="alert alert-warning" role="alert">
