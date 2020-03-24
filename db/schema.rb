@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_19_081923) do
+ActiveRecord::Schema.define(version: 2020_03_24_104245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,9 @@ ActiveRecord::Schema.define(version: 2020_03_19_081923) do
     t.decimal "saltfor100g"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "basic_unity"
+    t.string "thousand_unity"
+    t.decimal "weight_for_one"
     t.index ["alim_code"], name: "index_foods_on_alim_code", unique: true
   end
 

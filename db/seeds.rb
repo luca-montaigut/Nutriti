@@ -33,6 +33,9 @@ csv.each do |row|
   food.sugarfor100g = row['sugarfor100g']
   food.cholesterolfor100g = row['cholesterolfor100g']
   food.saltfor100g = row['saltfor100g']
+  food.basic_unity = row['basic_unity']
+  food.thousand_unity = row['thousand_unity']
+  food.weight_for_one = row['weight_for_one']
   food.save
 end
 
