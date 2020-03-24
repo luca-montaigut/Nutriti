@@ -3,8 +3,10 @@ class Admin::RecipesController < Admin::ApplicationController
 
   def index
     @admin_recipes = Recipe.all
-	@join_recipes = JoinRecipeFood.all
-    @categories = ["Starter", "Dish", "Dessert", "Drink", "Complement"]
+	  @join_recipes = JoinRecipeFood.all
+    @breakfast_categories = ["Hot Drink", "Juice", "Cereal (Breakfast)", "Protein (Breakfast)", "Option (Breakfast)"]
+    @meal_categories = ["Starter", "Dish", "Dessert", "Drink", "Complement"]
+
     respond_to do |format|
       format.html
       if params[:notice] == "recipe"

@@ -4,6 +4,13 @@ class Recipe < ApplicationRecord
   
   accepts_nested_attributes_for :join_recipe_foods, allow_destroy: true, reject_if: ['food_id'].blank?
 
+
+  has_many :hotdrink_breakfast, foreign_key: 'hotdrink_id', class_name: 'Breakfast'
+  has_many :fruit_breakfast, foreign_key: 'fruit_id', class_name: 'Breakfast'
+  has_many :cereal_breakfast, foreign_key: 'cereal_id', class_name: 'Breakfast'
+  has_many :protein_breakfast, foreign_key: 'protein_id', class_name: 'Breakfast'
+  has_many :complement_breakfast, foreign_key: 'complement_id', class_name: 'Breakfast'
+
   has_many :starter_meal, foreign_key: 'starter_id', class_name: 'Meal'
   has_many :dish_meal, foreign_key: 'dish_id', class_name: 'Meal'
   has_many :dessert_meal, foreign_key: 'dessert_id', class_name: 'Meal'

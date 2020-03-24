@@ -1,5 +1,5 @@
 class Day < ApplicationRecord
-  belongs_to :breakfast, class_name: 'Meal'
+  belongs_to :breakfast, class_name: 'Breakfast'
   belongs_to :lunch, class_name: 'Meal'
   belongs_to :dinner, class_name: 'Meal'
 
@@ -14,7 +14,7 @@ class Day < ApplicationRecord
   has_many :saturday_weeks, foreign_key: 'saturday_id', class_name: 'Week'
   has_many :sunday_weeks, foreign_key: 'sunday_id', class_name: 'Week'
 
-  def generate(day)
+  def generate(day, user)
 
     case day
     when "Monday"
@@ -33,8 +33,7 @@ class Day < ApplicationRecord
       self.name = "Dimanche"
     end
 
-    @breakfast = Meal.new.generate("Breakfast")
-    @breakfast.save
+    @breakfast = user.breakfast
 
     @lunch = Meal.new.generate("Lunch")
     @lunch.save

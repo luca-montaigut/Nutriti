@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_19_081923) do
+ActiveRecord::Schema.define(version: 2020_03_24_104245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "breakfasts", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "hotdrink_id"
+    t.bigint "fruit_id"
+    t.bigint "cereal_id"
+    t.bigint "protein_id"
+    t.bigint "option_id"
+    t.decimal "kcal", default: "0.0"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cereal_id"], name: "index_breakfasts_on_cereal_id"
+    t.index ["fruit_id"], name: "index_breakfasts_on_fruit_id"
+    t.index ["hotdrink_id"], name: "index_breakfasts_on_hotdrink_id"
+    t.index ["option_id"], name: "index_breakfasts_on_option_id"
+    t.index ["protein_id"], name: "index_breakfasts_on_protein_id"
+    t.index ["user_id"], name: "index_breakfasts_on_user_id"
+  end
 
   create_table "days", force: :cascade do |t|
     t.string "name"
@@ -42,6 +60,9 @@ ActiveRecord::Schema.define(version: 2020_03_19_081923) do
     t.decimal "saltfor100g"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "basic_unity"
+    t.string "thousand_unity"
+    t.decimal "weight_for_one"
     t.index ["alim_code"], name: "index_foods_on_alim_code", unique: true
   end
 

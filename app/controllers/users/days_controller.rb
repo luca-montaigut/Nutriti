@@ -15,7 +15,7 @@ class Users::DaysController < Users::ApplicationController
   def create
     @days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     @users_day = Day.new
-    @users_day.generate(@days.sample)
+    @users_day.generate(@days.sample, current_user)
 
     respond_to do |format|
       if @users_day.save

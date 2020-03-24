@@ -8,16 +8,24 @@
 		  <%= link_to "Recevoir la liste de course par email", shopping_email_path, data: { confirm: "Voulez vous recevoir votre liste par email ?" }, class:'btn btn-warning'%>
 		</div>
 		<br/>
+    <%= Food.first.weight_for_one%>
         <% @alim_groups.each do |alim_group| %>
           <div>
           </div>
           <% current_user.shopping_cart.each do |elem|%>
-            <% if alim_group == Food.find_by("alim_name like?", "%#{elem[0]}%").alim_group %>            
+          <% food = Food.find_by("alim_name like?", "%#{elem[0]}%") %>
+            <% if alim_group ==  food.alim_group %>            
               <tr>
                 
                 <td class="bold"><%= alim_group %></td>
                 <td class="bold"><%= elem[0]%></td>
-                <td><%= elem[1].round%> g</td>
+                <% if food.weight_for_one != 1%>
+                  <td><%= (elem[1].round / food.weight_for_one)%></td>
+                <% elsif elem[1].round < 999 %>
+                  <td><%= elem[1].round%> <%= food.basic_unity%></td>
+                <% else %>
+                   <td><%= (elem[1].round.to_f / 1000).round(2)%> <%= food.thousand_unity%></td>
+                <%end%>
               </tr>
             <% end %>
           <% end %>
@@ -39,11 +47,13 @@
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item text-light text-center bg-success"><b>Petit déjeuner</b></li>
-      <ul class="list-group-item">    
-        <li class=""><%= day.breakfast.starter.title%></li>
-        <li class=""><%= day.breakfast.dish.title%></li>
-        <li class=""><%= day.breakfast.dessert.title%></li>
-        <%= link_to "Voir le repas", meal_path(day.breakfast.id), class:"btn btn-warning btn-sm"%>
+      <ul class="list-group-item">  
+        <li class=""><%= current_user.breakfast.hotdrink.title%></li>
+        <li class=""><%= current_user.breakfast.fruit.title%></li>
+        <li class=""><%= current_user.breakfast.cereal.title%></li>
+        <li class=""><%= current_user.breakfast.protein.title%></li>
+        <li class=""><%= current_user.breakfast.option.title%></li>
+        <%= link_to "Voir le repas", breakfast_path(current_user.breakfast.id), class:"btn btn-warning btn-sm"%>
       </ul>
       <li class="list-group-item text-light text-center bg-success"><b>Déjeuner</b></li>
       <ul class="list-group-item">    
