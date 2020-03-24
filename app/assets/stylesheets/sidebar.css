@@ -1,0 +1,59 @@
+.sidebar-wrapper{
+  width: 100vw;
+  height: 100%;
+  z-index: 9999;
+  position: fixed;
+
+}
+
+.sidenav{
+  float: right;
+  width: 35vw; 
+  background-color: white; 
+  height: 100%;
+}
+
+.blur{
+  float: left;
+  width: 65vw; 
+  background-color: black; 
+  height: 100%;
+  opacity: 0.50;
+  animation-duration: 0.25s;
+  animation-name: blurein;
+}
+
+.scrollable{
+  overflow-y: scroll;
+}
+
+.sidenav {
+  animation-duration: 0.50s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    background-color:grey;
+    opacity: 0;
+    width: 0vh; 
+  }
+
+  to {
+    background-color:white;
+    opacity: 1;
+    width: 35%;
+  }
+}
+
+@keyframes blurein {
+  from {
+    opacity: 0;
+    width: 0vh; 
+  }
+
+  to {
+    opacity: 0.5;
+    width: 65%;
+  }
+}
