@@ -1,12 +1,14 @@
 <div class="container">
 
   <h1 class="mt-4 text-center text-success border-bottom py-3"><%= @users_day.name %></h1>
-  <%= link_to 'Petit Déjeuner', meal_path(@users_day.breakfast.id),class:"h3 mt-4 text-warning border-bottom py-3" %>
+  <%= link_to 'Petit Déjeuner', breakfast_path(current_user.breakfast.id),class:"h3 mt-4 text-warning border-bottom py-3" %>
   <br><br>
   <ul>
-    <li class="d-flex justify-content-between my-1"><%= @users_day.breakfast.starter.title %> <%= link_to "Voir la recette proportionnée", recipe_path(@users_day.breakfast.starter.id, ratio: current_user.needbymeal(@users_day.breakfast.category)/@users_day.breakfast.kcal), class:"btn btn-outline-warning" %></li>
-    <li class="d-flex justify-content-between my-1"><%= @users_day.breakfast.dish.title %> <%= link_to "Voir la recette proportionnée", recipe_path(@users_day.breakfast.dish.id, ratio: current_user.needbymeal(@users_day.breakfast.category)/@users_day.breakfast.kcal), class:"btn btn-outline-warning" %></li>
-    <li class="d-flex justify-content-between my-1"><%= @users_day.breakfast.dessert.title %> </li>
+    <li class="d-flex justify-content-between my-1"><%= current_user.breakfast.hotdrink.title %> </li>
+    <li class="d-flex justify-content-between my-1"><%= current_user.breakfast.fruit.title %> </li>
+    <li class="d-flex justify-content-between my-1"><%= current_user.breakfast.protein.title %> </li>
+    <li class="d-flex justify-content-between my-1"><%= current_user.breakfast.cereal.title %> </li>
+    <li class="d-flex justify-content-between my-1"><%= current_user.breakfast.option.title %> </li>
   </ul>
   <%= link_to 'Déjeuner', meal_path(@users_day.lunch.id),class:"h3 mt-4 text-warning border-bottom py-3" %>
   <br><br>

@@ -20,9 +20,11 @@
         <td><%= users_day.name %></td>
         <td>
           <ul>
-            <li><%= users_day.breakfast %></li>
-            <li><%= users_day.breakfast %></li>
-            <li><%= users_day.breakfast %></li>
+            <li><%= current_user.breakfast.hotdrink.title %> </li>
+            <li><%= current_user.breakfast.fruit.title %> </li>
+            <li><%= current_user.breakfast.protein.title %> </li>
+            <li><%= current_user.breakfast.cereal.title %> </li>
+            <li><%= current_user.breakfast.option.title %> </li>
           </ul>
         </td>
         <td>
