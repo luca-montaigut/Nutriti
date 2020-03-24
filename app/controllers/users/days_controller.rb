@@ -6,6 +6,9 @@ class Users::DaysController < Users::ApplicationController
   end
 
   def show
+    @day = Day.find(params[:id])
+    @alim_groups = Food.all.map(&:alim_group).uniq
+
   end
 
 
