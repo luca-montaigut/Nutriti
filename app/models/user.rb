@@ -82,7 +82,9 @@ class User < ApplicationRecord
       day.meals.each do |meal|
         meal.recipes.each do |recipe|
           if meal == self.breakfast
-            
+            recipe.join_recipe_foods.each do |join|
+              array << {join.food.alim_name.match('^[^\(]*') => join.quantity.to_f * (1.0/join.recipe.forhowmany.to_f).to_f}
+            end
           else   
             recipe.join_recipe_foods.each do |join|
               array << {join.food.alim_name.match('^[^\(]*') => join.quantity.to_f * (1.0/join.recipe.forhowmany.to_f).to_f}

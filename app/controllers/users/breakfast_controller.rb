@@ -2,13 +2,27 @@ class Users::BreakfastController < ApplicationController
   before_action :set_users_breakfast, only: [:show, :edit, :update]
 
   def show
-    
+    @meal = Breakfast.find(params[:id])
+    @alim_groups = Food.all.map(&:alim_group).uniq
+  
   end
 
   def edit
+    @hotdrinks = Recipe.all.where(category: "Hot Drink")
+    @fruits = Recipe.all.where(category: "Juice")
+    @cereals = Recipe.all.where(category: "Cereal (Breakfast)")
+    @proteins = Recipe.all.where(category: "Protein (Breakfast)")
+    @options = Recipe.all.where(category: "Option (Breakfast)")
   end
 
   def update
+    respond_to do |format|
+      if @users_breakfast.update(users_breakfast_params)
+        format.html { redirect_to @users_breakfast, notice: "Petit dej mis à jours avec success" }
+      else 
+        format.html { redirect_to :edit, error: "Petit dej non mis à jours" }
+      end
+    end
   end
 
 

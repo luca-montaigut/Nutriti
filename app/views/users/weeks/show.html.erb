@@ -1,4 +1,5 @@
-<div class="sidebar-wrapper "  hidden="true" id="nav">
+<hr>
+<div class="sidebar-wrapper mt-5"  hidden="true" id="nav">
   <nav class="sidenav flex-column scrollable" style="">
     <table class="table table-borderless" >
       <h3 class="text-center">Liste de course</h3>
@@ -8,7 +9,6 @@
 		  <%= link_to "Recevoir la liste de course par email", shopping_email_path, data: { confirm: "Voulez vous recevoir votre liste par email ?" }, class:'btn btn-warning'%>
 		</div>
 		<br/>
-    <%= Food.first.weight_for_one%>
         <% @alim_groups.each do |alim_group| %>
           <div>
           </div>
@@ -20,7 +20,7 @@
                 <td class="bold"><%= alim_group %></td>
                 <td class="bold"><%= elem[0]%></td>
                 <% if food.weight_for_one != 1%>
-                  <td><%= (elem[1].round / food.weight_for_one)%></td>
+                  <td><%= (elem[1].round / food.weight_for_one).round%></td>
                 <% elsif elem[1].round < 999 %>
                   <td><%= elem[1].round%> <%= food.basic_unity%></td>
                 <% else %>
@@ -42,107 +42,44 @@
 <% current_user.week.days.each do |day|%>
   <div class="card" style="width: 18rem;">
     <div class="card-header d-flex justify-content-between">
-      <%= day.name%>
-      <%= link_to "Voir le jour", day_path(day.id), class:"btn btn-info btn-sm"%>
+      <%= link_to day.name, day_path(day.id), class:"text-info"%>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item text-light text-center bg-success"><b>Petit déjeuner</b></li>
+      <li class="list-group-item text-light text-center bg-light">
+        <b><%= link_to "Petit Déjeuner", breakfast_path(current_user.breakfast.id), class:"text-warning"%></b>
+      </li>
       <ul class="list-group-item">  
         <li class=""><%= current_user.breakfast.hotdrink.title%></li>
         <li class=""><%= current_user.breakfast.fruit.title%></li>
         <li class=""><%= current_user.breakfast.cereal.title%></li>
         <li class=""><%= current_user.breakfast.protein.title%></li>
         <li class=""><%= current_user.breakfast.option.title%></li>
-        <%= link_to "Voir le repas", breakfast_path(current_user.breakfast.id), class:"btn btn-warning btn-sm"%>
+        
       </ul>
-      <li class="list-group-item text-light text-center bg-success"><b>Déjeuner</b></li>
+      <li class="list-group-item text-light text-center bg-light">
+        <b><%= link_to "Déjeuner", meal_path(day.lunch.id), class:"text-warning"%></b>
+      </li>
       <ul class="list-group-item">    
         <li class=""><%= day.lunch.starter.title%></li>
         <li class=""><%= day.lunch.dish.title%></li>
         <li class=""><%= day.lunch.dessert.title%></li>
-        <%= link_to "Voir le repas", meal_path(day.lunch.id), class:"btn btn-warning btn-sm"%>
+        
       </ul>
-      <li class="list-group-item text-light text-center bg-success"><b>Diner</b></li>
+      <li class="list-group-item text-light text-center bg-light">
+        <b><%= link_to "Diner", meal_path(day.dinner.id), class:"text-warning"%></b>
+      </li>
       <ul class="list-group-item">    
         <li class=""><%= day.dinner.starter.title%></li>
         <li class=""><%= day.dinner.dish.title%></li>
         <li class=""><%= day.dinner.dessert.title%></li>
-        <%= link_to "Voir le repas", meal_path(day.dinner.id), class:"btn btn-warning btn-sm"%>
+        
       </ul>
     </ul>
   </div>
   <% end %>
 </div>
-<hr>
-<div class="d-flex flex-row justify-content-center">
-  <%= link_to "Generate Meal", meals_path, data:{method: 'post'}, class:'btn btn-warning'%> |
-  <%= link_to "Generate Day", days_path, data:{method: 'post'}, class:'btn btn-info'%> |
-  <%= link_to "Generate Week", week_path(@users_week.id), data:{method: 'put'}, class:'btn btn-success'%>|
-  <button name="button" id="shopping-list"class="btn btn-danger">Afficher Liste de Course</button>
-</div>
 
-<style>
-.sidebar-wrapper{
-  width: 100vw;
-  height: 100%;
-  z-index: 9999;
-  position: fixed;
 
-}
-
-.sidenav{
-  float: right;
-  width: 35vw; 
-  background-color: white; 
-  height: 100%;
-}
-
-.blur{
-  float: left;
-  width: 65vw; 
-  background-color: black; 
-  height: 100%;
-  opacity: 0.50;
-  animation-duration: 0.25s;
-  animation-name: blurein;
-}
-
-.scrollable{
-  overflow-y: scroll;
-}
-
-.sidenav {
-  animation-duration: 0.50s;
-  animation-name: slidein;
-}
-
-@keyframes slidein {
-  from {
-    background-color:grey;
-    opacity: 0;
-    width: 0vh; 
-  }
-
-  to {
-    background-color:white;
-    opacity: 1;
-    width: 35%;
-  }
-}
-
-@keyframes blurein {
-  from {
-    opacity: 0;
-    width: 0vh; 
-  }
-
-  to {
-    opacity: 0.5;
-    width: 65%;
-  }
-}
-
-</style>
 
 <script>
 var btn = document.getElementById("shopping-list");
