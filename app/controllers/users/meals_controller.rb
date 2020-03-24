@@ -12,7 +12,7 @@ class Users::MealsController < Users::ApplicationController
   end
 
   def create
-    category = ['Breakfast','Lunch','Dinner']
+    category = ['Lunch','Dinner']
     @meal = Meal.new.generate(category.sample)
 
     respond_to do |format|

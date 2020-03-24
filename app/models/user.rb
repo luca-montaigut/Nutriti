@@ -17,6 +17,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true
 
   has_one :week
+  has_one :breakfast
 
   def get_age
     if self.birthdate
@@ -53,24 +54,24 @@ class User < ApplicationRecord
   end
 
   def needbymeal(meal)
-    if meal == "Breakfast"
-      self.breakfast
+    if meal == self.breakfast
+      self.breakfast_needs
     elsif meal == "Lunch"
-      self.lunch
+      self.lunch_needs
     else meal == "Dinner"
-      self.dinner
+      self.dinner_needs
     end
   end
 
-  def breakfast
+  def breakfast_needs
     (self.drc / 100) * 25
   end
 
-  def lunch
+  def lunch_needs
     (self.drc / 100) * 45
   end
 
-  def dinner
+  def dinner_needs
     (self.drc / 100) * 30
   end
 
@@ -80,8 +81,12 @@ class User < ApplicationRecord
     self.week.days.each  do |day|
       day.meals.each do |meal|
         meal.recipes.each do |recipe|
-          recipe.join_recipe_foods.each do |join|
-            array << {join.food.alim_name.match('^[^\(]*') => join.quantity.to_f * (1.0/join.recipe.forhowmany.to_f).to_f}
+          if meal == self.breakfast
+            
+          else   
+            recipe.join_recipe_foods.each do |join|
+              array << {join.food.alim_name.match('^[^\(]*') => join.quantity.to_f * (1.0/join.recipe.forhowmany.to_f).to_f}
+            end
           end
         end
       end
@@ -93,6 +98,8 @@ class User < ApplicationRecord
   private
   
   def user_week
+    user_breakfast = Breakfast.create(user_id: self.id)
+    user_breakfast.generate
     user_week = Week.create(user_id: self.id)
     user_week.generate
   end

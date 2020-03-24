@@ -11,6 +11,7 @@ require 'faker'
 JoinRecipeFood.destroy_all
 Food.destroy_all
 Recipe.destroy_all
+Breakfast.destroy_all
 Week.destroy_all
 Day.destroy_all
 Meal.destroy_all
