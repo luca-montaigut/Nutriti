@@ -8,6 +8,7 @@
 		  <%= link_to "Recevoir la liste de course par email", shopping_email_path, data: { confirm: "Voulez vous recevoir votre liste par email ?" }, class:'btn btn-warning'%>
 		</div>
 		<br/>
+    <%= Food.first.weight_for_one%>
         <% @alim_groups.each do |alim_group| %>
           <div>
           </div>
@@ -18,8 +19,10 @@
                 
                 <td class="bold"><%= alim_group %></td>
                 <td class="bold"><%= elem[0]%></td>
-                <% if elem[1].round < 999 %>
-                <td><%= elem[1].round%> <%= food.basic_unity%></td>
+                <% if food.weight_for_one != 1%>
+                  <td><%= (elem[1].round / food.weight_for_one)%></td>
+                <% elsif elem[1].round < 999 %>
+                  <td><%= elem[1].round%> <%= food.basic_unity%></td>
                 <% else %>
                    <td><%= (elem[1].round.to_f / 1000).round(2)%> <%= food.thousand_unity%></td>
                 <%end%>
