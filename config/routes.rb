@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :breakfast, only: [:show, :edit, :update]
     resources :meals, except: [:new]
     resources :days, except: [:new]
-    resources :weeks, except: [:new, :index]
+    resources :weeks, only: [:show, :create, :update]
 	  resources :shopping_emails, only: [:show]
   end
 
