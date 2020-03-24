@@ -1,4 +1,4 @@
-class Users::ShoppingEmailsController < ApplicationController
+class Users::ShoppingEmailsController < Users::ApplicationController
 
   def show
 	@user = current_user

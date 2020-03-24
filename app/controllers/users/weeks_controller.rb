@@ -5,9 +5,6 @@ class Users::WeeksController < Users::ApplicationController
     @alim_groups = Food.all.map(&:alim_group).uniq
   end
 
-  def edit
-  end
-
   def create
     @users_week = Week.new(users_week_params)
 
@@ -30,12 +27,6 @@ class Users::WeeksController < Users::ApplicationController
     end
   end
 
-  def destroy
-    @users_week.destroy
-    respond_to do |format|
-      format.html { redirect_to users_weeks_url, notice: 'Week was successfully destroyed.' }
-    end
-  end
 
   private
     def set_users_week

@@ -22,7 +22,7 @@
   <div class="d-flex flex-row mt-2">
     <div class="mr-5">
     <%= f.label :category, "Type de recette"%>
-    <%= f.select :category, [["Starter"],["Dish"], ["Dessert"], ["Drink"], ["Complement"]], class:"form-control"%>
+    <%= f.select :category, [["Starter"],["Dish"], ["Dessert"], ["Drink"], ["Complement"], ["Hot Drink"], ["Juice"], ["Cereal (Breakfast)"], ["Protein (Breakfast)"], ["Option (Breakfast)"]], class:"form-control"%>
     </div>
     <div class="mx-5">
     <%= f.label :budget, "Budget"%>
@@ -48,3 +48,5 @@
   <%= f.submit %>
 </div>
 <% end %>
+
+

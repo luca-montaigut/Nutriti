@@ -47,11 +47,13 @@
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item text-light text-center bg-success"><b>Petit déjeuner</b></li>
-      <ul class="list-group-item">    
-        <li class=""><%= day.breakfast.starter.title%></li>
-        <li class=""><%= day.breakfast.dish.title%></li>
-        <li class=""><%= day.breakfast.dessert.title%></li>
-        <%= link_to "Voir le repas", meal_path(day.breakfast.id), class:"btn btn-warning btn-sm"%>
+      <ul class="list-group-item">  
+        <li class=""><%= current_user.breakfast.hotdrink.title%></li>
+        <li class=""><%= current_user.breakfast.fruit.title%></li>
+        <li class=""><%= current_user.breakfast.cereal.title%></li>
+        <li class=""><%= current_user.breakfast.protein.title%></li>
+        <li class=""><%= current_user.breakfast.option.title%></li>
+        <%= link_to "Voir le repas", breakfast_path(current_user.breakfast.id), class:"btn btn-warning btn-sm"%>
       </ul>
       <li class="list-group-item text-light text-center bg-success"><b>Déjeuner</b></li>
       <ul class="list-group-item">    
