@@ -16,7 +16,7 @@
   </ul>
 
   <div class="text-center mt-5">
-    <%= link_to 'Edit', breakfast_path(@users_breakfast.id), class:"text-warning" %> |
+    <%= link_to 'Edit', edit_breakfast_path(current_user.breakfast.id), class:"text-warning" %> |
     <%= link_to 'Back', :back, class:"text-warning" %>
   </div>
 </div>
