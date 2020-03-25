@@ -1,7 +1,8 @@
 <div class="container">
+  <div class="row"><div> <br><br><br></div></div>
   <div class="row"></div>
-    <div class="col-md-6 offset-md-3 border shadow-lg bg-white rounded">
-      <br><br><br>
+
+    <div class="col-md-6 offset-md-3 shadow-lg bg-white rounded py-3">
 
       <%= form_for resource, as: resource_name, url: registration_path(resource_name), html: { class: "form-signin mt-3" } do |f| %>
       <h1 class="h3 font-weight-normal text-center text-success border-bottom pb-3">Inscription</h1>
@@ -31,7 +32,7 @@
         </div>
 
         <div class="actions mt-5">
-          <%= f.submit "Inscris - toi ! ;)", class: "btn btn-lg btn-success btn-block px-3" %>
+          <%= f.submit "Inscris - toi !", class: "btn btn-lg btn-success btn-block px-3" %>
         </div>
       <% end %>
 
