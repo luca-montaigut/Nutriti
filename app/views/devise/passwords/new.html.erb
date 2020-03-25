@@ -1,7 +1,8 @@
 <div class="container">
+  <div class="row"><div> <br><br><br></div></div>
   <div class="row">
-    <div class="col-md-6 offset-md-3">
-      <br><br><br>
+    <div class="col-md-6 offset-md-3 shadow-lg bg-white rounded py-3">
+      <br>
 
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "form-signin mt-3" }) do |f| %>
         <h1 class="h3 mb-3 font-weight-normal text-center text-success border-bottom pb-3">Mot de passe oublié ?</h1>
