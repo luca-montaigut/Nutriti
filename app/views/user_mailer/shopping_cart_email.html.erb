@@ -1,4 +1,115 @@
-<% @user.shopping_cart.each do |item| %>
-  <p><%= item[0] %>, <%= item[1].to_i + 1 %> g</p>
-  <br/>
-<% end %>
+<body style="background-color:#f8f8f8;">
+  <div style="background-color:#f8f8f8;">
+    <div style="background:#ffffff;background-color:#ffffff;Margin:0px auto;max-width:600px;">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#ffffff;background-color:#ffffff;width:100%;">
+        <tbody>
+          <tr>
+            <td style="direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;padding-left:0px;padding-right:0px;padding-top:0px;text-align:center;vertical-align:top;">
+              <div class="mj-column-per-100 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+                <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
+                  <tr>
+                    <td style="font-size:0px;padding:10px 25px;padding-top:0px;padding-right:0px;padding-bottom:40px;padding-left:0px;word-break:break-word;">
+                      <p style="border-top:solid 7px #DEDEDE;font-size:1;margin:0px auto;width:100%;">
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="center" style="font-size:0px;padding:10px 25px;padding-top:0px;padding-bottom:0px;word-break:break-word;">
+                      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;">
+                        <tbody>
+                          <tr>
+                            <td style="width:110px;">
+                              <%= image_tag("https://nutriti.herokuapp.com/assets/logo_nutriti-503d74d802934f61d7d4fc9b0724bcf518326ee44a2760ff50e444d3a892bc3f.svg", style: 'border:none;display:block;outline:none;text-decoration:none;height:auto;width:100%;', width: '110', height: 'auto') %>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="background:#ffffff;background-color:#ffffff;Margin:0px auto;max-width:600px;">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#ffffff;background-color:#ffffff;width:100%;">
+        <tbody>
+          <tr>
+            <td style="direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;padding-top:0px;text-align:center;vertical-align:top;">
+              <div class="mj-column-per-100 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+                <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
+                  <tr>
+                    <td align="center" style="font-size:0px;padding:10px 25px;padding-top:40px;padding-right:50px;padding-bottom:0px;padding-left:50px;word-break:break-word;">
+                      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;">
+                        <tbody>
+                          <tr>
+                            <td style="width:300px;">
+                              <%= image_tag("http://9pl9.mjt.lu/tplimg/9pl9/b/yui2/zn8lz.png", style: 'border:none;display:block;outline:none;text-decoration:none;height:auto;width:100%;', width: '300', height: 'auto') %>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="background:#ffffff;background-color:#ffffff;Margin:0px auto;max-width:600px;">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#ffffff;background-color:#ffffff;width:100%;">
+        <tbody>
+          <tr>
+            <td style="direction:ltr;font-size:0px;padding:20px 0px 20px 0px;padding-bottom:70px;padding-top:30px;text-align:center;vertical-align:top;">
+              <div class="mj-column-per-100 outlook-group-fix" style="font-size:13px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+                <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
+                  <tr>
+                    <td align="left" style="font-size:0px;padding:0px 25px 0px 25px;padding-top:0px;padding-right:50px;padding-bottom:0px;padding-left:50px;word-break:break-word;">
+                      <div style="font-family:Open Sans, Helvetica, Arial, sans-serif;font-size:13px;line-height:22px;text-align:left;color:#797e82;">
+						<br/><br/>
+                        <h1 style="text-align:center; color: #000000; line-height:32px">Voici votre liste de course !</h1>
+                      </div>
+					  </div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="font-family:Open Sans, Helvetica, Arial, sans-serif;font-size:13px;line-height:22px;text-align:left;color:#797e82;">
+        <tbody style="padding-top: 30px;">
+          <% @alim_groups.each do |alim_group| %>
+            <b style="margin: 10px 0; text-align: center;"><%= alim_group %></b>
+              <table>
+                <tbody>
+                <% @user.shopping_cart.each do |elem|%>
+                <% food = Food.find_by("alim_name like?", "%#{elem[0]}%") %>
+                  <% if alim_group ==  food.alim_group %>
+                    <tr>
+                      <% if food.weight_for_one != 1%>
+                        <td><%= (elem[1].round / food.weight_for_one).round%></td>
+                      <% elsif elem[1].round < 999 %>
+                        <td><%= elem[1].round%> <%= food.basic_unity%></td>
+                      <% else %>
+                        <td><%= (elem[1].round.to_f / 1000).round(2)%> <%= food.thousand_unity%></td>
+                      <%end%>
+                      <td class="bold"><%= elem[0]%></td>
+                    </tr>
+                  <% end %>
+                <% end %>
+              </tbody>
+            </table>
+            <hr>
+          <% end %>
+        </tbody>
+      </div>
+    </div>
+  </div>
+</body>
+

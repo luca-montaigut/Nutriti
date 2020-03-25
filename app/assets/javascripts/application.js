@@ -16,7 +16,9 @@
 
 //= require cocoon
 
-//= require bootstrap
 //= require jquery
 //= require main
 //= require cable
+//= require popper
+//= require bootstrap-select
+//= require bootstrap

@@ -2,7 +2,7 @@ class Users::UsersController < Users::ApplicationController
   def show
   end
 
-  def update  
+  def update
     current_user.update(user_params)
 
     respond_to do |format|

@@ -14,58 +14,22 @@
   </head>
 
   <body>
+    <div class="container-fluid">
+	  <div class="row">
+		  <div class="col-md-12" id="content">
     <!-- Start of navbar-->
     <nav class="navbar navbar-expand-lg navbar-white bg-white">
       <%= link_to image_tag("logo_nutriti.svg", height: 50), week_path(current_user.id), class:"navbar-brand ml-5" %>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item <%= 'active' if current_page?(root_path) %>">
-            <%= link_to "Planning", root_path, class:"btn btn-warning" %>
-          </li> |
-          <li class="nav-item"><%= link_to "Edit Breakfast", edit_breakfast_path(current_user.breakfast.id), class:'btn btn-success'%></li>  |
-          <li class="nav-item"><%= link_to "Generate Meal", meals_path, data:{method: 'post'}, class:'btn btn-warning'%></li> |
-          <li class="nav-item"><%= link_to "Generate Day", days_path, data:{method: 'post'}, class:'btn btn-info'%></li> 
-        </ul>
-        <ul class="navbar-nav">
-          <% if user_signed_in? %>
-            <li class="nav-item dropdown">
-              <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <%= "#{current_user.first_name} #{current_user.last_name}" %>
-              </button>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                   <%= link_to "Voir profil", user_path(current_user.id), class: "dropdown-item" %>
-                <% if current_user.is_admin %>
-                  <%= link_to "Dashboard Admin", admin_dashboard_index_path, class:"dropdown-item" %>
-                <% end %>
-                <div class="dropdown-divider"></div>
-                <%= link_to "Se déconnecter", destroy_user_session_path, class:"dropdown-item", method: :delete %>
-              </div>
-            </li>
-            </li>
-          <% else %>
-            <li class="btn-group">
-              <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                S'inscrire / Se connecter
-              </button>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <%= link_to "Inscription", new_user_registration_path, class:"dropdown-item" %>
-                <div class="dropdown-divider"></div>
-                <%= link_to "Connexion", new_user_session_path, class:"dropdown-item" %>
-              </div>
-            </li>
-          <% end %>
-        </ul>
       </div>
+      <button class="btn btn-outline-warning" id="nav-collapse" style="z-index: 9999;"><i class="fas fa-bars"></i></button>
     </nav>
     
     <!-- End of Navbar-->
     <% if current_user%>
       <% if current_user.incomplete_profile? %>
         <div class="alert alert-warning" role="alert">
-         Veuillez remplir vos informations en <%= link_to "cliquant ici",edit_user_path(current_user.id)%> pour profiter pleinement de nos fonctionnalités.  
+         Veuillez remplir vos informations en <b><%= link_to "cliquant ici",edit_user_path(current_user.id), class:"text-warning"%></b> pour profiter pleinement de nos fonctionnalités.  
         </div>
       <% end %>
     <%end%>
@@ -89,7 +53,77 @@
     </footer>
     <!-- End of footer-->
     
-    
-  
+      </div>
+      <div id="side-nav" class="container-right" style="display:none;">
+      <div class="right-nav bg-light d-flex flex-column ">
+        <ul class="nav flex-column align-items-end right-nav mt-4">
+          <li class="nav-item my-2 <%= 'active' if current_page?(user_path) %>"><%= link_to "Voir profil", user_path(current_user.id), class: "btn btn-warning" %></li>
+          <% if current_user.is_admin %>
+          <hr>
+            <li class="nav-item my-2">
+              <%= link_to "Dashboard Admin", admin_dashboard_index_path, class:"btn btn-warning" %>
+            </li>    
+          <% end %>
+          <hr>
+          <li class="nav-item my-2 <%= 'active' if current_page?(root_path) %>"><%= link_to "Planning", root_path, class:"btn btn-warning" %></li>
+          <hr>
+          <li class="nav-item my-2"><%= link_to "Configurer son petit déjeuner", edit_breakfast_path(current_user.breakfast.id), class:'btn btn-success'%></li>
+          <hr>
+          <li class="nav-item my-2"><%= link_to "Générer un repas", meals_path, data:{method: 'post'}, class:'btn btn-warning'%></li>
+          <hr>
+          <li class="nav-item my-2"><%= link_to "Générer une journée complète", days_path, data:{method: 'post'}, class:'btn btn-info'%></li>
+          <hr>
+          <li class="nav-item my-2 <%= 'active' if current_page?(root_path) %>"><%= link_to "Se déconnecter", destroy_user_session_path, class:"btn btn-danger", method: :delete %></li>
+        </ul>
+        </div>      
+	</div>
+</div>
+  <script>
+let nav = document.getElementById("side-nav");
+let content = document.getElementById("content"); 
+let button = document.getElementById("nav-collapse");
+
+button.addEventListener("click", function () {
+    if (nav.style.display === "none") {
+    nav.style.display = "block";
+    button.animate([
+      { transform: 'translateX(0px)' }, 
+      { transform: 'translateX(-250px)' }
+    ], { 
+      duration: 250,
+    });
+    nav.animate([
+      { transform: 'translateX(+250px)' }, 
+      { transform: 'translateX(0px)' }
+    ], { 
+      duration: 250,
+    });
+    button.style.transform = "translateX(-250px)";
+    button.classList.remove('btn-outline-warning');
+    button.classList.add('btn-warning');
+  } else {
+        button.animate([
+      { transform: 'translateX(-250px)' }, 
+      { transform: 'translateX(0px)' }
+    ], { 
+      duration: 250,
+    });
+    nav.animate([
+      { transform: 'translateX(0px)' }, 
+      { transform: 'translateX(+250px)' }
+    ], { 
+      duration: 300,
+    });
+    button.style.transform = "translateX(0px)";
+    button.classList.remove('btn-warning');
+    button.classList.add('btn-outline-warning');
+    setTimeout(hide, 300)
+    function hide() {
+      nav.style.display = "none";
+    }
+  }
+})
+</script>
   </body>
 </html>
+

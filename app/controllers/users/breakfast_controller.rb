@@ -1,4 +1,4 @@
-class Users::BreakfastController < ApplicationController
+class Users::BreakfastController < Users::ApplicationController
   before_action :set_users_breakfast, only: [:show, :edit, :update]
 
   def show
@@ -18,6 +18,7 @@ class Users::BreakfastController < ApplicationController
   def update
     respond_to do |format|
       if @users_breakfast.update(users_breakfast_params)
+        @users_breakfast.total_kcal
         format.html { redirect_to @users_breakfast, notice: "Petit dej mis à jours avec success" }
       else 
         format.html { redirect_to :edit, error: "Petit dej non mis à jours" }

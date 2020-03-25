@@ -12,7 +12,7 @@ class Meal < ApplicationRecord
   has_many :dinner_days, foreign_key: 'dinner_id', class_name: 'Day'
 
 
-  def generate(category)
+  def generate(category, user)
 
     if category == "Lunch"
       self.category = "Lunch"
@@ -20,11 +20,17 @@ class Meal < ApplicationRecord
       self.category = "Dinner"
     end
 
-    self.starter = Recipe.all.where(category: "Starter").sample
-    self.dish_id = Recipe.all.where(category: "Dish").sample.id
-    self.dessert_id = Recipe.all.where(category: "Dessert").sample.id
-    self.drink_id = Recipe.all.where(category: "Drink").sample.id # Eau minérale
-    self.complement_id = Recipe.all.where(category: "Complement").sample.id # Pain
+    if user.express == true
+	  all_recipes = Recipe.all.where("cookingtime <= 15")
+    else
+      all_recipes = Recipe.all
+    end
+
+    self.starter = all_recipes.where(category: "Starter").sample
+    self.dish_id = all_recipes.where(category: "Dish").sample.id
+    self.dessert_id = all_recipes.where(category: "Dessert").sample.id
+    self.drink_id = all_recipes.where(category: "Drink").sample.id # Eau minérale
+    self.complement_id = all_recipes.where(category: "Complement").sample.id # Pain
 
     return self
   end
@@ -39,11 +45,11 @@ class Meal < ApplicationRecord
     ]
   end
 
-  def list 
+  def list(user) 
     array = []
     self.recipes.each do |join|
       join.join_recipe_foods.each do |m|
-        array << {m.food.alim_name.match('^[^\(]*') => m.quantity.to_f * (1.0/m.recipe.forhowmany.to_f).to_f}
+        array << {m.food.alim_name.match('^[^\,(]*') => (m.quantity.to_f * (1.0/m.recipe.forhowmany.to_f).to_f) * (user.needbymeal(self.category)/self.kcal).to_f}
       end
     end
 

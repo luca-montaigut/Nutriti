@@ -74,5 +74,7 @@ end
 gem 'table_print'
 gem 'faker'
 
+gem 'popper_js', '~> 1.14.5'
 gem 'jquery-rails'
 gem 'cocoon' 
+gem 'bootstrap-select-rails'
