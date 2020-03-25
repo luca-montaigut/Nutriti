@@ -11,10 +11,6 @@ Rails.application.routes.draw do
     resources :days, except: [:new]
     resources :weeks, only: [:show, :create, :update]
     resources :shopping_emails, only: [:show]
-    resources :express_recipes, only: [:edit]
-    resources :vegans, only: [:edit]
-    resources :vegetarians, only: [:edit]
-    resources :pork_less, only: [:edit]
   end
 
   scope 'admin', module: 'admin', as: 'admin' do
