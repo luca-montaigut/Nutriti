@@ -6,9 +6,10 @@ class Users::UsersController < Users::ApplicationController
     current_user.update(user_params)
 
     respond_to do |format|
-         format.html {redirect_to current_user, flash:{notice: "Votre profil a été mis à jours"}}
+         format.js {}
     end
   end
+  
 
 private
 
