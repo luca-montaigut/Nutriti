@@ -45,14 +45,11 @@
       <% if @users_week.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@users_week.errors.count, "error") %> prohibited this @users_week from being saved:</h2>
-
           <ul>
           <% @users_week.errors.full_messages.each do |message| %>
             <li><%= message %></li>
           <% end %>
           </ul>
-
-
         </div>
       <% end %>
 
@@ -76,12 +73,9 @@
   </div>
 </div>
 
-
 <div class="container-fluid">
-<br>
-  <div class="d-flex flex-row ">
-  <% current_user.week.days.each do |day|%>
-  
+  <div class="d-flex flex-row mt-3">
+    <% current_user.week.days.each do |day|%>
       <div class="card mx-1 mb-5 border-bottom border-left border-right border-success" style="width: 18rem;">
         <div class="card-header d-flex justify-content-between bg-success">
           <%= link_to day.name, day_path(day.id), class:"text-white"%> 
@@ -102,8 +96,8 @@
             <b><%= link_to "Déjeuner", meal_path(day.lunch.id), class:"text-warning"%></b>
           </li>
           <ul class="list-group-item size-li-planning border-bottom border-success">    
-            <li class=""><%= day.lunch.starter.title%></li>
-            <li class=""><%= day.lunch.dish.title%></li>
+            <li class=""><%= link_to day.lunch.starter.title, recipe_path(day.lunch.starter.id, ratio: current_user.needbymeal(day.lunch.category)/day.lunch.kcal),  remote: true, "data-target" => "#recipeModal", "data-toggle" =>"modal", class:"text-dark text-decoration-none" %></li>
+            <li class=""><%= link_to day.lunch.dish.title, recipe_path(day.lunch.dish.id, ratio: current_user.needbymeal(day.lunch.category)/day.lunch.kcal),  remote: true, "data-target" => "#recipeModal", "data-toggle" =>"modal", class:"text-dark text-decoration-none" %></li>
             <li class=""><%= day.lunch.dessert.title%></li>
             
           </ul>
@@ -111,8 +105,8 @@
             <b><%= link_to "Diner", meal_path(day.dinner.id), class:"text-warning"%></b>
           </li>
           <ul class="list-group-item size-li-planning border-bottom border-success">    
-            <li class=""><%= day.dinner.starter.title%></li>
-            <li class=""><%= day.dinner.dish.title%></li>
+            <li class=""><%= link_to day.dinner.starter.title, recipe_path(day.dinner.starter.id, ratio: current_user.needbymeal(day.dinner.category)/day.dinner.kcal),  remote: true, "data-target" => "#recipeModal", "data-toggle" =>"modal", class:"text-dark text-decoration-none" %></li>
+            <li class=""><%= link_to day.dinner.dish.title, recipe_path(day.dinner.dish.id, ratio: current_user.needbymeal(day.dinner.category)/day.dinner.kcal),  remote: true, "data-target" => "#recipeModal", "data-toggle" =>"modal", class:"text-dark text-decoration-none" %></li>
             <li class=""><%= day.dinner.dessert.title%></li>
           </ul>
         </ul>
@@ -121,14 +115,22 @@
   </div>
 </div>
 
-
-
-<br><br>
-
-
-
-
-
+<div class="modal fade " id="recipeModal" tabindex="-1" role="dialog" aria-labelledby="recipeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="recipeBody">
+      </div>
+      <div class="modal-footer">
+        <button tye="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <script>
