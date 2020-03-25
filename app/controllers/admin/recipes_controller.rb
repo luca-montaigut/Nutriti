@@ -10,9 +10,9 @@ class Admin::RecipesController < Admin::ApplicationController
     respond_to do |format|
       format.html
       if params[:notice] == "recipe"
-        format.csv { send_data @admin_recipes.recipes_to_csv }
+        format.csv { send_data @admin_recipes.recipes_to_csv, filename: "recipes_nutriti.csv" }
       else params[:notice] == "join"
-        format.csv { send_data @join_recipes.join_to_csv }
+        format.csv { send_data @join_recipes.join_to_csv, filename: "join_recipe_foods_nutriti.csv" }
       end
     end
   end
