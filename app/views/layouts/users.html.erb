@@ -14,6 +14,9 @@
   </head>
 
   <body>
+    <div class="container-fluid">
+	  <div class="row">
+		  <div class="col-md-10" id="content">
     <!-- Start of navbar-->
     <nav class="navbar navbar-expand-lg navbar-white bg-white">
       <%= link_to image_tag("logo_nutriti.svg", height: 50), week_path(current_user.id), class:"navbar-brand ml-5" %>
@@ -64,6 +67,8 @@
           <% end %>
         </ul>
       </div>
+      |
+      <button class="btn btn-info" id="nav-collapse"><i class="fas fa-bars"></i></button>
     </nav>
     
     <!-- End of Navbar-->
@@ -94,7 +99,43 @@
     </footer>
     <!-- End of footer-->
     
-    
+      </div>
+      <div id="side-nav" class="col-md-2 p-0 right-nav">
+        <ul class="nav flex-column bg-nav right-nav ">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>      
+	</div>
+</div>
   
   </body>
 </html>
+
+<script>
+var nav = document.getElementById("side-nav");
+var content = document.getElementById("content"); 
+let button = document.getElementById("nav-collapse");
+
+button.addEventListener("click", function () {
+
+  if (nav.style.display === "none") {
+    nav.style.display = "block";
+  } else {
+    nav.style.display = "none";
+  }
+
+  content.classList.toggle("col-md-10");
+  content.classList.toggle("col-md-12");
+  
+})
+</script>

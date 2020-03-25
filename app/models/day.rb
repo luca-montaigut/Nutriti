@@ -50,7 +50,7 @@ class Day < ApplicationRecord
   end
 
 
-  def recipes
+  def meals
     [
       self.breakfast,
       self.lunch,
@@ -60,9 +60,17 @@ class Day < ApplicationRecord
 
   def list 
     array = []
+
+    
     self.recipes.each do |join|
-      join.join_recipe_foods.each do |m|
-        array << {m.food.alim_name.match('^[^\(]*') => m.quantity.to_f * (1.0/m.recipe.forhowmany.to_f).to_f}
+      if join == self.breakfast
+        recipe.join_recipe_foods.each do |join|
+          array << {join.food.alim_name.match('^[^\(]*') => join.quantity.to_f * (1.0/join.recipe.forhowmany.to_f).to_f}
+        end
+      else
+        join.join_recipe_foods.each do |m|
+          array << {m.food.alim_name.match('^[^\(]*') => m.quantity.to_f * (1.0/m.recipe.forhowmany.to_f).to_f}
+        end
       end
     end
 
