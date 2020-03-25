@@ -68,11 +68,11 @@ class User < ApplicationRecord
   end
 
   def lunch_needs
-    (self.drc / 100) * 45
+    (self.drc / 100) * 40
   end
 
   def dinner_needs
-    (self.drc / 100) * 30
+    (self.drc / 100) * 35
   end
 
   def shopping_cart
@@ -83,11 +83,11 @@ class User < ApplicationRecord
         meal.recipes.each do |recipe|
           if meal == self.breakfast
             recipe.join_recipe_foods.each do |join|
-              array << {join.food.alim_name.match('^[^\(]*') => join.quantity.to_f * (1.0/join.recipe.forhowmany.to_f).to_f}
+              array << {join.food.alim_name.match('^[^\(]*') => (join.quantity.to_f * (1.0/join.recipe.forhowmany.to_f).to_f) * (self.needbymeal(meal)/meal.kcal).to_f}
             end
           else   
             recipe.join_recipe_foods.each do |join|
-              array << {join.food.alim_name.match('^[^\(]*') => join.quantity.to_f * (1.0/join.recipe.forhowmany.to_f).to_f}
+              array << {join.food.alim_name.match('^[^\(]*') => (join.quantity.to_f * (1.0/join.recipe.forhowmany.to_f).to_f) * (self.needbymeal(meal.category)/meal.kcal).to_f}
             end
           end
         end
@@ -102,6 +102,7 @@ class User < ApplicationRecord
   def user_week
     user_breakfast = Breakfast.create(user_id: self.id)
     user_breakfast.generate
+    user_breakfast.total_kcal
     user_week = Week.create(user_id: self.id)
     user_week.generate
   end

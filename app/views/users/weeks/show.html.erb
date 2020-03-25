@@ -17,7 +17,7 @@
               <% if alim_group ==  food.alim_group %>            
                 <tr>
                   <% if food.weight_for_one != 1%>
-                    <td><%= (elem[1].round / food.weight_for_one).round%></td>
+                    <td><%= (elem[1].round / food.weight_for_one).round%> <%= food.basic_unity%></td>
                   <% elsif elem[1].round < 999 %>
                     <td><%= elem[1].round%> <%= food.basic_unity%></td>
                   <% else %>

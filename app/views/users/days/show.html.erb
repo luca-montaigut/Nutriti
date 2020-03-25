@@ -10,7 +10,7 @@
           <table class="ml-4">
             <tbody>
               <% @day.meals.each do |meal|%>
-                <% meal.list.each do |elem|%>
+                <% meal.list(current_user).each do |elem|%>
                   <% food = Food.find_by("alim_name like?", "%#{elem[0]}%") %>
                     <% if alim_group ==  food.alim_group %>            
                       <tr>

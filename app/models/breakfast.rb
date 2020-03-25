@@ -1,7 +1,6 @@
 class Breakfast < ApplicationRecord
   after_create :generate
 
-
   belongs_to :user
 
   belongs_to :hotdrink, class_name: 'Recipe', optional: true
@@ -19,11 +18,13 @@ class Breakfast < ApplicationRecord
     @protein = Recipe.all.where(category: "Protein (Breakfast)").sample
     @option = Recipe.all.where(category: "Option (Breakfast)").sample
 
-    self.update(hotdrink: @hotdrink)
-    self.update(fruit: @fruit)
-    self.update(cereal: @cereal)
-    self.update(protein: @protein)
-    self.update(option: @option)
+    self.update(
+      hotdrink: @hotdrink,
+      fruit: @fruit,
+      cereal: @cereal,
+      protein: @protein,
+      option: @option
+    )
 
   end
   
@@ -37,15 +38,20 @@ class Breakfast < ApplicationRecord
     ]
   end
 
-  def list 
+  def list(user) 
     array = []
     self.recipes.each do |join|
       join.join_recipe_foods.each do |m|
-        array << {m.food.alim_name.match('^[^\(]*') => m.quantity.to_f * (1.0/m.recipe.forhowmany.to_f).to_f}
+        array << {m.food.alim_name.match('^[^\(]*') => (m.quantity.to_f * (1.0/m.recipe.forhowmany.to_f).to_f) * (user.needbymeal(self)/self.kcal).to_f}
       end
     end
 
     array.reduce {|acc, h| acc.merge(h) {|_,v1,v2| v1 + v2 }}
+  end
+
+
+  def total_kcal
+    self.update(kcal: self.hotdrink.for_one + self.fruit.for_one + self.protein.for_one + self.cereal.for_one + self.option.for_one)
   end
 
 end
