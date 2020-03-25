@@ -29,3 +29,7 @@ footer{
     background-size: cover;
     height: 25vh;
 }
+
+.size-li-planning {
+    min-height: 20vh;
+}
