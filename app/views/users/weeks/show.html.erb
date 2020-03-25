@@ -39,6 +39,50 @@
   </div>
 </div>
 
+<div class="container-fluid">
+<br>
+  <div class="d-flex flex-row my-3">
+  <% current_user.week.days.each do |day|%>
+  
+      <div class="card mx-1 mb-5 border-bottom border-left border-right border-success" style="width: 18rem;">
+        <div class="card-header d-flex justify-content-between bg-success">
+          <%= link_to day.name, day_path(day.id), class:"text-white"%> 
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item text-light text-center bg-light">
+            <b><%= link_to "Petit Déjeuner", breakfast_path(current_user.breakfast.id), class:"text-warning"%></b>
+          </li>
+          <ul class="list-group-item size-li-planning border-bottom border-success">  
+            <li class=""><%= current_user.breakfast.hotdrink.title%></li>
+            <li class=""><%= current_user.breakfast.fruit.title%></li>
+            <li class=""><%= current_user.breakfast.cereal.title%></li>
+            <li class=""><%= current_user.breakfast.protein.title%></li>
+            <li class=""><%= current_user.breakfast.option.title%></li>
+            
+          </ul>
+          <li class="list-group-item text-light text-center bg-light">
+            <b><%= link_to "Déjeuner", meal_path(day.lunch.id), class:"text-warning"%></b>
+          </li>
+          <ul class="list-group-item size-li-planning border-bottom border-success">    
+            <li class=""><%= day.lunch.starter.title%></li>
+            <li class=""><%= day.lunch.dish.title%></li>
+            <li class=""><%= day.lunch.dessert.title%></li>
+            
+          </ul>
+          <li class="list-group-item text-light text-center bg-light">
+            <b><%= link_to "Diner", meal_path(day.dinner.id), class:"text-warning"%></b>
+          </li>
+          <ul class="list-group-item size-li-planning border-bottom border-success">    
+            <li class=""><%= day.dinner.starter.title%></li>
+            <li class=""><%= day.dinner.dish.title%></li>
+            <li class=""><%= day.dinner.dessert.title%></li>
+          </ul>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 <div class="text-center flex-row mt-3">
   <% if current_user.express == false %>
     <%= link_to "Generate Only Express Cookingtime Meals", edit_express_recipe_path, class:'btn btn-info'%> |
@@ -64,50 +108,8 @@
   <button name="button" id="shopping-list"class="btn btn-danger">Afficher Liste de Course</button> 
 </div>
 
-<div class="container-fluid">
+<br><br>
 
-  <div class="d-flex flex-row my-3">
-  <% current_user.week.days.each do |day|%>
-  
-      <div class="card mx-1" style="width: 18rem;">
-        <div class="card-header d-flex justify-content-between">
-          <%= link_to day.name, day_path(day.id), class:"text-info"%>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item text-light text-center bg-light">
-            <b><%= link_to "Petit Déjeuner", breakfast_path(current_user.breakfast.id), class:"text-warning"%></b>
-          </li>
-          <ul class="list-group-item size-li-planning">  
-            <li class=""><%= current_user.breakfast.hotdrink.title%></li>
-            <li class=""><%= current_user.breakfast.fruit.title%></li>
-            <li class=""><%= current_user.breakfast.cereal.title%></li>
-            <li class=""><%= current_user.breakfast.protein.title%></li>
-            <li class=""><%= current_user.breakfast.option.title%></li>
-            
-          </ul>
-          <li class="list-group-item text-light text-center bg-light">
-            <b><%= link_to "Déjeuner", meal_path(day.lunch.id), class:"text-warning"%></b>
-          </li>
-          <ul class="list-group-item size-li-planning">    
-            <li class=""><%= day.lunch.starter.title%></li>
-            <li class=""><%= day.lunch.dish.title%></li>
-            <li class=""><%= day.lunch.dessert.title%></li>
-            
-          </ul>
-          <li class="list-group-item text-light text-center bg-light">
-            <b><%= link_to "Diner", meal_path(day.dinner.id), class:"text-warning"%></b>
-          </li>
-          <ul class="list-group-item size-li-planning">    
-            <li class=""><%= day.dinner.starter.title%></li>
-            <li class=""><%= day.dinner.dish.title%></li>
-            <li class=""><%= day.dinner.dessert.title%></li>
-            
-          </ul>
-        </ul>
-      </div>
-    <% end %>
-  </div>
-</div>
 
 
 
