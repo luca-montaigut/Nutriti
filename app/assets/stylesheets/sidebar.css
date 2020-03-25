@@ -1,7 +1,7 @@
 .sidebar-wrapper{
   width: 100vw;
   height: 100%;
-  z-index: 1000;
+  z-index: 300;
   position: fixed;
 
 }
@@ -39,8 +39,9 @@
   height: 100vh;
   width: 300px;
   float: right;
-  z-index: 1000;
+  z-index: 9999;
   position: relative;
+  pointer-events:auto;
 
 }
 
@@ -50,11 +51,15 @@
   z-index: 999;
   position: fixed;
   display: none;
+  pointer-events: none;
 }
 .bg-nav{
   background-color: #1d1919;
 }
 
+footer{
+  z-index: 500;
+}
 @keyframes right-slidein {
   from {
     float: right;
