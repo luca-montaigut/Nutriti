@@ -13,6 +13,7 @@
   height: 100%;
 }
 
+
 .blur{
   float: right;
   width: 65vw; 
@@ -30,6 +31,29 @@
 .sidenav {
   animation-duration: 0.50s;
   animation-name: slidein;
+}
+
+
+
+.right-nav{
+  height: 100vh;
+
+}
+
+.bg-nav{
+  background-color: #1d1919;
+}
+
+@keyframes right-slidein {
+  from {
+    float: right;
+    width: 0vh; 
+  }
+
+  to {
+    float: right;
+    width: 310px;
+  }
 }
 
 @keyframes slidein {
