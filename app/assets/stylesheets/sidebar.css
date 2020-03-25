@@ -7,14 +7,14 @@
 }
 
 .sidenav{
-  float: right;
+  float: left;
   width: 35vw; 
   background-color: white; 
   height: 100%;
 }
 
 .blur{
-  float: left;
+  float: right;
   width: 65vw; 
   background-color: black; 
   height: 100%;

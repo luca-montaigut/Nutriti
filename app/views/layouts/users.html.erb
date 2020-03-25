@@ -15,7 +15,7 @@
 
   <body>
     <!-- Start of navbar-->
-    <nav class="navbar navbar-expand-lg navbar-white bg-success">
+    <nav class="navbar navbar-expand-lg navbar-white bg-white">
       <%= link_to image_tag("logo_nutriti.svg", height: 50), week_path(current_user.id), class:"navbar-brand ml-5" %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -23,7 +23,16 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item <%= 'active' if current_page?(root_path) %>">
-          </li>        
+            <%= link_to "Planning", root_path, class:"btn btn-warning" %>
+          </li> |
+          <li class="nav-item"><%= link_to "Edit Breakfast", edit_breakfast_path(current_user.breakfast.id), class:'btn btn-success'%></li>  |
+          <li class="nav-item"><%= link_to "Generate Meal", meals_path, data:{method: 'post'}, class:'btn btn-warning'%></li> |
+          <li class="nav-item"><%= link_to "Generate Day", days_path, data:{method: 'post'}, class:'btn btn-info'%></li> |
+		  <% if current_user.express == false %>
+			<li class="nav-item"><%= link_to "Generate Only Express Cookingtime Meals", edit_express_recipe_path, class:'btn btn-info'%></li> 
+		  <% else %>
+			<li class="nav-item"><%= link_to "Generate Random Cookingtime Meals", edit_express_recipe_path, class:'btn btn-info'%></li> 
+		  <% end %>
         </ul>
         <ul class="navbar-nav">
           <% if user_signed_in? %>
@@ -56,8 +65,8 @@
         </ul>
       </div>
     </nav>
+    
     <!-- End of Navbar-->
-
     <% if current_user%>
       <% if current_user.incomplete_profile? %>
         <div class="alert alert-warning" role="alert">
@@ -75,8 +84,8 @@
     <footer class="page-footer fixed-bottom mt-5">
         <div class="container-fluid bg-success py-1 text-center fixed-bottem">
     <% end %>
-          <p class="mt-2">
-            <i class="far fa-copyright"></i> Fait avec <i class="fas fa-heart"></i> par l'équipage Nantais 
+          <p class="text-white mt-2">
+            <i class="far fa-copyright"></i> Fait avec <i class="fas fa-heart text-warning"></i> par l'équipage Nantais 
         </div>  
         <div class="container-fluid bg-dark py-1">
           <div class="container text-center text-white">
@@ -84,6 +93,7 @@
         </div>
     </footer>
     <!-- End of footer-->
+    
     
   
   </body>

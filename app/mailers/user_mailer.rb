@@ -7,6 +7,7 @@ class UserMailer < ApplicationMailer
 
   def shopping_cart_email(user)
 	@user = user
+	@alim_groups = Food.all.map(&:alim_group).uniq
 	mail(to: @user.email, subject: 'Liste de course Nutriti')
   end
 

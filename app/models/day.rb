@@ -35,10 +35,10 @@ class Day < ApplicationRecord
 
     @breakfast = user.breakfast
 
-    @lunch = Meal.new.generate("Lunch")
+    @lunch = Meal.new.generate("Lunch", user)
     @lunch.save
 
-    @dinner = Meal.new.generate("Dinner")
+    @dinner = Meal.new.generate("Dinner", user)
     @dinner.save
 
 

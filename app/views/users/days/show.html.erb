@@ -1,31 +1,35 @@
-<div class="sidebar-wrapper "  hidden="true" id="nav">
+<div class="sidebar-wrapper"  hidden="true" id="nav">
   <nav class="sidenav flex-column scrollable" style="">
     <table class="table table-borderless" >
       <h3 class="text-center">Liste de course</h3>
       <hr style="margin: 25px;" class="bold">
       <tbody>
-      	<div class="d-flex flex-row justify-content-center">
-		    </div>
+		<br/>
         <% @alim_groups.each do |alim_group| %>
-        <% @day.meals.each do |meal|%>
-        <% meal.list.each do |elem|%>
-        <% food = Food.find_by("alim_name like?", "%#{elem[0]}%") %>
-                <% if alim_group ==  food.alim_group %>            
-                <tr> 
-                <td class="bold"><%= alim_group %></td>
-                <td class="bold"><%= elem[0]%></td>
-                <% if food.weight_for_one != 1%>
-                  <td><%= (elem[1].round / food.weight_for_one).round%></td>
-                <% elsif elem[1].round < 999 %>
-                  <td><%= elem[1].round%> <%= food.basic_unity%></td>
-                <% else %>
-                   <td><%= (elem[1].round.to_f / 1000).round(2)%> <%= food.thousand_unity%></td>
-                <%end%>
-              </tr>
-            <% end %>
-        <% end %>
-        <% end %>
-        <% end %>
+          <b class="ml-4"><%= alim_group %></b>
+          <table class="ml-4">
+            <tbody>
+              <% @day.meals.each do |meal|%>
+                <% meal.list.each do |elem|%>
+                  <% food = Food.find_by("alim_name like?", "%#{elem[0]}%") %>
+                    <% if alim_group ==  food.alim_group %>            
+                      <tr>
+                        <% if food.weight_for_one != 1%>
+                          <td><%= (elem[1].round / food.weight_for_one).round%></td>
+                        <% elsif elem[1].round < 999 %>
+                          <td><%= elem[1].round%> <%= food.basic_unity%></td>
+                        <% else %>
+                          <td><%= (elem[1].round.to_f / 1000).round(2)%> <%= food.thousand_unity%></td>
+                        <%end%>
+                        <td class="bold"><%= elem[0]%></td>
+                      </tr>
+                    <% end %>
+                  <% end %>
+                <% end %>
+            </tbody>
+          </table>
+          <hr>
+              <% end %>
       </tbody>
     </table>
     <br><br><br><br>
@@ -33,6 +37,8 @@
   <div class="blur" id="close">
   </div>
 </div>
+
+
 
 <div class="container">
 
