@@ -16,7 +16,7 @@ class Users::MealsController < Users::ApplicationController
 
   def create
     category = ['Lunch','Dinner']
-    @meal = Meal.new.generate(category.sample)
+    @meal = Meal.new.generate(category.sample, current_user)
 
     respond_to do |format|
       if @meal.save

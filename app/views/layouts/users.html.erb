@@ -27,7 +27,12 @@
           </li> |
           <li class="nav-item"><%= link_to "Edit Breakfast", edit_breakfast_path(current_user.breakfast.id), class:'btn btn-success'%></li>  |
           <li class="nav-item"><%= link_to "Generate Meal", meals_path, data:{method: 'post'}, class:'btn btn-warning'%></li> |
-          <li class="nav-item"><%= link_to "Generate Day", days_path, data:{method: 'post'}, class:'btn btn-info'%></li> 
+          <li class="nav-item"><%= link_to "Generate Day", days_path, data:{method: 'post'}, class:'btn btn-info'%></li> |
+		  <% if current_user.express == false %>
+			<li class="nav-item"><%= link_to "Generate Only Express Cookingtime Meals", edit_express_recipe_path, class:'btn btn-info'%></li> 
+		  <% else %>
+			<li class="nav-item"><%= link_to "Generate Random Cookingtime Meals", edit_express_recipe_path, class:'btn btn-info'%></li> 
+		  <% end %>
         </ul>
         <ul class="navbar-nav">
           <% if user_signed_in? %>
