@@ -49,11 +49,24 @@ class Day < ApplicationRecord
     return self
   end
 
-  def meals
+
+  def recipes
     [
       self.breakfast,
       self.lunch,
       self.dinner
     ]
   end
+
+  def list 
+    array = []
+    self.recipes.each do |join|
+      join.join_recipe_foods.each do |m|
+        array << {m.food.alim_name.match('^[^\(]*') => m.quantity.to_f * (1.0/m.recipe.forhowmany.to_f).to_f}
+      end
+    end
+
+    array.reduce {|acc, h| acc.merge(h) {|_,v1,v2| v1 + v2 }}
+  end
+  
 end
