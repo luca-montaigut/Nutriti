@@ -17,7 +17,7 @@
     <div class="container-fluid">
 	  <div class="row">
 		  <div class="col-md-12" id="content">
-    <!-- Start of navbar-->
+
     <nav class="navbar navbar-expand-lg navbar-white bg-white">
       <%= link_to image_tag("logo_nutriti.svg", height: 50), week_path(current_user.id), class:"navbar-brand ml-5" %>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
@@ -25,17 +25,15 @@
       <button class="side-btn btn btn-outline-warning" id="nav-collapse" style="z-index: 9999;"><i class="fas fa-bars"></i></button>
     </nav>
     
-    <!-- End of Navbar-->
     <% if current_user%>
       <% if current_user.incomplete_profile? %>
         <div class="alert alert-warning" role="alert">
-         Veuillez remplir vos informations en <b><%= link_to "cliquant ici",edit_user_path(current_user.id), class:"text-warning"%></b> pour profiter pleinement de nos fonctionnalités.  
+         Veuillez remplir vos informations en <b><%= link_to "cliquant ici", user_path(current_user.id), class:"text-warning"%></b> pour profiter pleinement de nos fonctionnalités.  
         </div>
       <% end %>
     <%end%>
     <%= yield %>
 
-    <!-- Start of footer-->
     <% if current_page?(root_path) %>
     <footer class="page-footer mt-5">
         <div class="container-fluid bg-success py-1 text-center">
@@ -51,7 +49,6 @@
           </div>
         </div>
     </footer>
-    <!-- End of footer-->
     
     </div>
 
@@ -69,7 +66,7 @@
           <hr>
           <li class="nav-item my-2 <%= 'active' if current_page?(root_path) %>"><%= link_to "Planning", root_path, class:"btn btn-warning" %></li>
           <hr>
-          <li class="nav-item my-2"><%= link_to "Configurer son petit déjeuner", edit_breakfast_path(current_user.breakfast.id), class:'btn btn-success'%></li>
+          <li class="nav-item my-2"><%= link_to "Configurer son petit déjeuner", edit_breakfast_path(current_user.breakfast.id), "data-target" => "#breakfastModal", "data-toggle" =>"modal", remote: true,class:'btn btn-success'%></li>
           <hr>
           <li class="nav-item my-2"><%= link_to "Générer un repas", meals_path, data:{method: 'post'}, class:'btn btn-warning'%></li>
           <hr>
@@ -80,6 +77,26 @@
       </div>      
 	  </div>
     <!-- End of Sidebar-->
+        </div>      
+	</div>
+
+  <div class="modal fade " id="breakfastModal" tabindex="-1" role="dialog" aria-labelledby="breakfastModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="breakfastBody">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
   <script>
 let nav = document.getElementById("side-nav");
 let content = document.getElementById("content"); 
