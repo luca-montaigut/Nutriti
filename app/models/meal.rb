@@ -49,7 +49,7 @@ class Meal < ApplicationRecord
     array = []
     self.recipes.each do |join|
       join.join_recipe_foods.each do |m|
-        array << {m.food.alim_name.match('^[^\(]*') => (m.quantity.to_f * (1.0/m.recipe.forhowmany.to_f).to_f) * (user.needbymeal(self.category)/self.kcal).to_f}
+        array << {m.food.alim_name.match('^[^\,(]*') => (m.quantity.to_f * (1.0/m.recipe.forhowmany.to_f).to_f) * (user.needbymeal(self.category)/self.kcal).to_f}
       end
     end
 
