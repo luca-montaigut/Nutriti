@@ -68,7 +68,7 @@
         </ul>
       </div>
       |
-      <button class="btn btn-info" id="nav-collapse"><i class="fas fa-bars"></i></button>
+      <button class="btn btn-info" id="nav-collapse" style="z-index: 9999;"><i class="fas fa-bars"></i></button>
     </nav>
     
     <!-- End of Navbar-->
@@ -100,7 +100,8 @@
     <!-- End of footer-->
     
       </div>
-      <div id="side-nav" class="col-md-2 p-0 right-nav" style="display: none;">
+      <div id="side-nav" class="container-right" style="display:none;">
+      <div  class="right-nav">
         <ul class="nav flex-column bg-nav right-nav ">
           <li class="nav-item">
             <a class="nav-link active" href="#">Active</a>
@@ -114,43 +115,52 @@
           <li class="nav-item">
             <a class="nav-link disabled" href="#">Disabled</a>
           </li>
-        </ul>      
+        </ul>
+        </div>      
 	</div>
 </div>
-  
-  </body>
-</html>
-
-<script>
-var nav = document.getElementById("side-nav");
-var content = document.getElementById("content"); 
+  <script>
+let nav = document.getElementById("side-nav");
+let content = document.getElementById("content"); 
 let button = document.getElementById("nav-collapse");
 
 button.addEventListener("click", function () {
-
-  if (nav.style.display === "none") {
-    content.animate([
-
-    { transform: 'translateX(+300px)' }, 
-    { transform: 'translateX(0px)' }
-    { transform: 'scaleX(-300px)' }
-    ], { 
-      duration: 1000,
-    });
+    if (nav.style.display === "none") {
     nav.style.display = "block";
-    nav.animate([
-      {transform: 'translateX(+300px)'},
-      {transform: 'translateX(0px)'}
-    ], {
-      duration: 1000,
+    button.animate([
+      { transform: 'translateX(0px)' }, 
+      { transform: 'translateX(-250px)' }
+    ], { 
+      duration: 250,
     });
-  
+    nav.animate([
+      { transform: 'translateX(+250px)' }, 
+      { transform: 'translateX(0px)' }
+    ], { 
+      duration: 250,
+    });
+    button.style.transform = "translateX(-250px)";
   } else {
-    nav.style.display = "none";
+        button.animate([
+      { transform: 'translateX(-250px)' }, 
+      { transform: 'translateX(0px)' }
+    ], { 
+      duration: 250,
+    });
+    nav.animate([
+      { transform: 'translateX(0px)' }, 
+      { transform: 'translateX(+250px)' }
+    ], { 
+      duration: 300,
+    });
+    button.style.transform = "translateX(0px)";
+    setTimeout(hide, 300)
+    function hide() {
+      nav.style.display = "none";
+    }
   }
-
-  content.classList.toggle("col-md-10");
-  content.classList.toggle("col-md-12");
-  
 })
 </script>
+  </body>
+</html>
+
