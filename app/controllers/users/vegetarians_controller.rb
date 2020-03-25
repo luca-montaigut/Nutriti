@@ -1,10 +1,10 @@
-class Users::VegetariansController < ApplicationController
+class Users::VegetariansController < Users::ApplicationController
 
   def edit
-	if current_user.vegetarien == false
-	  current_user.update(vegetarien: true)
+	if current_user.vegetarian == false
+	  current_user.update(vegetarian: true)
 	else
-	  current_user.update(vegetarien: false)
+	  current_user.update(vegetarian: false)
 	end
 	redirect_to :week
   end

@@ -1,4 +1,4 @@
-class Users::VegansController < ApplicationController
+class Users::VegansController < Users::ApplicationController
 
   def edit
 	if current_user.vegan == false

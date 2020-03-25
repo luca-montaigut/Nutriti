@@ -53,8 +53,10 @@
     </footer>
     <!-- End of footer-->
     
-      </div>
-      <div id="side-nav" class="container-right" style="display:none;">
+    </div>
+
+    <!-- Sidebar-->
+    <div id="side-nav" class="container-right" style="display:none;">
       <div class="right-nav bg-light d-flex flex-column ">
         <ul class="nav flex-column align-items-end right-nav mt-4">
           <li class="nav-item my-2 <%= 'active' if current_page?(user_path) %>"><%= link_to "Voir profil", user_path(current_user.id), class: "btn btn-warning" %></li>
@@ -75,8 +77,9 @@
           <hr>
           <li class="nav-item my-2 <%= 'active' if current_page?(root_path) %>"><%= link_to "Se déconnecter", destroy_user_session_path, class:"btn btn-danger", method: :delete %></li>
         </ul>
-        </div>      
-	</div>
+      </div>      
+	  </div>
+    <!-- End of Sidebar-->
   <script>
 let nav = document.getElementById("side-nav");
 let content = document.getElementById("content"); 

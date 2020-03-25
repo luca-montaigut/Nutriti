@@ -102,8 +102,8 @@ ActiveRecord::Schema.define(version: 2020_03_25_171829) do
     t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "sans_porc", default: true
-    t.boolean "vegetarien", default: false
+    t.boolean "porkless", default: true
+    t.boolean "vegetarian", default: false
     t.boolean "vegan", default: false
   end
 
@@ -127,8 +127,8 @@ ActiveRecord::Schema.define(version: 2020_03_25_171829) do
     t.string "uid"
     t.boolean "is_admin", default: false
     t.boolean "express", default: false
-    t.boolean "sans_porc", default: false
-    t.boolean "vegetarien", default: false
+    t.boolean "porkless", default: false
+    t.boolean "vegetarian", default: false
     t.boolean "vegan", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

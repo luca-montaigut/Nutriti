@@ -24,27 +24,27 @@ class Meal < ApplicationRecord
 	  all_recipes = Recipe.all.where("cookingtime <= 15")
 	  if user.vegan == true
 		all_recipes = all_recipes.where("vegan = ?", 'true')
-	  elsif user.vegetarien == true
-		all_recipes = all_recipes.where("vegan = ? AND vegetarien = ?", 'true', 'true')
-	  elsif user.sans_porc == true
-		all_recipes = all_recipes.where("sans_porc = ?", 'true')
-	  elsif user.vegan == true && user.sans_porc == true
-		all_recipes = all_recipes.where("vegan = ? AND sans_porc = ?", 'true', 'true')
-	  elsif user.vegetarien == true && user.sans_porc == true
-		all_recipes = all_recipes.where("vegan = ? AND vegetarien = ? AND sans_porc = ?", 'true', 'true', 'true')
+	  elsif user.vegetarian == true
+		all_recipes = all_recipes.where("vegan = ? AND vegetarian = ?", 'true', 'true')
+	  elsif user.porkless == true
+		all_recipes = all_recipes.where("porkless = ?", 'true')
+	  elsif user.vegan == true && user.porkless == true
+		all_recipes = all_recipes.where("vegan = ? AND porkless = ?", 'true', 'true')
+	  elsif user.vegetarian == true && user.porkless == true
+		all_recipes = all_recipes.where("vegan = ? AND vegetarian = ? AND porkless = ?", 'true', 'true', 'true')
 	  end
     else
       all_recipes = Recipe.all
 	  if user.vegan == true
 		all_recipes = all_recipes.where("vegan = ?", 'true')
-	  elsif user.vegetarien == true
-		all_recipes = all_recipes.where("vegan = ? OR vegetarien = ?", 'true', 'true')
-	  elsif user.sans_porc == true
-		all_recipes = all_recipes.where("sans_porc = ?", 'true')
-	  elsif user.vegan == true && user.sans_porc == true
-		all_recipes = all_recipes.where("vegan = ? AND sans_porc = ?", 'true', 'true')
-	  elsif user.vegetarien == true && user.sans_porc == true
-		all_recipes = all_recipes.where("vegan = ? OR vegetarien = ? AND sans_porc = ?", 'true', 'true', 'true')
+	  elsif user.vegetarian == true
+		all_recipes = all_recipes.where("vegan = ? OR vegetarian = ?", 'true', 'true')
+	  elsif user.porkless == true
+		all_recipes = all_recipes.where("porkless = ?", 'true')
+	  elsif user.vegan == true && user.porkless == true
+		all_recipes = all_recipes.where("vegan = ? AND porkless = ?", 'true', 'true')
+	  elsif user.vegetarian == true && user.porkless == true
+		all_recipes = all_recipes.where("vegan = ? OR vegetarian = ? AND porkless = ?", 'true', 'true', 'true')
 	  end
     end
 

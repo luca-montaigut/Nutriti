@@ -94,12 +94,12 @@
   <% else %>
     <%= link_to "Pas Vegan", edit_vegan_path, class:'btn btn-info'%> |
   <% end %>
-  <% if current_user.vegetarien == false %>
+  <% if current_user.vegetarian == false %>
     <%= link_to "Végétarien", edit_vegetarian_path, class:'btn btn-info'%> |
   <% else %>
     <%= link_to "Pas végétarien", edit_vegetarian_path, class:'btn btn-info'%> |
   <% end %>
-  <% if current_user.sans_porc == false %>
+  <% if current_user.porkless == false %>
     <%= link_to "Sans porc", edit_pork_less_path, class:'btn btn-info'%> |
   <% else %>
     <%= link_to "Avec porc", edit_pork_less_path, class:'btn btn-info'%> |
