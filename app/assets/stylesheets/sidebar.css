@@ -37,8 +37,7 @@
 
 .right-nav{
   height: 100vh;
-  animation-duration: 2s;
-  animation-name: right-slidein;
+
 }
 
 .bg-nav{
@@ -47,12 +46,12 @@
 
 @keyframes right-slidein {
   from {
-    opacity: 0;
+    float: right;
     width: 0vh; 
   }
 
   to {
-    opacity: 1;
+    float: right;
     width: 310px;
   }
 }

@@ -100,7 +100,7 @@
     <!-- End of footer-->
     
       </div>
-      <div id="side-nav" class="col-md-2 p-0 right-nav">
+      <div id="side-nav" class="col-md-2 p-0 right-nav" display="none">
         <ul class="nav flex-column bg-nav right-nav ">
           <li class="nav-item">
             <a class="nav-link active" href="#">Active</a>
@@ -129,7 +129,22 @@ let button = document.getElementById("nav-collapse");
 button.addEventListener("click", function () {
 
   if (nav.style.display === "none") {
+    content.animate([
+
+    { transform: 'translateX(+300px)' }, 
+    { transform: 'translateX(0px)' }
+    { transform: 'scaleX(-300px)' }
+    ], { 
+      duration: 1000,
+    });
     nav.style.display = "block";
+    nav.animate([
+      {transform: 'translateX(+300px)'},
+      {transform: 'translateX(0px)'}
+    ], {
+      duration: 1000,
+    });
+  
   } else {
     nav.style.display = "none";
   }
