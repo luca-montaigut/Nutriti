@@ -21,3 +21,11 @@
 .no_dot_ul {
     list-style-type: none;
 }
+
+footer{
+    background-image: url(https://image.freepik.com/vecteurs-libre/composition-horizontale-fruits-legumes_1284-29854.jpg);
+    background-position: bottom;    
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 25vh;
+}
