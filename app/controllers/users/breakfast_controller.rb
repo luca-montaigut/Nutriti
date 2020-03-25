@@ -1,4 +1,4 @@
-class Users::BreakfastController < ApplicationController
+class Users::BreakfastController < Users::ApplicationController
   before_action :set_users_breakfast, only: [:show, :edit, :update]
 
   def show
