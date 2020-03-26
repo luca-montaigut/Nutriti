@@ -1,0 +1,65 @@
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Boostez votre semaine !</h1>
+  <p class="lead">Vous aimez Nutriti ? Vous allez adorer ses fonctionnalités avancées !</p>
+</div>
+
+<div class="container">
+  <div class="card-deck mb-3 text-center">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Free</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>Prise en compte de vos préférences alimentaires</li>
+          <li>Calculs de vos besoins caloriques</li>
+          <li>Configuration de votre petit déjeuner</li>
+          <li>Générations de semaine</li>
+          <li>Des recettes adaptés à vos besoins</li>
+          <li>La liste des courses de la semaine en ligne</li>
+        </ul>
+        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Votre formule actuelle</button>
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Premium</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">5€ <small class="text-muted">/ mo</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>Prise en compte de vos préférences alimentaires</li>
+          <li>Calculs de vos besoins caloriques</li>
+          <li>Configuration de votre petit déjeuner</li>
+          <li>Générations de jours</li>
+          <li>La liste des courses du jour en ligne</li>
+          <li>Générations de repas</li>
+          <li>La liste des courses du repas en ligne</li>
+          <li>Des recettes adaptés à vos besoins</li>
+          <li>Générations de semaine</li>
+          <li>La liste des courses de la semaine en ligne</li>
+          <li>La liste des courses de la semaine par mail</li>
+          <li>Bientôt disponible : prise en compte de vos objectifs</li>
+        </ul>
+        <%= link_to "Devenir Premium", new_charge_path(notice: "premium"), class:"btn btn-lg btn-block btn-primary"%>
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Family</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">19€ <small class="text-muted">/ mo</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>Jusqu'à 6 utilisateurs</li>
+          <li>L'ensemble des fonctionnalités Premuim</li>
+          <li>+ la gestion des besoins par personnes</li>
+          <li>+ la gestion du nombres de personne par repas</li>
+          <li>+ l'ajout et le retrait d'objets de la liste de courses (alimentaires ou non)</li>
+        </ul>
+        <button type="button" class="btn btn-lg btn-block btn-primary">Bientôt disponible</button>
+      </div>
+    </div>
+  </div>
+

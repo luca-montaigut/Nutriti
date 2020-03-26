@@ -67,10 +67,8 @@
     <li class="d-flex justify-content-between my-1"><%= @users_day.dinner.dish.title %> <%= link_to "Voir la recette proportionnée", recipe_path(@users_day.dinner.dish.id, ratio: current_user.needbymeal(@users_day.dinner.category)/@users_day.dinner.kcal),  remote: true, "data-target" => "#recipeModal", "data-toggle" =>"modal", class:"btn btn-outline-warning" %></li>
     <li class="d-flex justify-content-between my-1"><%= @users_day.dinner.dessert.title %> </li>
   </ul>
-  <div class="text-center mt-5">
-    <%= link_to 'Edit', edit_day_path(@users_day), class:"text-warning" %> |
-    <%= link_to 'Index', days_path, class:"text-warning" %> |
-    <%= link_to 'Back', :back, class:"text-warning" %>
+  <div class="text-center mt-5"> |
+    <%= link_to 'Index', days_path, class:"btn btn-warning" %> |
     <button name="button" id="shopping-list"class="btn btn-danger">Afficher Liste de Course</button>
   </div>
 </div>

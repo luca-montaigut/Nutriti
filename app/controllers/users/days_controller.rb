@@ -1,5 +1,6 @@
 class Users::DaysController < Users::ApplicationController
-  before_action :set_users_day, only: [:show, :edit, :update, :destroy]
+  before_action :set_users_day, only: [:show, :update, :destroy]
+  before_action :only_premium, only: [:show, :update, :destroy]
 
   def index
     @users_days = Day.all
@@ -9,10 +10,6 @@ class Users::DaysController < Users::ApplicationController
     @day = Day.find(params[:id])
     @alim_groups = Food.all.map(&:alim_group).uniq
 
-  end
-
-
-  def edit
   end
 
   def create

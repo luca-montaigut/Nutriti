@@ -7,10 +7,11 @@ Rails.application.routes.draw do
     resources :users, only: [:show, :edit, :update]
     resources :recipes, only: [:show]
     resources :breakfast, only: [:show, :edit, :update]
-    resources :meals, except: [:new]
-    resources :days, except: [:new]
+    resources :meals, except: [:new, :edit]
+    resources :days, except: [:new, :edit]
     resources :weeks, only: [:show, :create, :update]
     resources :shopping_emails, only: [:show]
+    resources :charges
   end
 
   scope 'admin', module: 'admin', as: 'admin' do
