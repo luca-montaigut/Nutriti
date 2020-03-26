@@ -30,7 +30,7 @@
           <% if user_signed_in? %>
             <li class="nav-item dropdown">
               <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <%= "#{current_user.first_name} #{current_user.last_name}" %>
+                Menu
               </button>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                    <%= link_to "Voir profil", user_path(current_user.id), class: "dropdown-item" %>
@@ -66,6 +66,7 @@
         </div>
       <% end %>
     <%end%>
+    
     <%= yield %>
 
     <!-- Start of footer-->
@@ -79,10 +80,6 @@
           <p class="text-white mt-2">
             <i class="far fa-copyright"></i> Fait avec <i class="fas fa-heart text-warning"></i> par l'équipage Nantais 
         </div>  
-        <div class="container-fluid bg-dark py-1">
-          <div class="container text-center text-white">
-          </div>
-        </div>
     </footer>
     <!-- End of footer-->
     

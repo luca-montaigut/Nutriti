@@ -117,7 +117,7 @@ ActiveRecord::Schema.define(version: 2020_03_26_013904) do
     t.date "birthdate"
     t.string "gender"
     t.string "physical_activity", default: "0"
-    t.string "objective"
+    t.string "objective", default: "1"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

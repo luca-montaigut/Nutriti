@@ -1,7 +1,8 @@
-<div class="container">
+<div class="container shadow-lg bg-white rounded py-3">
+  <br>
   
     <h1 class="text-center mt-4 text-success border-bottom pb-3"> Bienvenue sur votre profil <%=current_user.first_name%> <%=current_user.last_name%></h1>
-    
+    <br><br>
     <div class="row1">
 
       <div class="d-flex justify-content-center mt-5">
@@ -14,13 +15,15 @@
             <p class="card-text"><%= current_user.email %></p>
             <p class="card-text"></p>
             <p class="card-text"></p>
+            <p class="card-text"></p>
           </div>
         </div>
   
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Taille : <%= current_user.height %></li>
           <li class="list-group-item">Poids : <%= current_user.weight %></li>
-          <li class="list-group-item">Fréquence de l'activité : <%= current_user.physical_activity %></li>
+          <li class="list-group-item">Fréquence de l'activité : <%= current_user.pa_title %></li>
+          <li class="list-group-item">Objectif : <%= current_user.obj_title %></li>
           <li class="list-group-item">Métabolisme Basal : <%= current_user.mb %> kcal</li>
           <li class="list-group-item">Besoin Calorique quotidien : <%= current_user.drc %> kcal</li>
         </ul>

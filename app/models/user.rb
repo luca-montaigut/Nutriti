@@ -13,8 +13,6 @@ class User < ApplicationRecord
     presence: true,
     uniqueness: true,
     format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "email adress please" }
-  validates :first_name, presence: true
-  validates :last_name, presence: true
 
   has_one :week
   has_one :breakfast
@@ -39,9 +37,9 @@ class User < ApplicationRecord
 
   def drc
     if (self.gender == "Homme")
-      self.mb * self.physical_activity.to_d
+      self.mb * self.physical_activity.to_d * self.objective.to_f
     else
-      self.mb * self.physical_activity.to_d
+      self.mb * self.physical_activity.to_d * self.objective.to_f
     end
   end
 
@@ -96,6 +94,34 @@ class User < ApplicationRecord
 
     array.reduce {|acc, h| acc.merge(h) {|_,v1,v2| v1 + v2 }}
   end
+
+
+  def pa_title
+    if self.physical_activity == "1.2"
+      "Sedentaire"
+    elsif self.physical_activity == "1.375"
+      "Activité physique légère"
+    elsif self.physical_activity == "1.55"
+      "Activité physique modérée"
+    elsif self.physical_activity == "1.725"
+      "Activité physique intense"
+    elsif self.physical_activity == "1.9"
+      "Activité physique très intense"
+    else
+      "Non renseigné"
+    end
+  end
+
+  def obj_title
+    if self.objective == "1"
+      'Garder la ligne'
+    elsif self.objective == "0.9"
+      'Maigrir'
+    else self.objective == "1.1"
+      'Grossir'
+    end
+  end
+
   
   private
   

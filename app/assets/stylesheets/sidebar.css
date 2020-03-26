@@ -1,7 +1,7 @@
 .sidebar-wrapper{
   width: 100vw;
   height: 100%;
-  z-index: 300;
+  z-index: 6000;
   position: fixed;
 
 }
@@ -37,7 +37,7 @@
 
 .right-nav{
   height: 100vh;
-  width: 300px;
+  width: 15vw;
   float: right;
   z-index: 9999;
   position: relative;
@@ -51,7 +51,6 @@
   z-index: 999;
   position: fixed;
   display: none;
-  pointer-events: none;
 }
 .bg-nav{
   background-color: #1d1919;
@@ -69,6 +68,15 @@ footer{
 }
 .side-btn:hover{
   box-shadow: none;
+}
+
+.side-blur{
+  float: left;
+  width: 85vw; 
+  background-color: gray; 
+  height: 100%;
+  opacity: 0.50;
+
 }
 
 
@@ -107,5 +115,18 @@ footer{
   to {
     opacity: 0.5;
     width: 65%;
+  }
+}
+
+@keyframes side-blurein {
+  from {
+    opacity: 0;
+    width: 100%;
+  }
+
+  to {
+    opacity: 0.5;
+    width: 100%;
+
   }
 }
