@@ -1,6 +1,6 @@
 <br><br>
-<div class="text-center">
-<h4>Félicitations <%=current_user.first_name%> !</h4>
+<div class="text-center shadow-lg bg-white rounded py-3">
+<h4 class="font-weight-normal text-center text-success border-bottom pb-3">Félicitations <%=current_user.first_name%> !</h4>
 <h2>Votre paiement de <strong><%= (@amount / 100).to_f %>€</strong> a bien été pris en compte!</h2>
 
 <p>Si vous n'êtes pas automatiquement redirigé(e) vers la page d'accueil, merci de cliquez sur le bouton ci-dessous</p>

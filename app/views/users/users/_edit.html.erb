@@ -42,15 +42,15 @@
         </div>
 
         <% if current_user.is_premium %>
-        <div class="form-group">
-          <%= f.label :objective, "Objectif" %>
-          <%= f.select :objective, [['Garder la ligne', '1'],['Maigrir', '0.9'],['Grossir', '1.1']] ,required: true, class:"form-control"%>
-        </div>        
+          <div class="form-group">
+            <%= f.label :objective, "Objectif" %>
+            <%= f.select :objective, [['Garder la ligne', '1'],['Maigrir', '0.9'],['Grossir', '1.1']] ,required: true, class:"form-control"%>
+          </div>        
         <% else %>
-        <div class="form-group">
-          <%= f.label :objective, "Objectif" %>
-          <%= f.select :objective, [['Garder la ligne', '1'],['Maigrir', '0.9'],['Grossir', '1.1']] ,required: true, class:"form-control", readonly:""%>
-        </div>        
+          <div class="form-group">
+            <%= f.label :objective, "Objectif" %> <span class="badge badge-pill badge-light"><i class="far fa-star mr-2"></i> Premium</span>
+            <p>Le paramtérage de vos objectifs est une fonctionnalité disponible uniquement pour les membres Premium</p>
+          </div>        
         <% end %>
 
         <div class="actions mt-5 mb-3">

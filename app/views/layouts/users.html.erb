@@ -110,8 +110,8 @@
           <td class="nav-item <%= 'active' if current_page?(root_path) %> align-self-center mr-4 mt-5"><%= link_to "Se déconnecter", destroy_user_session_path, class:"btn btn-danger", method: :delete %></td>
         </tr>
       </div>
-        <div class="side-blur" id="side-blur">
-        </div>      
+        <div class="side-blur" id="close">
+  </div>      
 	  </div>
     <!-- End of Sidebar-->
         </div>      
@@ -136,57 +136,43 @@
 
   <script>
 let nav = document.getElementById("side-nav");
-let blur = document.getElementById("side-blur");
 let content = document.getElementById("content"); 
 let button = document.getElementById("nav-collapse");
-blur.addEventListener("click", function () {
-  button.click();
-});
+
 button.addEventListener("click", function () {
     if (nav.style.display === "none") {
     nav.style.display = "block";
     button.animate([
       { transform: 'translateX(0px)' }, 
-      { transform: 'translateX(-13vw)' }
+      { transform: 'translateX(-250px)' }
     ], { 
       duration: 250,
     });
     nav.animate([
-      { transform: 'translateX(+13vw)' }, 
+      { transform: 'translateX(+250px)' }, 
       { transform: 'translateX(0px)' }
     ], { 
       duration: 250,
     });
-    blur.animate([
-      { transform: 'scale(2)' },
-      { transform: 'scale(1)' },
-    ], { 
-      duration: 250,
-    });
-    button.style.transform = "translateX(-13vw)";
+    button.style.transform = "translateX(-250px)";
     button.classList.remove('btn-outline-warning');
     button.classList.add('btn-warning');
-    blur.style.display = "block";
-
-    } else {
+  } else {
         button.animate([
-      { transform: 'translateX(-13vw)' }, 
+      { transform: 'translateX(-250px)' }, 
       { transform: 'translateX(0px)' }
     ], { 
       duration: 250,
     });
     nav.animate([
       { transform: 'translateX(0px)' }, 
-      { transform: 'translateX(+13vw)' }
+      { transform: 'translateX(+250px)' }
     ], { 
       duration: 300,
     });
-    
-
     button.style.transform = "translateX(0px)";
     button.classList.remove('btn-warning');
     button.classList.add('btn-outline-warning');
-    blur.style.display = "none";
     setTimeout(hide, 300)
     function hide() {
       nav.style.display = "none";

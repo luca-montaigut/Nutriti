@@ -1,28 +1,36 @@
 <div class="container">
-<h1> Vous avez opter pour la formule <%= @formula %> </h1>
-<p> Effectuez votre premier paiement et bénéficier sans plus attendre des foctionnalités <%= @formula %> de Nutriti </p>
+  <div class="row"><div> <br><br><br></div></div>
+  <div class="row"></div>
+
+    <div class="col-md-6 offset-md-3 shadow-lg bg-white rounded py-3 text-center">
+
+      <h1 class="font-weight-normal text-center text-success border-bottom pb-3"> Vous avez opter pour la formule <%= @formula %> </h1>
+      <p class="my-4"> Effectuez votre premier paiement et bénéficier sans plus attendre des foctionnalités <%= @formula %> de Nutriti </p>
 
 
-<!-- STRIPE -->
-      <%= form_tag charges_path do %>
-        <article>
-          <% if flash[:error].present? %>
-            <div id="error_explanation">
-              <p><%= flash[:error] %></p>
-            </div>
-          <% end %>
-          <label class="amount">
-            <h4>Total: <%= @amount %> €</h4>
-          </label>
-        </article>
+      <!-- STRIPE -->
+            <%= form_tag charges_path do %>
+              <article>
+                <% if flash[:error].present? %>
+                  <div id="error_explanation">
+                    <p><%= flash[:error] %></p>
+                  </div>
+                <% end %>
+                <label class="amount">
+                  <h4 class="text-warning">Total: <%= @amount %> €</h4>
+                </label>
+              </article>
 
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                 data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                 data-description="Payez votre commande"
                 data-email=<%= current_user.email %>
                 data-currency= 'eur',
                 data-amount=<%= @amount * 100 %>
-                data-locale="auto"></script>
-      <% end %>
-<!-- End of STRIPE -->
+                data-locale="auto">
+              </script>
+            <% end %>
+      <!-- End of STRIPE -->
+    </div>
+  </div>
 </div>
