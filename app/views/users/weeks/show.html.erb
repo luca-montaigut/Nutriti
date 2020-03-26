@@ -61,7 +61,7 @@
           <%= f.check_box :express %> |
           <%= f.label :vegan %>
           <%= f.check_box :vegan %> |
-          <%= f.label :vegetarian %>
+          <%= f.label :vegetarian, "Végétarien" %>
           <%= f.check_box :vegetarian %> |
           <%= f.label :porkless, "Sans porc" %>
           <%= f.check_box :porkless %>
@@ -99,8 +99,8 @@
             <b><%= link_to "Déjeuner", meal_path(day.lunch.id), class:"text-warning"%></b>
           </li>
           <ul class="list-group-item size-li-planning border-bottom border-success">    
-            <li class=""><i class="fas fa-plus-circle text-warning"></i> <%= link_to day.lunch.starter.title, recipe_path(day.lunch.starter.id, ratio: current_user.needbymeal(day.lunch.category)/day.lunch.kcal),  remote: true, "data-target" => "#recipeModal", "data-toggle" =>"modal", class:"text-dark text-decoration-none" %></li>
-            <li class=""><i class="fas fa-plus-circle text-warning"></i> <%= link_to day.lunch.dish.title, recipe_path(day.lunch.dish.id, ratio: current_user.needbymeal(day.lunch.category)/day.lunch.kcal),  remote: true, "data-target" => "#recipeModal", "data-toggle" =>"modal", class:"text-dark text-decoration-none" %></li>
+            <li class=""><i class="fas fa-plus-circle text-success"></i> <%= link_to day.lunch.starter.title, recipe_path(day.lunch.starter.id, ratio: current_user.needbymeal(day.lunch.category)/day.lunch.kcal),  remote: true, "data-target" => "#recipeModal", "data-toggle" =>"modal", class:"text-dark text-decoration-none" %></li>
+            <li class=""><i class="fas fa-plus-circle text-success"></i> <%= link_to day.lunch.dish.title, recipe_path(day.lunch.dish.id, ratio: current_user.needbymeal(day.lunch.category)/day.lunch.kcal),  remote: true, "data-target" => "#recipeModal", "data-toggle" =>"modal", class:"text-dark text-decoration-none" %></li>
             <li class=""><%= day.lunch.dessert.title%></li>
             
           </ul>
@@ -108,8 +108,8 @@
             <b><%= link_to "Dîner", meal_path(day.dinner.id), class:"text-warning"%></b>
           </li>
           <ul class="list-group-item size-li-planning">    
-            <li class="recipe"><i class="fas fa-plus-circle text-warning"></i> <%= link_to day.dinner.starter.title, recipe_path(day.dinner.starter.id, ratio: current_user.needbymeal(day.dinner.category)/day.dinner.kcal),  remote: true, "data-target" => "#recipeModal", "data-toggle" =>"modal", class:"text-dark text-decoration-none" %></li>
-            <li class=""><i class="fas fa-plus-circle text-warning"></i> <%= link_to day.dinner.dish.title, recipe_path(day.dinner.dish.id, ratio: current_user.needbymeal(day.dinner.category)/day.dinner.kcal),  remote: true, "data-target" => "#recipeModal", "data-toggle" =>"modal", class:"text-dark text-decoration-none" %></li>
+            <li class="recipe"><i class="fas fa-plus-circle text-success"></i> <%= link_to day.dinner.starter.title, recipe_path(day.dinner.starter.id, ratio: current_user.needbymeal(day.dinner.category)/day.dinner.kcal),  remote: true, "data-target" => "#recipeModal", "data-toggle" =>"modal", class:"text-dark text-decoration-none" %></li>
+            <li class=""><i class="fas fa-plus-circle text-success"></i> <%= link_to day.dinner.dish.title, recipe_path(day.dinner.dish.id, ratio: current_user.needbymeal(day.dinner.category)/day.dinner.kcal),  remote: true, "data-target" => "#recipeModal", "data-toggle" =>"modal", class:"text-dark text-decoration-none" %></li>
             <li class=""><%= day.dinner.dessert.title%></li>
           </ul>
         </ul>

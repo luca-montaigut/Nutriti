@@ -3,6 +3,11 @@ class Users::ApplicationController < ApplicationController
   
   layout 'users'
 
+  def user_incompleted
+    if current_user.incomplete_profile?
+      redirect_to user_path(current_user.id)
+    end
+  end
 
   def only_premium
     if !user_signed_in? || !current_user.is_premium
