@@ -30,7 +30,7 @@
           <% if user_signed_in? %>
             <li class="nav-item dropdown">
               <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <%= "#{current_user.first_name} #{current_user.last_name}" %>
+                Menu
               </button>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                    <%= link_to "Voir profil", user_path(current_user.id), class: "dropdown-item" %>
