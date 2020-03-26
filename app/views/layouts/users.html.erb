@@ -99,9 +99,9 @@
           <td class="nav-item"><h5 class="ml-2 my-3 mb-5"><%= link_to "Générer une journée", days_path, data:{method: 'post'}, class:'text-warning text-decoration-none'%></td></h5>
     
           <% else %>
-          <td class="nav-item"><h6 class="ml-2 my-3"><%= link_to "Générer un repas", meals_path, data:{method: 'post'}, class:'text-warning text-decoration-none'%> <span class="badge badge-pill badge-light"><i class="far fa-star mr-2"></i> Premium</span></td></h6>
+          <td class="nav-item"><h6 class="ml-2 my-3"><%= link_to "Générer un repas", charges_path, data:{method: 'post'}, class:'text-warning text-decoration-none'%> <span class="badge badge-pill badge-light"><i class="far fa-star mr-2"></i> Premium</span></td></h6>
           
-          <td class="nav-item"><h6 class="ml-2 my-3 mb-5"><%= link_to "Générer une journée", days_path, data:{method: 'post'}, class:'text-warning text-decoration-none'%> <span class="badge badge-pill badge-light"><i class="far fa-star mr-2"></i> Premium</span></td></h6>
+          <td class="nav-item"><h6 class="ml-2 my-3 mb-5"><%= link_to "Générer une journée", charges_path, data:{method: 'post'}, class:'text-warning text-decoration-none'%> <span class="badge badge-pill badge-light"><i class="far fa-star mr-2"></i> Premium</span></td></h6>
           
           <h5 class="ml-2 my-3 mb-5 align-self-center mr-4"><td class="nav-item "><i class="far fa-star mr-2"></i> <%= link_to "Devenir Premium", charges_path, class:'text-warning text-decoration-none'%></td></h5>
           <% end %>
@@ -109,7 +109,7 @@
           <td class="nav-item <%= 'active' if current_page?(root_path) %> align-self-center mr-4 mt-5"><%= link_to "Se déconnecter", destroy_user_session_path, class:"btn btn-danger", method: :delete %></td>
         </tr>
       </div>
-        <div class="side-blur" id="close">
+        <div class="side-blur" id="side-blur">
   </div>      
 	  </div>
     <!-- End of Sidebar-->
@@ -135,43 +135,57 @@
 
   <script>
 let nav = document.getElementById("side-nav");
+let blur = document.getElementById("side-blur");
 let content = document.getElementById("content"); 
 let button = document.getElementById("nav-collapse");
-
+blur.addEventListener("click", function () {
+  button.click();
+});
 button.addEventListener("click", function () {
     if (nav.style.display === "none") {
     nav.style.display = "block";
     button.animate([
       { transform: 'translateX(0px)' }, 
-      { transform: 'translateX(-250px)' }
+      { transform: 'translateX(-13vw)' }
     ], { 
       duration: 250,
     });
     nav.animate([
-      { transform: 'translateX(+250px)' }, 
+      { transform: 'translateX(+13vw)' }, 
       { transform: 'translateX(0px)' }
     ], { 
       duration: 250,
     });
-    button.style.transform = "translateX(-250px)";
+    blur.animate([
+      { transform: 'scale(2)' },
+      { transform: 'scale(1)' },
+    ], { 
+      duration: 250,
+    });
+    button.style.transform = "translateX(-13vw)";
     button.classList.remove('btn-outline-warning');
     button.classList.add('btn-warning');
-  } else {
+    blur.style.display = "block";
+
+    } else {
         button.animate([
-      { transform: 'translateX(-250px)' }, 
+      { transform: 'translateX(-13vw)' }, 
       { transform: 'translateX(0px)' }
     ], { 
       duration: 250,
     });
     nav.animate([
       { transform: 'translateX(0px)' }, 
-      { transform: 'translateX(+250px)' }
+      { transform: 'translateX(+13vw)' }
     ], { 
       duration: 300,
     });
+    
+
     button.style.transform = "translateX(0px)";
     button.classList.remove('btn-warning');
     button.classList.add('btn-outline-warning');
+    blur.style.display = "none";
     setTimeout(hide, 300)
     function hide() {
       nav.style.display = "none";

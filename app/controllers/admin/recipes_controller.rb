@@ -5,7 +5,7 @@ class Admin::RecipesController < Admin::ApplicationController
     @admin_recipes = Recipe.all
 	  @join_recipes = JoinRecipeFood.all
     @breakfast_categories = ["Hot Drink", "Juice", "Cereal (Breakfast)", "Protein (Breakfast)", "Option (Breakfast)"]
-    @meal_categories = ["Starter", "Dish", "Dessert", "Drink", "Complement"]
+    @meal_categories = ["Starter", "Dish", "Fruit", "Drink", "Complement"]
 
     respond_to do |format|
       format.html

@@ -9,7 +9,7 @@ class Users::BreakfastController < Users::ApplicationController
 
   def edit
     @hotdrinks = Recipe.all.where(category: "Hot Drink")
-    @fruits = Recipe.all.where(category: "Juice")
+    @fruits = Recipe.all.where(category: "Juice").or(Recipe.all.where(category: "Fruit"))
     @cereals = Recipe.all.where(category: "Cereal (Breakfast)")
     @proteins = Recipe.all.where(category: "Protein (Breakfast)")
     @options = Recipe.all.where(category: "Option (Breakfast)")
