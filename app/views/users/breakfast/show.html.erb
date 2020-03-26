@@ -35,9 +35,9 @@
     <h1 class="mt-4 text-success">Votre petit déjeuner</h1>
   <hr>
   <ul>
-    <li class="my-2 ">Calories de ce petit déjeuner : <%= @users_breakfast.kcal %> kcal</li>
-    <li class="my-2">Votre besoin à ce moment de la journée : <%= current_user.needbymeal(@users_breakfast) %> kcal</li>
-    <li class="my-2">Nous vous conseillons de multiplier les proportions de la recette par <%= current_user.needbymeal(@users_breakfast)/@users_breakfast.kcal %> pour coller à vos besoins réels</li>
+    <li class="my-2 ">Calories de ce petit déjeuner : <%= @users_breakfast.kcal.ceil %> kcal</li>
+    <li class="my-2">Votre besoin à ce moment de la journée : <%= current_user.needbymeal(@users_breakfast).ceil %> kcal</li>
+    <li class="my-2">Nous vous conseillons de multiplier les proportions de la recette par <%= (current_user.needbymeal(@users_breakfast)/@users_breakfast.kcal).round(1) %> pour coller à vos besoins réels</li>
   </ul>
   <h2 class="mt-5 text-success border-bottom py-3"> Le repas </h2>
   <ul class="no_dot_ul">
