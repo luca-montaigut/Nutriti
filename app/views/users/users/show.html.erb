@@ -15,13 +15,15 @@
             <p class="card-text"><%= current_user.email %></p>
             <p class="card-text"></p>
             <p class="card-text"></p>
+            <p class="card-text"></p>
           </div>
         </div>
   
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Taille : <%= current_user.height %></li>
           <li class="list-group-item">Poids : <%= current_user.weight %></li>
-          <li class="list-group-item">Fréquence de l'activité : <%= current_user.physical_activity %></li>
+          <li class="list-group-item">Fréquence de l'activité : <%= current_user.pa_title %></li>
+          <li class="list-group-item">Objectif : <%= current_user.obj_title %></li>
           <li class="list-group-item">Métabolisme Basal : <%= current_user.mb %> kcal</li>
           <li class="list-group-item">Besoin Calorique quotidien : <%= current_user.drc %> kcal</li>
         </ul>
