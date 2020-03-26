@@ -107,7 +107,7 @@
           <li class="list-group-item text-light text-center bg-light">
             <b><%= link_to "Dîner", meal_path(day.dinner.id), class:"text-warning"%></b>
           </li>
-          <ul class="list-group-item size-li-planning border-bottom border-success">    
+          <ul class="list-group-item size-li-planning">    
             <li class=""><%= link_to day.dinner.starter.title, recipe_path(day.dinner.starter.id, ratio: current_user.needbymeal(day.dinner.category)/day.dinner.kcal),  remote: true, "data-target" => "#recipeModal", "data-toggle" =>"modal", class:"text-dark text-decoration-none" %></li>
             <li class=""><%= link_to day.dinner.dish.title, recipe_path(day.dinner.dish.id, ratio: current_user.needbymeal(day.dinner.category)/day.dinner.kcal),  remote: true, "data-target" => "#recipeModal", "data-toggle" =>"modal", class:"text-dark text-decoration-none" %></li>
             <li class=""><%= day.dinner.dessert.title%></li>
