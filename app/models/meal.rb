@@ -20,37 +20,27 @@ class Meal < ApplicationRecord
       self.category = "Dîner"
     end
 
+    all_recipes = Recipe.all
+
     if user.express == true
-	  all_recipes = Recipe.all.where("cookingtime <= 15")
-	  if user.vegan == true
-		all_recipes = all_recipes.where("vegan = ?", 'true')
-	  elsif user.vegetarian == true
-		all_recipes = all_recipes.where("vegan = ? AND vegetarian = ?", 'true', 'true')
-	  elsif user.porkless == true
-		all_recipes = all_recipes.where("porkless = ?", 'true')
-	  elsif user.vegan == true && user.porkless == true
-		all_recipes = all_recipes.where("vegan = ? AND porkless = ?", 'true', 'true')
-	  elsif user.vegetarian == true && user.porkless == true
-		all_recipes = all_recipes.where("vegan = ? AND vegetarian = ? AND porkless = ?", 'true', 'true', 'true')
-	  end
-    else
-      all_recipes = Recipe.all
-	  if user.vegan == true
-		all_recipes = all_recipes.where("vegan = ?", 'true')
-	  elsif user.vegetarian == true
-		all_recipes = all_recipes.where("vegan = ? OR vegetarian = ?", 'true', 'true')
-	  elsif user.porkless == true
-		all_recipes = all_recipes.where("porkless = ?", 'true')
-	  elsif user.vegan == true && user.porkless == true
-		all_recipes = all_recipes.where("vegan = ? AND porkless = ?", 'true', 'true')
-	  elsif user.vegetarian == true && user.porkless == true
-		all_recipes = all_recipes.where("vegan = ? OR vegetarian = ? AND porkless = ?", 'true', 'true', 'true')
-	  end
+      all_recipes = all_recipes.where("cookingtime <= 15")
+    end
+
+    if user.porkless
+      all_recipes = all_recipes.where(porkless: true)
+    end
+    
+    if user.vegetarian
+      all_recipes = all_recipes.where(vegetarian: true)
+    end
+
+    if user.vegan
+      all_recipes = all_recipes.where(vegan: true)
     end
 
     self.starter = all_recipes.where(category: "Starter").sample
     self.dish_id = all_recipes.where(category: "Dish").sample.id
-    self.dessert_id = all_recipes.where(category: "Dessert").sample.id
+    self.dessert_id = all_recipes.where(category: "Fruit").sample.id
     self.drink_id = all_recipes.where(category: "Drink").sample.id # Eau minérale
     self.complement_id = all_recipes.where(category: "Complement").sample.id # Pain
 

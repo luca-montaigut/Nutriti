@@ -13,7 +13,7 @@ class Breakfast < ApplicationRecord
 
   def generate
     @hotdrink = Recipe.all.where(category: "Hot Drink").sample
-    @fruit = Recipe.all.where(category: "Juice").sample
+    @fruit = Recipe.all.where(category: "Juice").or(Recipe.all.where(category: "Fruit")).sample
     @cereal = Recipe.all.where(category: "Cereal (Breakfast)").sample
     @protein = Recipe.all.where(category: "Protein (Breakfast)").sample
     @option = Recipe.all.where(category: "Option (Breakfast)").sample
