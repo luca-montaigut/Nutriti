@@ -37,9 +37,9 @@ class User < ApplicationRecord
 
   def drc
     if (self.gender == "Homme")
-      self.mb * self.physical_activity.to_d
+      self.mb * self.physical_activity.to_d * self.objective
     else
-      self.mb * self.physical_activity.to_d
+      self.mb * self.physical_activity.to_d * self.objective
     end
   end
 
@@ -94,6 +94,30 @@ class User < ApplicationRecord
 
     array.reduce {|acc, h| acc.merge(h) {|_,v1,v2| v1 + v2 }}
   end
+
+
+  def pa_title
+    if self.physical_activity == 1.375
+      "Sedentaire"
+    elsif self.physical_activity == 1.56
+      "Activité physique légère, (1 à 3 fois semaine)"
+    elsif self.physical_activity == 1.64
+      "Activité physique modérée, (4 à 6 fois semaine)"
+    else self.physical_activity == 1.82
+      "Activité physique intense, (4 à 6 fois semaine)"
+    end
+  end
+
+  def obj_title
+    if self.objective == 1
+      'Garder la ligne'
+    elsif self.objective == 0.9
+      'Maigrir'
+    else self.objective == 1.1
+      'Grossir'
+    end
+  end
+
   
   private
   

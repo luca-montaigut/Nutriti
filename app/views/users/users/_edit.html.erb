@@ -17,7 +17,7 @@
       </div>
 
       <div class="form-group">
-        <%= f.label :birthdate %>
+        <%= f.label :birthdate, "Date de naissance" %>
         <%= f.date_field :birthdate ,  value: current_user.birthdate,required: true, class:"form-control" %>
       </div>
 
@@ -32,13 +32,18 @@
       </div>
       <div class="text-center"> 
         <div class="form-group">
-          <%= f.label :sexe %>
+          <%= f.label :gender, "Sexe" %>
           <%= f.select :gender, [['Homme'],['Femme']] , value: current_user.gender,required: true, class:"form-control"%>
         </div>
   
         <div class="form-group">
-          <%= f.label :activity %>
-          <%= f.select :physical_activity, [['Sedentaire', '1.37'],['Actif', '1.50'],['Tres Actif', '1.80']] ,required: true, class:"form-control"%>
+          <%= f.label :activity, "Activité physique" %>
+          <%= f.select :physical_activity, [['Sedentaire', '1.375'],['Activité physique légère, (1 à 3 fois semaine)', '1.56'],['Activité physique modérée, (4 à 6 fois semaine)', '1.64'],['Activité physique intense, (4 à 6 fois semaine)', '1.82']] ,required: true, class:"form-control"%>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :objective, "Objectif" %>
+          <%= f.select :objective, [['Garder la ligne', '1'],['Maigrir', '0.9'],['Grossir', '1.1']] ,required: true, class:"form-control"%>
         </div>
   
         <div class="actions mt-5 mb-3">
