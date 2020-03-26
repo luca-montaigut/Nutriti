@@ -27,8 +27,7 @@
 }
 
 footer{
-    height: 5vh;
-    margin-top: 3em;
+    height: 50px;
 }
 
 .col-md-12 {
@@ -39,7 +38,7 @@ footer{
 }
 
 .container{
-    margin-bottom: 7vh;
+    min-height: calc(100vh - 70px);
 }
 
 body, ul, li .recipe {

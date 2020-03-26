@@ -19,7 +19,8 @@ class Users::BreakfastController < Users::ApplicationController
     respond_to do |format|
       if @users_breakfast.update(users_breakfast_params)
         @users_breakfast.total_kcal
-        format.html { redirect_to @users_breakfast, notice: "Petit dej mis à jours avec success" }
+        current_user.week.generate
+        format.html { redirect_to root_path, notice: "Petit déjeuner mis à jours avec success" }
       else 
         format.html { redirect_to :edit, error: "Petit dej non mis à jours" }
       end
@@ -34,6 +35,8 @@ class Users::BreakfastController < Users::ApplicationController
     end
 
     def users_breakfast_params
-      params.fetch(:users_breakfast, {})
+      params
+      .require(:breakfast)
+      .permit(:hotdrink, :fruit, :cereal, :protein, :option, :id)
     end
 end

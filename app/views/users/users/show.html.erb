@@ -10,7 +10,7 @@
           <div class="card-body">
             <h5 class="card-title"><%= current_user.first_name %> <%= current_user.last_name %></h5>
             <p class="card-text"><%= current_user.gender %></p>
-            <p class="card-text"><%= current_user.birthdate %></p>
+            <p class="card-text"><%= current_user.birthdate != nil ? current_user.birthdate.strftime('%d/%m/%Y') : "Date de naissance non renseignée" %></p>
             <p class="card-text"><%= current_user.get_age %> ans</p>
             <p class="card-text"><%= current_user.email %></p>
             <p class="card-text"></p>
@@ -33,17 +33,17 @@
 
       <div class="text-center mt-3">
         <%if current_user.id == current_user.id %>
-          <%= link_to 'Editer le compte', edit_user_registration_path, class:"btn btn-outline-success" %> |
+          <%= link_to 'Modifier le compte', edit_user_registration_path, class:"btn btn-outline-success" %> |
           <% if current_user.incomplete_profile? %>
               <%= link_to 'Remplir votre profil', edit_user_path, "data-target" => "#settingModal", "data-toggle" =>"modal" ,remote: true,class:"btn btn-success" %>
           <% else%>
-            <%= link_to 'Editer le profil', edit_user_path, "data-target" => "#settingModal", "data-toggle" =>"modal" ,remote: true,class:"btn btn-success" %>
+            <%= link_to 'Modifier le profil', edit_user_path, "data-target" => "#settingModal", "data-toggle" =>"modal" ,remote: true,class:"btn btn-success" %>
           <% end %>
         <% end %>
       </div>
     
       <div class="text-center mt-3">
-          <%= link_to '« Retour Accueil', root_path, class:"btn btn-outline-warning" %>
+          <%= link_to '« Retour au planning', root_path, class:"btn btn-outline-warning" %>
       </div>
       <br>
       </div>

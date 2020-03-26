@@ -1,5 +1,5 @@
 <div class="sidebar-wrapper"  hidden="true" id="nav">
-  <nav class="sidenav flex-column scrollable" style="">
+  <nav class="sidenav flex-column scrollable">
     <table class="table table-borderless" >
       <h3 class="text-center">Liste de course</h3>
       <hr style="margin: 25px;" class="bold">
@@ -42,44 +42,44 @@
   </div>
 </div>
 
-<div class="text-center d-flex flex-row justify-content-center">
-  <div class="text-center flex-row mx-2">
-    <%= form_with(model: current_user, method: 'put', local: true) do |f| %>
-      <% if @users_week.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@users_week.errors.count, "error") %> prohibited this @users_week from being saved:</h2>
-          <ul>
-          <% @users_week.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-          </ul>
-        </div>
-      <% end %>
-      
-        <%= f.label :express, "Express (-15min)" %>
-        <%= f.check_box :express %> |
-        <%= f.label :vegan %>
-        <%= f.check_box :vegan %> |
-        <%= f.label :vegetarian %>
-        <%= f.check_box :vegetarian %> |
-        <%= f.label :porkless, "Sans porc" %>
-        <%= f.check_box :porkless %>
-
-
-        <%= f.submit "Générer une nouvelle semaine", class:"btn btn-success ml-2" %>
-
-    <% end %>
-  </div>
-
-  <div class="text-center flex-row mx-2">
-    <button name="button" id="shopping-list"class="btn btn-danger">Afficher Liste de Course</button> 
-  </div>
-</div>
-
 <div class="container-fluid">
+  <div class="text-center d-flex flex-row justify-content-center">
+    <div class="text-center flex-row mx-2">
+      <%= form_with(model: current_user, method: 'put', local: true) do |f| %>
+        <% if @users_week.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@users_week.errors.count, "error") %> prohibited this @users_week from being saved:</h2>
+            <ul>
+            <% @users_week.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+        
+          <%= f.label :express, "Express (-15min)" %>
+          <%= f.check_box :express %> |
+          <%= f.label :vegan %>
+          <%= f.check_box :vegan %> |
+          <%= f.label :vegetarian, "Végétarien" %>
+          <%= f.check_box :vegetarian %> |
+          <%= f.label :porkless, "Sans porc" %>
+          <%= f.check_box :porkless %>
+
+
+          <%= f.submit "Générer une nouvelle semaine", class:"btn btn-success ml-2" %>
+
+      <% end %>
+    </div>
+
+    <div class="text-center flex-row mx-2">
+      <button name="button" id="shopping-list"class="btn btn-danger">Afficher Liste de Course</button> 
+    </div>
+  </div>
+
   <div class="d-flex flex-row mt-3">
     <% current_user.week.days.each do |day|%>
-      <div class="card mx-1 mb-5 border-bottom border-left border-right border-success" style="width: 18rem;">
+      <div class="card mx-1 border-bottom border-left border-right border-success" style="width: 16rem;">
         <div class="card-header d-flex justify-content-between bg-success">
           <%= link_to day.name, day_path(day.id), class:"text-white"%> 
         </div>
@@ -99,8 +99,8 @@
             <b><%= link_to "Déjeuner", meal_path(day.lunch.id), class:"text-warning"%></b>
           </li>
           <ul class="list-group-item size-li-planning border-bottom border-success">    
-            <li class=""><i class="fas fa-plus-circle text-warning"></i> <%= link_to day.lunch.starter.title, recipe_path(day.lunch.starter.id, ratio: current_user.needbymeal(day.lunch.category)/day.lunch.kcal),  remote: true, "data-target" => "#recipeModal", "data-toggle" =>"modal", class:"text-dark text-decoration-none" %></li>
-            <li class=""><i class="fas fa-plus-circle text-warning"></i> <%= link_to day.lunch.dish.title, recipe_path(day.lunch.dish.id, ratio: current_user.needbymeal(day.lunch.category)/day.lunch.kcal),  remote: true, "data-target" => "#recipeModal", "data-toggle" =>"modal", class:"text-dark text-decoration-none" %></li>
+            <li class=""><i class="fas fa-plus-circle text-success"></i> <%= link_to day.lunch.starter.title, recipe_path(day.lunch.starter.id, ratio: current_user.needbymeal(day.lunch.category)/day.lunch.kcal),  remote: true, "data-target" => "#recipeModal", "data-toggle" =>"modal", class:"text-dark text-decoration-none" %></li>
+            <li class=""><i class="fas fa-plus-circle text-success"></i> <%= link_to day.lunch.dish.title, recipe_path(day.lunch.dish.id, ratio: current_user.needbymeal(day.lunch.category)/day.lunch.kcal),  remote: true, "data-target" => "#recipeModal", "data-toggle" =>"modal", class:"text-dark text-decoration-none" %></li>
             <li class=""><%= day.lunch.dessert.title%></li>
             
           </ul>
@@ -108,8 +108,8 @@
             <b><%= link_to "Dîner", meal_path(day.dinner.id), class:"text-warning"%></b>
           </li>
           <ul class="list-group-item size-li-planning">    
-            <li class="recipe"><i class="fas fa-plus-circle text-warning"></i> <%= link_to day.dinner.starter.title, recipe_path(day.dinner.starter.id, ratio: current_user.needbymeal(day.dinner.category)/day.dinner.kcal),  remote: true, "data-target" => "#recipeModal", "data-toggle" =>"modal", class:"text-dark text-decoration-none" %></li>
-            <li class=""><i class="fas fa-plus-circle text-warning"></i> <%= link_to day.dinner.dish.title, recipe_path(day.dinner.dish.id, ratio: current_user.needbymeal(day.dinner.category)/day.dinner.kcal),  remote: true, "data-target" => "#recipeModal", "data-toggle" =>"modal", class:"text-dark text-decoration-none" %></li>
+            <li class="recipe"><i class="fas fa-plus-circle text-success"></i> <%= link_to day.dinner.starter.title, recipe_path(day.dinner.starter.id, ratio: current_user.needbymeal(day.dinner.category)/day.dinner.kcal),  remote: true, "data-target" => "#recipeModal", "data-toggle" =>"modal", class:"text-dark text-decoration-none" %></li>
+            <li class=""><i class="fas fa-plus-circle text-success"></i> <%= link_to day.dinner.dish.title, recipe_path(day.dinner.dish.id, ratio: current_user.needbymeal(day.dinner.category)/day.dinner.kcal),  remote: true, "data-target" => "#recipeModal", "data-toggle" =>"modal", class:"text-dark text-decoration-none" %></li>
             <li class=""><%= day.dinner.dessert.title%></li>
           </ul>
         </ul>
