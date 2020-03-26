@@ -42,41 +42,41 @@
   </div>
 </div>
 
-<div class="text-center d-flex flex-row justify-content-center">
-  <div class="text-center flex-row mx-2">
-    <%= form_with(model: current_user, method: 'put', local: true) do |f| %>
-      <% if @users_week.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@users_week.errors.count, "error") %> prohibited this @users_week from being saved:</h2>
-          <ul>
-          <% @users_week.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-          </ul>
-        </div>
-      <% end %>
-      
-        <%= f.label :express, "Express (-15min)" %>
-        <%= f.check_box :express %> |
-        <%= f.label :vegan %>
-        <%= f.check_box :vegan %> |
-        <%= f.label :vegetarian %>
-        <%= f.check_box :vegetarian %> |
-        <%= f.label :porkless, "Sans porc" %>
-        <%= f.check_box :porkless %>
-
-
-        <%= f.submit "Générer une nouvelle semaine", class:"btn btn-success ml-2" %>
-
-    <% end %>
-  </div>
-
-  <div class="text-center flex-row mx-2">
-    <button name="button" id="shopping-list"class="btn btn-danger">Afficher Liste de Course</button> 
-  </div>
-</div>
-
 <div class="container-fluid">
+  <div class="text-center d-flex flex-row justify-content-center">
+    <div class="text-center flex-row mx-2">
+      <%= form_with(model: current_user, method: 'put', local: true) do |f| %>
+        <% if @users_week.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@users_week.errors.count, "error") %> prohibited this @users_week from being saved:</h2>
+            <ul>
+            <% @users_week.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+        
+          <%= f.label :express, "Express (-15min)" %>
+          <%= f.check_box :express %> |
+          <%= f.label :vegan %>
+          <%= f.check_box :vegan %> |
+          <%= f.label :vegetarian %>
+          <%= f.check_box :vegetarian %> |
+          <%= f.label :porkless, "Sans porc" %>
+          <%= f.check_box :porkless %>
+
+
+          <%= f.submit "Générer une nouvelle semaine", class:"btn btn-success ml-2" %>
+
+      <% end %>
+    </div>
+
+    <div class="text-center flex-row mx-2">
+      <button name="button" id="shopping-list"class="btn btn-danger">Afficher Liste de Course</button> 
+    </div>
+  </div>
+
   <div class="d-flex flex-row mt-3">
     <% current_user.week.days.each do |day|%>
       <div class="card mx-1 mb-5 border-bottom border-left border-right border-success" style="width: 18rem;">
