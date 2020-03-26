@@ -79,7 +79,7 @@
 
   <div class="d-flex flex-row mt-3">
     <% current_user.week.days.each do |day|%>
-      <div class="card mx-1 mb-5 border-bottom border-left border-right border-success" style="width: 18rem;">
+      <div class="card mx-1 border-bottom border-left border-right border-success" style="width: 16rem;">
         <div class="card-header d-flex justify-content-between bg-success">
           <%= link_to day.name, day_path(day.id), class:"text-white"%> 
         </div>
