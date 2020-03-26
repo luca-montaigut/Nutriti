@@ -25,7 +25,7 @@
           <h5 class="ml-2 my-3"><td class="nav-item <%= 'active' if current_page?(root_path) %> "><%= link_to "« Retour au planning", root_path, class:"text-warning text-decoration-none" %></td></h5>
         <% end %>
       </div>
-      <button class="side-btn btn btn-outline-warning mr-3" id="nav-collapse" style="z-index: 9999;"><i class="fas fa-bars"></i></button>
+      <button class="side-btn btn btn-outline-warning mr-2" id="nav-collapse" style="z-index: 9999;"><i class="fas fa-bars"></i></button>
     </nav>
     
     <% if current_user%>
@@ -82,7 +82,7 @@
 
     <!-- Sidebar-->
     <div id="side-nav" class="container-right" style="display:none;">
-      <div class="right-nav bg-light d-flex flex-column ">
+      <div class="right-nav bg-white d-flex flex-column ">
         <h1 class="text-warning text-center mt-3 mb-2">Nutriti</h1>
         <hr>
         <tr class="nav flex-column align-items-start right-nav mt-4 ml-4">
@@ -91,6 +91,7 @@
               <%= link_to "Dashboard Admin", admin_dashboard_index_path, class:"btn btn-warning" %>
             </td>   
           <% end %>
+          <hr>
           <% unless current_page?(root_path) || current_page?(week_path(current_user.week.id)) %>          
             <h5 class="ml-2 my-3"><td class="nav-item <%= 'active' if current_page?(root_path) %> "><%= link_to "« Retour au planning", root_path, class:"text-warning text-decoration-none" %></td></h5>
           <% end %>
@@ -112,7 +113,9 @@
     
           <td class="nav-item <%= 'active' if current_page?(root_path) %> align-self-center mr-4 mt-5"><%= link_to "Se déconnecter", destroy_user_session_path, class:"btn btn-danger", method: :delete %></td>
         </tr>
-      </div>      
+      </div>
+        <div class="side-blur" id="close">
+  </div>      
 	  </div>
     <!-- End of Sidebar-->
         </div>      
