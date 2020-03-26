@@ -3,11 +3,15 @@ class Users::UsersController < Users::ApplicationController
   end
 
   def update
-    puts "a" * 78
     current_user.update(user_params)
     current_user.week.generate
+    
+    if params[:commit] == "Mettre à jour mon profil"
+      redirect_to user_path(current_user.id)
+    else
+      redirect_to root_path
+    end
 
-    redirect_to root_path
   end
 
   def edit 
