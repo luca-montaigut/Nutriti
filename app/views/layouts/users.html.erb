@@ -36,6 +36,7 @@
     <% end %>
 
 <!-- Flash -->
+<div class="container-fluid">
     <% flash.each do |key, value| %>
       <% if key == "error" %>
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -53,6 +54,7 @@
         </div>
       <% end %>
     <% end %>
+</div>
 <!-- End of Flash -->
 
     <%= yield %>
