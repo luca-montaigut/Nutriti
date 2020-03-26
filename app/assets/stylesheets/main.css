@@ -26,9 +26,18 @@
     min-height: 18vh;
 }
 
+footer{
+    height: 5vh;
+    margin-top: 3em;
+}
+
 .col-md-12 {
   position: relative;
   width: 100%;
   padding-right: 0px;
   padding-left: 0px;
+}
+
+.container{
+    margin-bottom: 7vh;
 }

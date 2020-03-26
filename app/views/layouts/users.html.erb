@@ -28,27 +28,24 @@
       <button class="side-btn btn btn-outline-warning mr-2" id="nav-collapse" style="z-index: 9999;"><i class="fas fa-bars"></i></button>
     </nav>
     
-    <% if current_user%>
-      <% if current_user.incomplete_profile? %>
-        <div class="alert alert-warning" role="alert">
-         Veuillez remplir vos informations en <b><%= link_to "cliquant ici", user_path(current_user.id), class:"text-warning"%></b> pour profiter pleinement de nos fonctionnalités.  
-        </div>
-      <% end %>
-    <%end%>
-    <%= yield %>
 
-    <!-- Flash -->
-  <div class="container">
+    <% if current_user.incomplete_profile? %>
+      <div class="alert alert-warning" role="alert">
+        Veuillez remplir vos informations en <b><%= link_to "cliquant ici", user_path(current_user.id), class:"text-warning"%></b> pour profiter pleinement de nos fonctionnalités.  
+      </div>
+    <% end %>
+
+<!-- Flash -->
     <% flash.each do |key, value| %>
       <% if key == "error" %>
-        <div class="alert alert-danger alert-dismissible fade show fixed-top" role="alert">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
           <%= content_tag :span, value, class: "flash #{key}" %>
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
       <% else %>
-        <div class="alert alert-success alert-dismissible fade show fixed-top" role="alert">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
           <%= content_tag :span, value, class: "flash #{key}" %>
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -56,8 +53,9 @@
         </div>
       <% end %>
     <% end %>
-  </div>
 <!-- End of Flash -->
+
+    <%= yield %>
 
 
     <!-- Footer -->
@@ -100,9 +98,9 @@
           <td class="nav-item"><h5 class="ml-2 my-3 mb-5"><%= link_to "Générer une journée", days_path, data:{method: 'post'}, class:'text-warning text-decoration-none'%></td></h5>
     
           <% else %>
-          <td class="nav-item"><h6 class="ml-2 my-3"><%= link_to "Générer un repas", charges_path, data:{method: 'post'}, class:'text-warning text-decoration-none'%> <span class="badge badge-pill badge-light"><i class="far fa-star mr-2"></i> Premium</span></td></h6>
+          <td class="nav-item"><h6 class="ml-2 my-3"><%= link_to "Générer un repas", charges_path, class:'text-warning text-decoration-none'%> <span class="badge badge-pill badge-light"><i class="far fa-star mr-2"></i> Premium</span></td></h6>
           
-          <td class="nav-item"><h6 class="ml-2 my-3 mb-5"><%= link_to "Générer une journée", charges_path, data:{method: 'post'}, class:'text-warning text-decoration-none'%> <span class="badge badge-pill badge-light"><i class="far fa-star mr-2"></i> Premium</span></td></h6>
+          <td class="nav-item"><h6 class="ml-2 my-3 mb-5"><%= link_to "Générer une journée", charges_path, class:'text-warning text-decoration-none'%> <span class="badge badge-pill badge-light"><i class="far fa-star mr-2"></i> Premium</span></td></h6>
           
           <h5 class="ml-2 my-3 mb-5 align-self-center mr-4"><td class="nav-item "><i class="far fa-star mr-2"></i> <%= link_to "Devenir Premium", charges_path, class:'text-warning text-decoration-none'%></td></h5>
           <% end %>
@@ -193,6 +191,13 @@ button.addEventListener("click", function () {
     }
   }
 })
+
+
+window.setTimeout(function() {
+    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+        $(this).remove(); 
+    });
+}, 1500);
 </script>
   </body>
 </html>
