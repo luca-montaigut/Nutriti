@@ -40,3 +40,9 @@ footer{
 .container{
     min-height: calc(100vh - 70px);
 }
+
+body, ul, li .recipe {
+    list-style: none;
+    margin:0;
+    padding:0;
+   }
