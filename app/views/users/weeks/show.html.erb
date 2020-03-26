@@ -12,7 +12,7 @@
 		</div>
 		<br/>
         <% @alim_groups.each do |alim_group| %>
-          <b class="ml-4"><%= alim_group %></b>
+          <b class="ml-4"><%= alim_group.capitalize %></b>
           <table class="ml-4">
             <tbody>
             <% current_user.shopping_cart.each do |elem|%>
