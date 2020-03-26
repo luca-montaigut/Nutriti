@@ -1,5 +1,5 @@
 class Users::MealsController < Users::ApplicationController
-  before_action :set_meal, only: [:show, :edit, :update, :destroy]
+  before_action :set_meal, only: [:show, :update, :destroy]
 
   def index
     @meals = Meal.all
@@ -10,16 +10,13 @@ class Users::MealsController < Users::ApplicationController
     @alim_groups = Food.all.map(&:alim_group).uniq
   end
 
-  def edit
-  end
-
   def create
     category = ['Lunch','Dinner']
     @meal = Meal.new.generate(category.sample, current_user)
 
     respond_to do |format|
       if @meal.save
-        format.html { redirect_to @meal, notice: 'Meal was successfully created.' }
+        format.html { redirect_to @meal, notice: 'Votre repas a bien été créé.' }
       else
         format.html { render :new }
       end
@@ -29,7 +26,7 @@ class Users::MealsController < Users::ApplicationController
   def update
     respond_to do |format|
       if @meal.update(meal_params)
-        format.html { redirect_to @meal, notice: 'Meal was successfully updated.' }
+        format.html { redirect_to @meal, notice: 'Votre repas a bienété mis à jours.' }
       else
         format.html { render :edit }
       end
@@ -39,7 +36,7 @@ class Users::MealsController < Users::ApplicationController
   def destroy
     @meal.destroy
     respond_to do |format|
-      format.html { redirect_to meals_url, notice: 'Meal was successfully destroyed.' }
+      format.html { redirect_to meals_url, notice: 'Votre repas a bien été supprimé.' }
     end
   end
 
