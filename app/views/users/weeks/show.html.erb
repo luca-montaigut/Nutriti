@@ -55,14 +55,14 @@
           </ul>
         </div>
       <% end %>
-
-        <%= f.label :express, "Express" %>
-        <%= f.check_box :express %>
+      
+        <%= f.label :express, "Express (-15min)" %>
+        <%= f.check_box :express %> |
         <%= f.label :vegan %>
-        <%= f.check_box :vegan %>
+        <%= f.check_box :vegan %> |
         <%= f.label :vegetarian %>
-        <%= f.check_box :vegetarian %>
-        <%= f.label :porkless %>
+        <%= f.check_box :vegetarian %> |
+        <%= f.label :porkless, "Sans porc" %>
         <%= f.check_box :porkless %>
 
 
