@@ -1,4 +1,5 @@
 class Users::ShoppingEmailsController < Users::ApplicationController
+	before_action :only_premium, only: [:show, :update, :destroy]
 
   def show
 	@user = current_user

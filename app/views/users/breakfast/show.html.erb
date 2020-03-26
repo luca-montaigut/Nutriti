@@ -48,9 +48,12 @@
     <li class="my-2"><%= @users_breakfast.option.title %></li>
   </ul>
 
+<% if current_user.is_premium %>  
   <div class="text-center mt-5">
     <button name="button" id="shopping-list"class="btn btn-danger">Afficher Liste de Course</button>
   </div>
+<% end %>
+
 </div>
 
 <script>

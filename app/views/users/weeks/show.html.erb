@@ -4,7 +4,10 @@
       <h3 class="text-center">Liste de course</h3>
       <hr style="margin: 25px;" class="bold">
       <tbody>
-		<div class="d-flex flex-row justify-content-center">
+		<div class="d-flex flex-row justify-content-center align-items-center">
+      <% unless current_user.is_premium %>
+        <span class="badge badge-pill badge-light"><i class="far fa-star mr-2"></i> Premium</span>
+      <% end %>
 		  <%= link_to "Recevoir la liste de course par email", shopping_email_path, data: { confirm: "Voulez vous recevoir votre liste par email ?" }, class:'btn btn-warning'%>
 		</div>
 		<br/>
@@ -102,7 +105,7 @@
             
           </ul>
           <li class="list-group-item text-light text-center bg-light">
-            <b><%= link_to "Diner", meal_path(day.dinner.id), class:"text-warning"%></b>
+            <b><%= link_to "Dîner", meal_path(day.dinner.id), class:"text-warning"%></b>
           </li>
           <ul class="list-group-item size-li-planning border-bottom border-success">    
             <li class=""><%= link_to day.dinner.starter.title, recipe_path(day.dinner.starter.id, ratio: current_user.needbymeal(day.dinner.category)/day.dinner.kcal),  remote: true, "data-target" => "#recipeModal", "data-toggle" =>"modal", class:"text-dark text-decoration-none" %></li>

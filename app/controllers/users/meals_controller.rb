@@ -1,5 +1,6 @@
 class Users::MealsController < Users::ApplicationController
   before_action :set_meal, only: [:show, :update, :destroy]
+  before_action :only_premium, only: [:show, :update, :destroy]
 
   def index
     @meals = Meal.all
