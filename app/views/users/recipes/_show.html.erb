@@ -1,0 +1,38 @@
+
+
+  <h1 class="my-5 font-weight-normal text-center text-success border-bottom pb-3"><%= @recipe.title %></h1>
+  <div class="text-center">
+    Pour <%= @recipe.forhowmany %> personne(s) |
+    <%= @recipe.cookingtime %> minute(s) |
+    Budget : <%= @recipe.budget %>
+    <br>
+    <div class="mt-3">
+    <%= link_to "Voir la recette", @recipe.url, target: :_blank, class:"btn btn-outline-warning" %>
+    </div>
+  </div>
+  <br>
+  <h2 class="my-5 font-weight-normal text-center text-success border-bottom pb-3">Valeure nutritionnelle pour <%= @recipe.forhowmany %> personnes : <%= @recipe.total_kcal %> kcal</h2>
+  <div class="text-center">Soit : <%= (@recipe.total_kcal / @recipe.forhowmany).ceil %> kcal par personne</div>
+  <div class="text-center">dont : <%= (@recipe.total_prot / @recipe.forhowmany ).ceil%> grammes de proteine(s) par personne</div>
+
+  <br>
+  <h2 class="my-5 font-weight-normal text-center text-success border-bottom pb-3">Liste des ingrédients proportionnés pour vous :</h2>
+  <ul class="no_dot_ul">
+    <div class="row text-center">
+      <% @recipe.join_recipe_foods.each do |food| %>
+      <div class="col-5 d-flex justify-content-end">
+        <li>
+          <%= food.food.alim_name %> 
+        </li>
+      </div>
+      <div class="col-5">
+        <li>
+          <%= (food.quantity/@recipe.forhowmany * @user_ratio).ceil%> gramme(s)
+        </li>
+      </div>
+      <% end %>
+    </div>
+  </ul>
+  <div class="row mb-5">
+  </div>
+</div>

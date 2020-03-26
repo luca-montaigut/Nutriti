@@ -61,6 +61,17 @@ footer{
   z-index: 500;
 }
 
+.side-btn{
+  box-shadow: none;
+}
+.side-btn:focus{
+  box-shadow: none;
+}
+.side-btn:hover{
+  box-shadow: none;
+}
+
+
 @keyframes right-slidein {
   from {
     float: right;

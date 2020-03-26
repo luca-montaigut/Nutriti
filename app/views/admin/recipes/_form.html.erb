@@ -29,6 +29,14 @@
     <%= f.select :budget, [['Bon marché'],['Coût moyen'],['Assez Cher']], class:"form-control"%>
     </div>
   </div>
+  <div class="d-flex flex-row mt-2">
+    <%= f.label :vegan, "Vegan" %>
+    <%= f.check_box :vegan %>
+    <%= f.label :vegetarian, "Végétarien" %>
+    <%= f.check_box :vegetarian %>
+    <%= f.label :porkless, "Sans porc" %>
+    <%= f.check_box :porkless %>
+  </div>
   <%= f.label :url%>
   <%= f.text_field :url, class:"form-control"%>
   <br>

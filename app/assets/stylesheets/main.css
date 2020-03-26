@@ -30,5 +30,12 @@ footer{
 }
 
 .size-li-planning {
-    min-height: 20vh;
+    min-height: 18vh;
+}
+
+.col-md-12 {
+  position: relative;
+  width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
 }

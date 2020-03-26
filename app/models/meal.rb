@@ -22,8 +22,30 @@ class Meal < ApplicationRecord
 
     if user.express == true
 	  all_recipes = Recipe.all.where("cookingtime <= 15")
+	  if user.vegan == true
+		all_recipes = all_recipes.where("vegan = ?", 'true')
+	  elsif user.vegetarian == true
+		all_recipes = all_recipes.where("vegan = ? AND vegetarian = ?", 'true', 'true')
+	  elsif user.porkless == true
+		all_recipes = all_recipes.where("porkless = ?", 'true')
+	  elsif user.vegan == true && user.porkless == true
+		all_recipes = all_recipes.where("vegan = ? AND porkless = ?", 'true', 'true')
+	  elsif user.vegetarian == true && user.porkless == true
+		all_recipes = all_recipes.where("vegan = ? AND vegetarian = ? AND porkless = ?", 'true', 'true', 'true')
+	  end
     else
       all_recipes = Recipe.all
+	  if user.vegan == true
+		all_recipes = all_recipes.where("vegan = ?", 'true')
+	  elsif user.vegetarian == true
+		all_recipes = all_recipes.where("vegan = ? OR vegetarian = ?", 'true', 'true')
+	  elsif user.porkless == true
+		all_recipes = all_recipes.where("porkless = ?", 'true')
+	  elsif user.vegan == true && user.porkless == true
+		all_recipes = all_recipes.where("vegan = ? AND porkless = ?", 'true', 'true')
+	  elsif user.vegetarian == true && user.porkless == true
+		all_recipes = all_recipes.where("vegan = ? OR vegetarian = ? AND porkless = ?", 'true', 'true', 'true')
+	  end
     end
 
     self.starter = all_recipes.where(category: "Starter").sample

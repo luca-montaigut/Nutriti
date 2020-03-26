@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1 class=text-center><%= @admin_recipe.title %></h1>
 <div class="text-center">
   Pour <%= @admin_recipe.forhowmany %> personne(s) |
@@ -27,6 +25,16 @@
     <% end %>
   </ul>
 
+<h2>Régime alimentaire</h2>
+  <% if@admin_recipe.vegan == true %>
+    <div>Vegan</div>
+  <% end %>
+  <% if@admin_recipe.vegetarian == true %>
+    <div>Végétarien</div>
+  <% end %>
+  <% if@admin_recipe.porkless == true %>
+    <div>Sans porc</div>
+  <% end %>
 <hr>
 <div class="text-center">
 <%= link_to 'Edit', edit_admin_recipe_path(@admin_recipe), class:"btn btn-success" %> |

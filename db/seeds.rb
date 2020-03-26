@@ -52,6 +52,9 @@ csv.each do |row|
   r.budget = row['budget']
   r.category = row['category']
   r.url = row['url']
+  r.vegan = row['vegan']
+  r.vegetarian = row['vegetarian']
+  r.porkless = row['porkless']
   r.save
 end
 

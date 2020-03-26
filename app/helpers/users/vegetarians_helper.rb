@@ -1,0 +1,2 @@
+module Users::VegetariansHelper
+end
