@@ -21,8 +21,11 @@
     <nav class="navbar navbar-expand-lg navbar-white bg-white">
       <%= link_to image_tag("logo_nutriti.svg", height: 50), week_path(current_user.id), class:"navbar-brand ml-5" %>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <% unless current_page?(root_path) || current_page?(week_path(current_user.week.id)) %>          
+          <h5 class="ml-2 my-3"><td class="nav-item <%= 'active' if current_page?(root_path) %> "><%= link_to "« Retour au planning", root_path, class:"text-warning text-decoration-none" %></td></h5>
+        <% end %>
       </div>
-      <button class="side-btn btn btn-outline-warning" id="nav-collapse" style="z-index: 9999;"><i class="fas fa-bars"></i></button>
+      <button class="side-btn btn btn-outline-warning mr-3" id="nav-collapse" style="z-index: 9999;"><i class="fas fa-bars"></i></button>
     </nav>
     
     <% if current_user%>
@@ -34,6 +37,30 @@
     <%end%>
     <%= yield %>
 
+    <!-- Flash -->
+  <div class="container">
+    <% flash.each do |key, value| %>
+      <% if key == "error" %>
+        <div class="alert alert-danger alert-dismissible fade show fixed-top" role="alert">
+          <%= content_tag :span, value, class: "flash #{key}" %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% else %>
+        <div class="alert alert-success alert-dismissible fade show fixed-top" role="alert">
+          <%= content_tag :span, value, class: "flash #{key}" %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<!-- End of Flash -->
+
+
+    <!-- Footer -->
     <% if current_page?(root_path) %>
     <footer class="page-footer mt-5">
         <div class="container-fluid bg-success py-1 text-center">
@@ -51,29 +78,40 @@
     </footer>
     
     </div>
+    <!-- End of Footer -->
 
     <!-- Sidebar-->
     <div id="side-nav" class="container-right" style="display:none;">
       <div class="right-nav bg-light d-flex flex-column ">
-        <ul class="nav flex-column align-items-end right-nav mt-4">
-          <li class="nav-item my-2 <%= 'active' if current_page?(user_path) %>"><%= link_to "Voir profil", user_path(current_user.id), class: "btn btn-warning" %></li>
+        <h1 class="text-warning text-center mt-3 mb-2">Nutriti</h1>
+        <hr>
+        <tr class="nav flex-column align-items-start right-nav mt-4 ml-4">
           <% if current_user.is_admin %>
-          <hr>
-            <li class="nav-item my-2">
+            <td class="nav-item align-self-center mr-4 mb-4">
               <%= link_to "Dashboard Admin", admin_dashboard_index_path, class:"btn btn-warning" %>
-            </li>    
+            </td>   
           <% end %>
-          <hr>
-          <li class="nav-item my-2 <%= 'active' if current_page?(root_path) %>"><%= link_to "Planning", root_path, class:"btn btn-warning" %></li>
-          <hr>
-          <li class="nav-item my-2"><%= link_to "Configurer son petit déjeuner", edit_breakfast_path(current_user.breakfast.id), "data-target" => "#breakfastModal", "data-toggle" =>"modal", remote: true,class:'btn btn-success'%></li>
-          <hr>
-          <li class="nav-item my-2"><%= link_to "Générer un repas", meals_path, data:{method: 'post'}, class:'btn btn-warning'%></li>
-          <hr>
-          <li class="nav-item my-2"><%= link_to "Générer une journée complète", days_path, data:{method: 'post'}, class:'btn btn-info'%></li>
-          <hr>
-          <li class="nav-item my-2 <%= 'active' if current_page?(root_path) %>"><%= link_to "Se déconnecter", destroy_user_session_path, class:"btn btn-danger", method: :delete %></li>
-        </ul>
+          <% unless current_page?(root_path) || current_page?(week_path(current_user.week.id)) %>          
+            <h5 class="ml-2 my-3"><td class="nav-item <%= 'active' if current_page?(root_path) %> "><%= link_to "« Retour au planning", root_path, class:"text-warning text-decoration-none" %></td></h5>
+          <% end %>
+          <h5 class="ml-2 my-3"><td class="nav-item <%= 'active' if current_page?(user_path(current_user.id)) %> "><%= link_to "Voir profil", user_path(current_user.id), class: "text-warning text-decoration-none" %></td></h5>
+    
+          <h5 class="ml-2 my-3"><td class="nav-item"><%= link_to "Editer son petit déjeuner", edit_breakfast_path(current_user.breakfast.id), "data-target" => "#breakfastModal", "data-toggle" =>"modal", remote: true,class:'text-warning text-decoration-none'%></td></h5>
+          <% if current_user.is_premium %>
+          <td class="nav-item"><h5 class="ml-2 my-3"><%= link_to "Générer un repas", meals_path, data:{method: 'post'}, class:'text-warning text-decoration-none'%></td></h5>
+          
+          <td class="nav-item"><h5 class="ml-2 my-3 mb-5"><%= link_to "Générer une journée", days_path, data:{method: 'post'}, class:'text-warning text-decoration-none'%></td></h5>
+    
+          <% else %>
+          <td class="nav-item"><h6 class="ml-2 my-3"><%= link_to "Générer un repas", meals_path, data:{method: 'post'}, class:'text-warning text-decoration-none'%> <span class="badge badge-pill badge-light"><i class="far fa-star mr-2"></i> Premium</span></td></h6>
+          
+          <td class="nav-item"><h6 class="ml-2 my-3 mb-5"><%= link_to "Générer une journée", days_path, data:{method: 'post'}, class:'text-warning text-decoration-none'%> <span class="badge badge-pill badge-light"><i class="far fa-star mr-2"></i> Premium</span></td></h6>
+          
+          <h5 class="ml-2 my-3 mb-5 align-self-center mr-4"><td class="nav-item "><i class="far fa-star mr-2"></i> <%= link_to "Devenir Premium", charges_path, class:'text-warning text-decoration-none'%></td></h5>
+          <% end %>
+    
+          <td class="nav-item <%= 'active' if current_page?(root_path) %> align-self-center mr-4 mt-5"><%= link_to "Se déconnecter", destroy_user_session_path, class:"btn btn-danger", method: :delete %></td>
+        </tr>
       </div>      
 	  </div>
     <!-- End of Sidebar-->

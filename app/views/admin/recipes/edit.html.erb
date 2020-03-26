@@ -1,6 +1,10 @@
-<h1>Editing Admin Recipe</h1>
+<h1>Editer la recette</h1>
+
+<div class="container">
 
 <%= render 'form', admin_recipe: @admin_recipe %>
 
-<%= link_to 'Show', admin_recipes_path %> |
-<%= link_to 'Back', admin_recipes_path %>
+<%= link_to 'Voir la recette', admin_recipes_path, class:"btn btn-success" %> |
+<%= link_to 'Retour', admin_recipes_path, class:"btn btn-primary" %>
+
+</div>

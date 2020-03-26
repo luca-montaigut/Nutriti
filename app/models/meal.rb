@@ -15,9 +15,9 @@ class Meal < ApplicationRecord
   def generate(category, user)
 
     if category == "Lunch"
-      self.category = "Lunch"
+      self.category = "Déjeuner"
     else category == "Diner"
-      self.category = "Dinner"
+      self.category = "Dîner"
     end
 
     if user.express == true

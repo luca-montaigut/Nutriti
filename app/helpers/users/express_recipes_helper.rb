@@ -1,2 +1,0 @@
-module Users::ExpressRecipesHelper
-end

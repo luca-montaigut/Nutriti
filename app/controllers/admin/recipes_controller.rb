@@ -41,7 +41,7 @@ class Admin::RecipesController < Admin::ApplicationController
   end
 
   def update
-    @admin_recipe.join_recipe_foods.destroy_all
+
     respond_to do |format|
       if @admin_recipe.update(admin_recipe_params)
         format.html { redirect_to admin_recipes_path, notice: 'Recipe was successfully updated.' }
@@ -67,7 +67,7 @@ class Admin::RecipesController < Admin::ApplicationController
     def admin_recipe_params
       params
       .require(:recipe)
-      .permit(:title, :forhowmany, :cookingtime, :category, :budget, :url, :vegan, :vegetarian, :porkless, join_recipe_foods_attributes: [:food_id, :quantity, :_destroy])
+      .permit(:title, :forhowmany, :cookingtime, :category, :budget, :url, :vegan, :vegetarian, :porkless, join_recipe_foods_attributes: [:id, :food_id, :quantity, :_destroy])
     end
 
 end

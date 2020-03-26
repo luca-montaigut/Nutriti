@@ -71,6 +71,7 @@ footer{
   box-shadow: none;
 }
 
+
 @keyframes right-slidein {
   from {
     float: right;

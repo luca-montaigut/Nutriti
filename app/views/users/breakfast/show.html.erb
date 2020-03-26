@@ -48,11 +48,12 @@
     <li class="my-2"><%= @users_breakfast.option.title %></li>
   </ul>
 
+<% if current_user.is_premium %>  
   <div class="text-center mt-5">
-    <%= link_to 'Edit', edit_breakfast_path(current_user.breakfast.id), class:"text-warning" %> |
-    <%= link_to 'Back', :back, class:"text-warning" %>
     <button name="button" id="shopping-list"class="btn btn-danger">Afficher Liste de Course</button>
   </div>
+<% end %>
+
 </div>
 
 <script>

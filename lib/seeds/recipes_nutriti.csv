@@ -1,29 +1,28 @@
-title,forhowmany,cookingtime,budget,category,url
-Ratatouille provençale,4,90,Bon marché,Dish,https://www.marmiton.org/recettes/recette_ratatouille-provencale_80582.aspx
-Poulet curry et oignons,4,20,Bon marché,Dish,https://www.marmiton.org/recettes/recette_poulet-curry-et-oignons-facile_13026.aspx
-Pâtes carbonara,6,20,Bon marché,Dish,https://www.marmiton.org/recettes/recette_pates-carbonara-la-vraie-recette-italienne_17213.aspx
-"Quiche poireaux, chèvre lardons",4,55,Bon marché,Dish,https://www.marmiton.org/recettes/recette_quiche-poireaux-chevre-lardons_22275.aspx
-Galettes bretonnes complètes,1,15,Bon marché,Dish,https://www.marmiton.org/recettes/recette_galettes-bretonnes-completes_20899.aspx
-Clémentine,1,5,Bon marché,Dessert,
-Eau minérale,1,1,Bon Marché,Drink,
-Pain,1,1,Bon Marché,Complement,
-Pomme,1,1,Bon Marché,Dessert,
-Banane,1,1,Bon Marché,Dessert,
-Tian de légumes du soleil,4,10,Bon marché,Starter,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Tian-de-legumes-du-soleil-3145546
-Petit salé aux lentilles,6,15,Bon marché,Dish,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Le-petit-sale-aux-lentilles-2634663
-Croque-monsieur,6,10,Bon marché,Dish,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Croque-monsieur-2280962
-Amuse-bouche au camembert et jambon cru,4,10,Bon marché,Starter,https://www.irepas.fr/recette/1296/amuse-bouche-au-camembert-et-jambon-crua
-Asperges à la milanaise,2,20,Coût moyen,Starter,https://www.irepas.fr/recette/9527/asperges-a-la-milanaisea
-Carottes et courgettes râpées aux épices,3,10,Bon marché,Starter,https://www.irepas.fr/recette/17752/carottes-et-courgettes-rapees-aux-epicesa
-Salade japonaise,4,20,Bon marché,Starter,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Salade-de-chou-blanc-a-la-japonaise-2028174
-Terrine aux deux saumons,8,60,Coût moyen,Starter,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Terrine-aux-deux-saumons-2033566
-Pâté de volaille maison,10,150,Bon marché,Starter,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Pate-de-volaille-maison-2076818
- Rillettes de saumon ,4,15,Bon marché,Starter,https://www.750g.com/rillettes-de-saumon-r100906.htm
- Oeufs mimosa à la betterave ,4,20,Bon marché,Starter,https://www.750g.com/oeufs-mimosa-a-la-betterave-r200051.htm
-Gaspacho,4,15,Bon marché,Starter,https://www.750g.com/gaspacho-r99712.htm
- Cake au jambon sans gluten ,4,65,Bon marché,Starter,https://www.750g.com/cake-au-jambon-sans-gluten-r19901.htm
-Café,1,5,Bon marché,Hot Drink,
-Jus d'orange,1,5,Bon marché,Juice,
-Céréales,1,5,Bon marché,Cereal (Breakfast),
-Yaourt,1,5,Bon marché,Protein (Breakfast),
-Tartines,1,5,Bon marché,Option (Breakfast),
+title,forhowmany,cookingtime,budget,category,url,vegan,vegetarian,porkless
+Ratatouille provençale,4,90,Bon marché,Dish,https://www.marmiton.org/recettes/recette_ratatouille-provencale_80582.aspx,true,true,true
+Poulet curry et oignons,4,20,Bon marché,Dish,https://www.marmiton.org/recettes/recette_poulet-curry-et-oignons-facile_13026.aspx,false,false,true
+Pâtes carbonara,6,20,Bon marché,Dish,https://www.marmiton.org/recettes/recette_pates-carbonara-la-vraie-recette-italienne_17213.aspx,false,true,true
+"Quiche poireaux, chèvre lardons",4,55,Bon marché,Dish,https://www.marmiton.org/recettes/recette_quiche-poireaux-chevre-lardons_22275.aspx,false,false,false
+Galettes bretonnes complètes,1,15,Bon marché,Dish,https://www.marmiton.org/recettes/recette_galettes-bretonnes-completes_20899.aspx,false,false,false
+Clémentine,1,5,Bon marché,Dessert,,true,true,true
+Eau minérale,1,1,Bon marché,Drink,,true,true,true
+Pain,1,1,Bon marché,Complement,,true,true,true
+Pomme,1,1,Bon marché,Dessert,,true,true,true
+Banane,1,1,Bon marché,Dessert,,true,true,true
+Tian de légumes du soleil,4,10,Bon marché,Starter,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Tian-de-legumes-du-soleil-3145546,true,true,true
+Petit salé aux lentilles,6,15,Bon marché,Dish,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Le-petit-sale-aux-lentilles-2634663,false,false,false
+Croque-monsieur,6,10,Bon marché,Dish,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Croque-monsieur-2280962,false,false,false
+Amuse-bouche au camembert et jambon cru,4,10,Bon marché,Starter,https://www.irepas.fr/recette/1296/amuse-bouche-au-camembert-et-jambon-crua,false,false,false
+Asperges à la milanaise,2,20,Coût moyen,Starter,https://www.irepas.fr/recette/9527/asperges-a-la-milanaisea,false,true,true
+Carottes et courgettes râpées aux épices,3,10,Bon marché,Starter,https://www.irepas.fr/recette/17752/carottes-et-courgettes-rapees-aux-epicesa,false,false,true
+Salade japonaise,4,20,Bon marché,Starter,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Salade-de-chou-blanc-a-la-japonaise-2028174,true,true,true
+Terrine aux deux saumons,8,60,Coût moyen,Starter,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Terrine-aux-deux-saumons-2033566,false,false,true
+Rillettes de saumon ,4,15,Bon marché,Starter,https://www.750g.com/rillettes-de-saumon-r100906.htm,false,false,true
+Oeufs mimosa à la betterave ,4,20,Bon marché,Starter,https://www.750g.com/oeufs-mimosa-a-la-betterave-r200051.htm,false,true,true
+Gaspacho,4,15,Bon marché,Starter,https://www.750g.com/gaspacho-r99712.htm,true,true,true
+Cake au jambon sans gluten ,4,65,Bon marché,Starter,https://www.750g.com/cake-au-jambon-sans-gluten-r19901.htm,false,false,false
+Café,1,5,Bon marché,Hot Drink,,true,true,true
+Jus d'orange,1,5,Bon marché,Juice,,true,true,true
+Céréales,1,5,Bon marché,Cereal (Breakfast),,true,true,true
+Yaourt,1,5,Bon marché,Protein (Breakfast),,false,true,true
+Tartines,1,5,Bon marché,Option (Breakfast),,false,true,true
