@@ -6,7 +6,7 @@
       <tbody>
 		<br/>
         <% @alim_groups.each do |alim_group| %>
-          <b class="ml-4"><%= alim_group %></b>
+          <b class="ml-4"><%= alim_group.capitalize %></b>
           <table class="ml-4">
             <tbody>
             <% @meal.list(current_user).each do |elem|%>
@@ -41,9 +41,9 @@
     <h1 class="mt-4 text-success">Votre : <%= @meal.category %></h1>
   <hr>
   <ul>
-    <li class="my-2 ">Calories de ce repas pour une personne : <%= @meal.kcal %> kcal</li>
-    <li class="my-2">Votre besoin à ce moment de la journée : <%= current_user.needbymeal(@meal.category) %> kcal</li>
-    <li class="my-2">Nous vous conseillons de multiplier les proportions de la recette par <%= current_user.needbymeal(@meal.category)/@meal.kcal %> pour coller à vos besoins réels</li>
+    <li class="my-2 ">Calories de ce repas pour une personne : <%= @meal.kcal.ceil %> kcal</li>
+    <li class="my-2">Votre besoin à ce moment de la journée : <%= current_user.needbymeal(@meal.category).ceil %> kcal</li>
+    <li class="my-2">Nous vous conseillons de multiplier les proportions de la recette par <%= (current_user.needbymeal(@meal.category)/@meal.kcal).ceil(1) %> pour coller à vos besoins réels</li>
   </ul>
   <h2 class="mt-5 text-success border-bottom py-3"> Le repas </h2>
   <ul class="no_dot_ul">

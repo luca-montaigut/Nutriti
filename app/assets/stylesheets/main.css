@@ -22,13 +22,6 @@
     list-style-type: none;
 }
 
-footer{
-    background-image: url();
-    background-position: bottom;    
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 .size-li-planning {
     min-height: 18vh;
 }

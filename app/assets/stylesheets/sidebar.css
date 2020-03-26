@@ -80,18 +80,6 @@ footer{
 }
 
 
-@keyframes right-slidein {
-  from {
-    float: right;
-    width: 0vh; 
-  }
-
-  to {
-    float: right;
-    width: 300px;
-  }
-}
-
 @keyframes slidein {
   from {
     background-color:grey;

@@ -100,9 +100,9 @@
           <td class="nav-item"><h5 class="ml-2 my-3 mb-5"><%= link_to "Générer une journée", days_path, data:{method: 'post'}, class:'text-warning text-decoration-none'%></td></h5>
     
           <% else %>
-          <td class="nav-item"><h6 class="ml-2 my-3"><%= link_to "Générer un repas", meals_path, data:{method: 'post'}, class:'text-warning text-decoration-none'%> <span class="badge badge-pill badge-light"><i class="far fa-star mr-2"></i> Premium</span></td></h6>
+          <td class="nav-item"><h6 class="ml-2 my-3"><%= link_to "Générer un repas", charges_path, data:{method: 'post'}, class:'text-warning text-decoration-none'%> <span class="badge badge-pill badge-light"><i class="far fa-star mr-2"></i> Premium</span></td></h6>
           
-          <td class="nav-item"><h6 class="ml-2 my-3 mb-5"><%= link_to "Générer une journée", days_path, data:{method: 'post'}, class:'text-warning text-decoration-none'%> <span class="badge badge-pill badge-light"><i class="far fa-star mr-2"></i> Premium</span></td></h6>
+          <td class="nav-item"><h6 class="ml-2 my-3 mb-5"><%= link_to "Générer une journée", charges_path, data:{method: 'post'}, class:'text-warning text-decoration-none'%> <span class="badge badge-pill badge-light"><i class="far fa-star mr-2"></i> Premium</span></td></h6>
           
           <h5 class="ml-2 my-3 mb-5 align-self-center mr-4"><td class="nav-item "><i class="far fa-star mr-2"></i> <%= link_to "Devenir Premium", charges_path, class:'text-warning text-decoration-none'%></td></h5>
           <% end %>
@@ -111,7 +111,7 @@
         </tr>
       </div>
         <div class="side-blur" id="side-blur">
-        </div>      
+  </div>      
 	  </div>
     <!-- End of Sidebar-->
         </div>      

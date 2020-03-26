@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :days, except: [:new, :edit]
     resources :weeks, only: [:show, :create, :update]
     resources :shopping_emails, only: [:show]
-    resources :charges
+    resources :charges, only: [:new, :create, :index]
   end
 
   scope 'admin', module: 'admin', as: 'admin' do
