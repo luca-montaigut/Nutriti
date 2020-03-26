@@ -1,5 +1,6 @@
 class Users::WeeksController < Users::ApplicationController
   before_action :set_users_week, only: [:show, :edit, :update, :destroy]
+  before_action :user_incompleted
 
   def show
     @alim_groups = Food.all.map(&:alim_group).uniq
