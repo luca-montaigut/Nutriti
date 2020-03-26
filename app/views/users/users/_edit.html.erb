@@ -38,14 +38,21 @@
   
         <div class="form-group">
           <%= f.label :activity, "Activité physique" %>
-          <%= f.select :physical_activity, [['Sedentaire', '1.375'],['Activité physique légère, (1 à 3 fois semaine)', '1.56'],['Activité physique modérée, (4 à 6 fois semaine)', '1.64'],['Activité physique intense, (4 à 6 fois semaine)', '1.82']] ,required: true, class:"form-control"%>
+          <%= f.select :physical_activity, [['Sedentaire', '1.2'],['Activité physique légère', '1.375'],['Activité physique modérée', '1.55'],['Activité physique intense', '1.725'], ['Activité physique très intense', '1.9']] ,required: true, class:"form-control"%>
         </div>
 
+        <% if current_user.is_premium %>
         <div class="form-group">
           <%= f.label :objective, "Objectif" %>
           <%= f.select :objective, [['Garder la ligne', '1'],['Maigrir', '0.9'],['Grossir', '1.1']] ,required: true, class:"form-control"%>
-        </div>
-  
+        </div>        
+        <% else %>
+        <div class="form-group">
+          <%= f.label :objective, "Objectif" %>
+          <%= f.select :objective, [['Garder la ligne', '1'],['Maigrir', '0.9'],['Grossir', '1.1']] ,required: true, class:"form-control", readonly:""%>
+        </div>        
+        <% end %>
+
         <div class="actions mt-5 mb-3">
           <%= submit_tag "Mettre a jour mon profil",class: "btn btn-lg btn-success btn-block px-3" %>
         </div>

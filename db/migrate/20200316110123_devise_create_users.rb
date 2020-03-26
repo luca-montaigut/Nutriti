@@ -13,7 +13,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
 	  t.date :birthdate
 	  t.string :gender
 	  t.string :physical_activity, :default => "0"
-	  t.decimal :objective, default: 1
+	  t.string :objective, default: "1"
 
       ## Recoverable
       t.string   :reset_password_token
