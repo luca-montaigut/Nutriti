@@ -16,7 +16,7 @@ class Meal < ApplicationRecord
 
     if category == "Lunch"
       self.category = "Déjeuner"
-    else category == "Diner"
+    else category == "Dinner"
       self.category = "Dîner"
     end
 
