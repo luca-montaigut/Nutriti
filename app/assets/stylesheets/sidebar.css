@@ -1,7 +1,7 @@
 .sidebar-wrapper{
   width: 100vw;
   height: 100%;
-  z-index: 300;
+  z-index: 6000;
   position: fixed;
 
 }
@@ -51,7 +51,6 @@
   z-index: 999;
   position: fixed;
   display: none;
-  pointer-events: none;
 }
 .bg-nav{
   background-color: #1d1919;
@@ -77,8 +76,7 @@ footer{
   background-color: gray; 
   height: 100%;
   opacity: 0.50;
-  animation-duration: 0.25s;
-  animation-name: blurein;
+
 }
 
 
@@ -117,5 +115,18 @@ footer{
   to {
     opacity: 0.5;
     width: 65%;
+  }
+}
+
+@keyframes side-blurein {
+  from {
+    opacity: 0;
+    width: 100%;
+  }
+
+  to {
+    opacity: 0.5;
+    width: 100%;
+
   }
 }
