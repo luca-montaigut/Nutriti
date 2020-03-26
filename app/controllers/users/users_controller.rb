@@ -4,10 +4,6 @@ class Users::UsersController < Users::ApplicationController
 
   def update
     current_user.update(user_params)
-
-    respond_to do |format|
-         format.js {}
-    end
   end
   
 
