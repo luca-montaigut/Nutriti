@@ -11,7 +11,7 @@
   </div>
   <br>
   <h2 class="my-5 font-weight-normal text-center text-success border-bottom pb-3">Valeur nutritionnelle pour 1 personne </h2>
-  <div class="text-center">Soit : <%= (@recipe.total_kcal / @recipe.forhowmany).ceil %> kcal </div>
+  <div class="text-center">Calories : <%= (@recipe.total_kcal / @recipe.forhowmany).ceil %> kcal </div>
   <div class="text-center">dont : <%= (@recipe.total_prot / @recipe.forhowmany ).ceil%> grammes de proteine(s)</div>
   <div class="text-center">dont : <%= (@recipe.total_lip / @recipe.forhowmany ).ceil%> grammes de lipide(s)</div>
   <div class="text-center">dont : <%= (@recipe.total_carb / @recipe.forhowmany ).ceil%> grammes de glucide(s)</div>
