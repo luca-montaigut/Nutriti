@@ -65,11 +65,11 @@ class Day < ApplicationRecord
     self.recipes.each do |join|
       if join == self.breakfast
         recipe.join_recipe_foods.each do |join|
-          array << {join.food.alim_name.match('^[^\,(]*') => join.quantity.to_f * (1.0/join.recipe.forhowmany.to_f).to_f}
+          array << {join.food.alim_name.match('^[^\,(]*').to_s => join.quantity.to_f * (1.0/join.recipe.forhowmany.to_f).to_f}
         end
       else
         join.join_recipe_foods.each do |m|
-          array << {m.food.alim_name.match('^[^\,(]*') => m.quantity.to_f * (1.0/m.recipe.forhowmany.to_f).to_f}
+          array << {m.food.alim_name.match('^[^\,(]*').to_s => m.quantity.to_f * (1.0/m.recipe.forhowmany.to_f).to_f}
         end
       end
     end
