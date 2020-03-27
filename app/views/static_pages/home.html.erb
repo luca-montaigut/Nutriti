@@ -19,29 +19,40 @@
     <div class="row icons-container text-center mb-5">
       <div class="col-md-4">
         <div class="incon-box-2 with-line">
-          <h3 class="mb-2 text-success border-bottom pb-3">Simplicité à toute épreuve</h3>
-          <i class="fas fa-lemon fa-2x fa-spin"></i>
-          <p class="mt-3">Le but est simple : après avoir rentré quelques données essentielles pour le fonctionnement de l'application telles que votre poids, votre taille, votre activité physique et vos objectifs, Nutriti vous proposera un planning de repas pour votre semaine. </p>
+          <h3 class="mb-2 text-success border-bottom pb-3">Simple</h3>
+          <br>
+          <i class=" fas fa-lemon fa-2x fa-spin fa-4x"></i>
+          <p class="mt-3">Nutriti vous proposera un planning de repas pour votre semaine adapté à votre régime alimentaire. Tous nos repas sont liés à des recttes réalisables par des débutants</p>
         </div>
 
 
       </div>
       <div class="col-md-4">
         <div class="incon-box-2 with-line">
-          <h3 class="mb-2 text-success border-bottom pb-3">Prise en main de sa santé</h3>
-          <i class="fas fa-carrot fa-2x fa-spin"></i>
-          <p class="mt-3"> Nutriti vous propose des recettes dosées en fonction de vos besoins caloriques. Ces derniers sont basés sur la formule de Harris et Benedict permettant ainsi de vous présenter des plats aux proportions adaptées à votre corps.</p>
+          <h3 class=" mb-2 text-success border-bottom pb-3">Sain</h3>
+          <br>
+          <i class="fas fa-carrot fa-2x fa-spin fa-4x"></i>
+          <p class="mt-3"> Basés sur la formule de Harris et Benedict, Nutriti vous donne les proportons sur les recettes en fontion de vos besoins caloriques.</p>
         </div>
   
       </div>
       <div class="col-md-4">
         <div class="incon-box-2 with-line">
-          <h3 class="mb-2 text-success border-bottom pb-3">Des courses clef en main</h3>
-          <i class="fas fa-pepper-hot fa-2x fa-spin"></i>
-          <p class="mt-3"> Avoir un planning c'est bien, avoir les aliments pour faire les recettes c'est mieux ! La grande force de Nutriti est de vous fournir la liste de courses nécessaires à la réalisation des plats de votre planning </p>
+          <h3 class="mb-2 text-success border-bottom pb-3">Efficace</h3>
+          <br>
+          <i class=" fas fa-pepper-hot fa-2x fa-spin fa-4x"></i>
+          <p class="mt-3"> Avoir un planning c'est bien, avoir les aliments pour faire les recettes c'est mieux ! Nutriti vous fourni la liste de courses nécessaires à la réalisation des recette de votre planning </p>
         </div>
       </div>
     </div>
+
+
+    <h3 class="mb-5 display-4 text-success border-bottom pb-3"> Le concept de Nutriti en video </h3>
+    <div class="embed-responsive embed-responsive-16by9 shadow-lg bg-white rounded py-3">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/YrfrvKo0pxc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <br>
 
     <div class="row text-center mt-5">
       <div class="col-12">
@@ -55,17 +66,15 @@
           <%= image_tag("https://images.pexels.com/photos/572056/pexels-photo-572056.jpeg?cs=srgb&dl=a-l-interieur-activites-affaires-afficher-572056.jpg&fm=jpg", class:"card-img-top") %>
           <div class="card-body">
             <h5 class="card-title text-success">Votre planning</h5>
-            <p class="card-text">Générez rapidement le planning de votre semaine de repas et modifiez-le à votre guise</p>
-            <button type="button" class="btn btn-lg btn-warning" disabled>Voir</button>
+            <p class="card-text">Générez rapidement le planning de votre semaine de repas selon vos préférences</p>
             <%= link_to "M'inscrire", new_user_registration_path, class:"btn btn-outline-warning btn-lg" %>
           </div>
         </div>
-        <div class="card shadow-lg">
+        <div class="card">
           <%= image_tag("https://images.pexels.com/photos/2168783/pexels-photo-2168783.jpeg?cs=srgb&dl=a-l-interieur-femme-fruits-interieur-2168783.jpg&fm=jpg", class:"card-img-top") %>
           <div class="card-body text-center">
             <h5 class="card-title text-success">Vos recettes</h5>
-            <p class="card-text">Retrouvez des recettes saines et faciles à réaliser. Vous suivez un régime alimentaire spécifique ou êtes allergique à un aliment ? Pas de problèmes, nous ne vous proposerons que des recettes répondant à vos critères</p>
-            <button type="button" class="btn btn-lg btn-warning" disabled>Voir</button>
+            <p class="card-text">Retrouvez des recettes saines et faciles à réaliser. Vous suivez un régime alimentaire spécifique ? Pas de problèmes, nous ne vous proposerons que des recettes répondant à vos critères</p>
             <%= link_to "M'inscrire", new_user_registration_path, class:"btn btn-outline-warning btn-lg" %>
           </div>
         </div>
@@ -74,7 +83,6 @@
           <div class="card-body text-center">
             <h5 class="card-title text-success">Vos listes de courses</h5>
             <p class="card-text">Grâce à Nutriti, vous aurez toujours les bons aliments dans vos placards pour réaliser vos repas.</p>
-            <button type="button" class="btn btn-lg btn-warning" disabled>Voir</button>
             <%= link_to "M'inscrire", new_user_registration_path, class:"btn btn-outline-warning btn-lg" %>
           </div>
         </div>
