@@ -58,21 +58,24 @@ class Day < ApplicationRecord
     ]
   end
 
-  def list 
+  def list
     array = []
+  
+    self.meals.each do |meal |
+      meal.recipes.each do |join |
+        if join == self.breakfast
 
-    
-    self.recipes.each do |join|
-      if join == self.breakfast
-        recipe.join_recipe_foods.each do |join|
-          array << {join.food.alim_name.match('^[^\,(]*').to_s => join.quantity.to_f * (1.0/join.recipe.forhowmany.to_f).to_f}
-        end
+          join.join_recipe_foods.each do |join |
+            array << {join.food.alim_name.match('^[^\,(]*').to_s => join.quantity.to_f * (1.0 / join.recipe.forhowmany.to_f).to_f}
+          end
+          
       else
-        join.join_recipe_foods.each do |m|
-          array << {m.food.alim_name.match('^[^\,(]*').to_s => m.quantity.to_f * (1.0/m.recipe.forhowmany.to_f).to_f}
+        join.join_recipe_foods.each do |m |
+          array << {m.food.alim_name.match('^[^\,(]*').to_s => m.quantity.to_f * (1.0 / m.recipe.forhowmany.to_f).to_f}
         end
       end
     end
+  end
 
     array.reduce {|acc, h| acc.merge(h) {|_,v1,v2| v1 + v2 }}
   end
