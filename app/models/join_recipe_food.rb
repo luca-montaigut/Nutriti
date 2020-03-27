@@ -27,7 +27,7 @@ class JoinRecipeFood < ApplicationRecord
   end
 
   def lipid
-    (self.food.ipidfor100g.to_f / 100) * self.quantity
+    (self.food.lipidfor100g.to_f / 100) * self.quantity
   end
 
   def self.join_to_csv

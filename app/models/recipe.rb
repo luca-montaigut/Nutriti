@@ -40,7 +40,7 @@ class Recipe < ApplicationRecord
   end
   
   def total_lip
-    self.join_recipe_foods.map { |food| food.lip}.sum
+    self.join_recipe_foods.map { |food| food.lipid}.sum
   end
 
   def total_salt
