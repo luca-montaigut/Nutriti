@@ -26,3 +26,29 @@ Jus d'orange,1,5,Bon marché,Juice,,true,true,true
 Céréales,1,5,Bon marché,Cereal (Breakfast),,true,true,true
 Yaourt,1,5,Bon marché,Protein (Breakfast),,false,true,true
 Tartines,1,5,Bon marché,Option (Breakfast),,false,true,true
+"Salade de fenouil, menthe et orange",2,5,Bon marché,Starter,https://vegan-pratique.fr/recettes/salade-de-fenouil-menthe-et-orange/,true,true,true
+Guacamole maison,3,10,Bon marché,Starter,https://vegan-pratique.fr/recettes/guacamole/,true,true,true
+Gnocchi et pesto de roquette,4,15,Bon marché,Dish,https://vegan-pratique.fr/recettes/gnocchi-et-pesto-de-roquette/,true,true,true
+Poke bowl quinoa et avocat,4,20,Bon marché,Dish,http://www.5ingredients15minutes.com/fr/recettes/plats-principaux/salades/poke-bowl-quinoa-et-avocat/?gallery=224564,true,true,true
+Chili de quinoa,4,30,Bon marché,Dish,http://www.5ingredients15minutes.com/fr/recettes/plats-principaux/chili-de-quinoa/?gallery=224564,true,true,true
+Casserole de pois chiches et épinards gratinée,4,30,Bon marché,Dish,http://www.5ingredients15minutes.com/fr/recettes/casserole-de-pois-chiches-et-epinards-gratinee/?gallery=224564,false,true,true
+Risotto de coquillettes,4,25,Bon marché,Dish,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Risotto-de-coquillettes-2345304,false,false,false
+Aiguillettes de poulet au curry,4,30,Bon marché,Dish,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Aiguillettes-de-poulet-au-curry-2070606,false,false,true
+Velouté de courgettes,2,25,Bon marché,Starter,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Veloute-de-courgettes-2086080,false,false,true
+Pommes de terre farcies au mascarpone,4,40,Bon marché,Starter,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/pommes-de-terre-farcies-au-mascarpone-549747,false,false,false
+Toasts d'avocat,4,10,Bon marché,Starter,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Avocado-toasts-2944212,true,true,true
+Oignon rings,6,10,Bon marché,Starter,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Oignon-rings-2080076,false,false,true
+Salade complète,4,10,Bon marché,Starter,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Salade-complete-2080324,false,false,true
+"Salade avocat, courgette, concombre, pamplemousse",6,15,Bon marché,Dish,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Salade-avocat-courgette-concombre-pamplemousse-3454322,true,true,true
+"Jus céleri, poire et coriandre",2,5,Bon marché,Juice,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Jus-celeri-poire-et-coriandre-3734783,true,true,true
+"Jus épinards, pomme granny et persil",2,5,Bon marché,Juice,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Jus-epinards-pomme-granny-et-persil-3734782,true,true,true
+"Jus ananas, poire et citron vert",2,5,Bon marché,Juice,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Jus-ananas-poire-et-citron-vert-3734779,true,true,true
+"Jus carotte, mangue et gingembre",2,5,Bon marché,Juice,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Jus-carotte-mangue-et-gingembre-3734777,true,true,true
+"Salade fenouils, carottes et abricots",4,15,Bon marché,Dish,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Salade-fenouils-carottes-et-abricots-3711740,true,true,true
+Ceviche aux haricots et quinoa,4,10,Bon marché,Dish,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Ceviche-aux-haricots-et-quinoa-3692954,true,true,true
+Tartare de légumes et kakis,6,15,Bon marché,Starter,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Tartare-de-legumes-et-kakis-3595727,true,true,true
+"Verrines avocat, fromage et saumon fumé",12,20,Bon marché,Starter,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Verrines-avocat-fromage-a-la-creme-aux-herbes-et-saumon-fume-2085226,false,false,true
+Tartare de tomate,4,15,Bon marché,Starter,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Tartare-de-tomate-2079466,true,true,true
+Pita au gigot d’agneau et chou rouge,4,25,Bon marché,Starter,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Pita-au-gigot-d-agneau-et-chou-rouge-3853187,false,false,true
+Spaghetti aux endives sautées,4,25,Bon marché,Dish,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Spaghetti-aux-endives-sautees-3829731,false,false,false
+Endives grillées à l’orange et au paprika,4,25,Bon marché,Starter,https://www.elle.fr/Elle-a-Table/Recettes-de-cuisine/Endives-grillees-a-l-orange-et-au-paprika-3829730,true,true,true
