@@ -2,9 +2,9 @@
 
 ## Présentation
 
-Nutriti est une application qui propose des repas pour la semaine à son utilisateur selon ses besoins et lui génère la liste des courses correspondante avec les quantités.
+Nutriti est une application qui propose des repas pour la semaine à son utilisateur selon ses besoins et ses objectifs. Ensuite l'application lui génère la liste des courses correspondante avec les quantités.
 
-![Image of site](https://i.imgur.com/ClPuT20.jpg)
+![Image of site](https://i.imgur.com/ch9qzNR.jpg)
 
 ## Visite en ligne http://nutriti.herokuapp.com/
 
@@ -12,6 +12,11 @@ Nutriti est une application qui propose des repas pour la semaine à son utilisa
 Connectez-vous avec :
 login : lazyrabbit@yopmail.com |
 password : 123456
+
+Effectuez un faux paiement Stripe pour devenir Premium :
+N° carte : 4242 4242 4242 4242
+Expiration : 12/21
+CVC : 123 
 
 Vous aurez ainsi accès à la partie "Dashboard Admin" depuis le menu déroulant de votre navbar
 
@@ -24,19 +29,12 @@ MVP fonctionnel :
 
 ### Schéma de la BDD
 
-![Image of site](https://i.imgur.com/ETawP7B.png)
+![Image of site](https://i.imgur.com/T0YuAgL.png)
 
-***Prochaines étapes :***
-- continuer de compléter notre base de données de recettes
-- améliorer le front et l'UI
-- gérer l'envoi de la liste des courses par mail
-- séparer le petit déjeuner des autres repas de la journée et le rendre configurable pour l'utilisateur
-- générer les repas non plus de façon aléatoire, mais adaptés aux besoins de l'utilisateur
-- prendre en compte les préférences de l'utilisateur (régimes spéciaux, allergies)
-
-Certaines limites techniques nous empèchent de proposer une application plus intéressante économiquement parlant, voir ci-après.
 
 ### Limites
+
+Certaines limites techniques nous empèchent de proposer une application plus intéressante économiquement parlant.
 
 Notre site est basé sur les aliments de la tables Ciqual qui est un jeu de données produit par l'Agence nationale de sécurité sanitaire de l'alimentation, de l'environnement et du travail sur la composition nutritionnelle des aliments. 
 C'est une référence pour les nutritionnistes toutefois les aliments présentés sont des aliments génériques et non des produits.
@@ -78,6 +76,11 @@ Connectez-vous avec :
 login : lazyrabbit@yopmail.com |
 password : 123456
 
+Effectuez un faux paiement Stripe pour devenir Premium :
+N° carte : 4242 4242 4242 4242
+Expiration : 12/21
+CVC : 123 
+
 Bonne visite !
 
 ## 🐰 Auteurs
@@ -90,4 +93,5 @@ Baptiste Igier : https://github.com/BaptisteIg
 Thibault Perchicot : https://github.com/Azaeps
 
 ### Notre mentor : 🧙‍♂️ Manuel Cartier https://github.com/neolectron
+### Vidéo : Mélanie Hubert
 
