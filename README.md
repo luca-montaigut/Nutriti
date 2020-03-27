@@ -18,7 +18,7 @@ N° carte : 4242 4242 4242 4242
 Expiration : 12/21
 CVC : 123 
 
-Vous aurez ainsi accès à la partie "Dashboard Admin" depuis le menu déroulant de votre navbar
+Vous aurez ainsi accès à la partie "Dashboard Admin" depuis la sidebar menu
 
 ## Etat d'avancement du projet 
 
@@ -93,5 +93,5 @@ Baptiste Igier : https://github.com/BaptisteIg
 Thibault Perchicot : https://github.com/Azaeps
 
 ### Notre mentor : 🧙‍♂️ Manuel Cartier https://github.com/neolectron
-### Vidéo : Mélanie Hubert
+### Vidéo : 🎞️  Mélanie Hubert
 
