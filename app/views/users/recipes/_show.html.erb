@@ -2,7 +2,6 @@
 
   <h1 class="my-5 font-weight-normal text-center text-success border-bottom pb-3"><%= @recipe.title %></h1>
   <div class="text-center">
-    Pour <%= @recipe.forhowmany %> personne(s) |
     <%= @recipe.cookingtime %> minute(s) |
     Budget : <%= @recipe.budget %>
     <br>
@@ -11,23 +10,25 @@
     </div>
   </div>
   <br>
-  <h2 class="my-5 font-weight-normal text-center text-success border-bottom pb-3">Valeure nutritionnelle pour <%= @recipe.forhowmany %> personnes : <%= @recipe.total_kcal.ceil %> kcal</h2>
-  <div class="text-center">Soit : <%= (@recipe.total_kcal / @recipe.forhowmany).ceil %> kcal par personne</div>
-  <div class="text-center">dont : <%= (@recipe.total_prot / @recipe.forhowmany ).ceil%> grammes de proteine(s) par personne</div>
+  <h2 class="my-5 font-weight-normal text-center text-success border-bottom pb-3">Valeur nutritionnelle pour 1 personne </h2>
+  <div class="text-center">Calories : <%= (@recipe.total_kcal / @recipe.forhowmany).ceil %> kcal </div>
+  <div class="text-center">dont : <%= (@recipe.total_prot / @recipe.forhowmany ).ceil%> grammes de proteine(s)</div>
+  <div class="text-center">dont : <%= (@recipe.total_lip / @recipe.forhowmany ).ceil%> grammes de lipide(s)</div>
+  <div class="text-center">dont : <%= (@recipe.total_carb / @recipe.forhowmany ).ceil%> grammes de glucide(s)</div>
 
   <br>
-  <h2 class="my-5 font-weight-normal text-center text-success border-bottom pb-3">Liste des ingrédients proportionnés pour vous :</h2>
+  <h2 class="my-5 font-weight-normal text-center text-success border-bottom pb-3">Liste des ingrédients proportionnés pour vous à ce moment de la journée:</h2>
   <ul class="no_dot_ul">
     <div class="row text-center">
       <% @recipe.join_recipe_foods.each do |food| %>
       <div class="col-5 d-flex justify-content-end">
         <li>
-          <%= food.food.alim_name %> 
+          <%= food.food.alim_name.match('^[^\,(]*') %> 
         </li>
       </div>
       <div class="col-5">
         <li>
-          <%= (food.quantity/@recipe.forhowmany * @user_ratio).ceil%> gramme(s)
+          <%= ((food.quantity.to_f/@recipe.forhowmany.to_f).to_f * @user_ratio).ceil%> gramme(s)
         </li>
       </div>
       <% end %>

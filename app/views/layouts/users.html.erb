@@ -17,7 +17,6 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12" id="content">
-          
           <nav class="navbar navbar-expand-lg navbar-white bg-white">
             <%= link_to image_tag("logo_nutriti.svg", height: 50), week_path(current_user.id), class:"navbar-brand ml-5" %>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
@@ -46,7 +45,7 @@
               <% end %>
               <h5 class="ml-2 my-3"><td class="nav-item <%= 'active' if current_page?(user_path(current_user.id)) %> "><%= link_to "Voir profil", user_path(current_user.id), class: "text-warning text-decoration-none" %></td></h5>
         
-              <h5 class="ml-2 my-3"><td class="nav-item"><%= link_to "Editer son petit déjeuner", edit_breakfast_path(current_user.breakfast.id), "data-target" => "#breakfastModal", "data-toggle" =>"modal", remote: true,class:'text-warning text-decoration-none'%></td></h5>
+              <h5 class="ml-2 my-3"><td class="nav-item"><%= link_to "Modifier son petit déjeuner", edit_breakfast_path(current_user.breakfast.id), "data-target" => "#breakfastModal", "data-toggle" =>"modal", remote: true,class:'text-warning text-decoration-none'%></td></h5>
               
               <% if current_user.is_premium %>
               <td class="nav-item"><h5 class="ml-2 my-3"><%= link_to "Générer un repas", meals_path, data:{method: 'post'}, class:'text-warning text-decoration-none'%></td></h5>
@@ -99,9 +98,12 @@
           <% end %>
         <% end %>
     </div>
-    <!-- End of Flash -->
+    <div class="content">
 
-    <%= yield %>
+      <%= yield %>
+
+    </div>
+
 
   
     <!-- Footer -->
