@@ -28,7 +28,7 @@
       </div>
       <div class="col-5">
         <li>
-          <%= (food.quantity/@recipe.forhowmany * @user_ratio).ceil%> gramme(s)
+          <%= ((food.quantity.to_f/@recipe.forhowmany.to_f).to_f * @user_ratio).ceil%> gramme(s)
         </li>
       </div>
       <% end %>
