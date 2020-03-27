@@ -5,7 +5,7 @@ class Users::ApplicationController < ApplicationController
 
   def user_incompleted
     if current_user.incomplete_profile?
-      redirect_to user_path(current_user.id)
+      redirect_to edit_user_path(current_user.id)
     end
   end
 
