@@ -6,6 +6,14 @@
     min-height: 100vh;
 }
 
+.image-card{
+    background-position: top;    
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 238px;
+    width: 358px;
+}
+
 .fa-lemon{
     color: yellow;
 }
