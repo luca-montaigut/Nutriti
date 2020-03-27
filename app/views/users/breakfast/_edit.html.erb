@@ -20,28 +20,28 @@
         <% end %>
 
           <div class="d-flex justify-content-between mb-2">
-            <%= f.label :name, "<h5>Boisson chaude </h5>".html_safe, class:"mb-1" %>
-            <%= f.collection_select :id, @hotdrinks, :id, :title, { include_blank: false }, {class: "btn btn-outline-warning w-50 h-25 p-3"}  %>
+            <%= f.label :hotdrink, "<h5>Boisson chaude </h5>".html_safe, class:"mb-1" %>
+            <%= f.collection_select :hotdrink_id, @hotdrinks, :id, :title, { include_blank: false }, {class: "btn btn-outline-warning w-50 h-25 p-3"}  %>
           </div>
 
           <div class="d-flex justify-content-between my-2">
-            <%= f.label :name, "<h5>Fruit </h5>".html_safe, class:"mb-1" %>
-            <%= f.collection_select :id, @fruits, :id, :title, { include_blank: false }, {class: "btn btn-outline-warning w-50 p-3"}  %>
+            <%= f.label :fruit, "<h5>Fruit </h5>".html_safe, class:"mb-1" %>
+            <%= f.collection_select :fruit_id, @fruits, :id, :title, { include_blank: false }, {class: "btn btn-outline-warning w-50 p-3"}  %>
           </div>
 
           <div class="d-flex justify-content-between my-2">
-            <%= f.label :name, "<h5>Céréales </h5>".html_safe, class:"mb-1" %>
-            <%= f.collection_select :id, @cereals, :id, :title, { include_blank: false }, {class: "btn btn-outline-warning w-50 p-3"}  %>
+            <%= f.label :cereal, "<h5>Céréales </h5>".html_safe, class:"mb-1" %>
+            <%= f.collection_select :cereal_id, @cereals, :id, :title, { include_blank: false }, {class: "btn btn-outline-warning w-50 p-3"}  %>
           </div>
 
           <div class="d-flex justify-content-between my-2">
-            <%= f.label :name, "<h5>Apport protéïné </h5>".html_safe, class:"mb-1" %>
-            <%= f.collection_select :id, @proteins, :id, :title, { include_blank: false }, {class: "btn btn-outline-warning w-50 p-3"}  %>
+            <%= f.label :protein, "<h5>Apport protéïné </h5>".html_safe, class:"mb-1" %>
+            <%= f.collection_select :protein_id, @proteins, :id, :title, { include_blank: false }, {class: "btn btn-outline-warning w-50 p-3"}  %>
           </div>
 
           <div class="d-flex justify-content-between my-2">
-            <%= f.label :name, "<h5>Option </h5>".html_safe, class:"mb-1" %>
-            <%= f.collection_select :id, @options, :id, :title, { include_blank: false }, {class: "btn btn-outline-warning w-50 p-3"}  %>
+            <%= f.label :option, "<h5>Option </h5>".html_safe, class:"mb-1" %>
+            <%= f.collection_select :option_id, @options, :id, :title, { include_blank: false }, {class: "btn btn-outline-warning w-50 p-3"}  %>
           </div>
 
         <br>
