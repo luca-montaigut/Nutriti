@@ -37,6 +37,6 @@ class Users::BreakfastController < Users::ApplicationController
     def users_breakfast_params
       params
       .require(:breakfast)
-      .permit(:hotdrink, :fruit, :cereal, :protein, :option, :id)
+      .permit(:hotdrink_id, :fruit_id, :cereal_id, :protein_id, :option_id, :id)
     end
 end
