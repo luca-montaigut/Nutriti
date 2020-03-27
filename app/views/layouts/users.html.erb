@@ -17,7 +17,6 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12" id="content">
-          
           <nav class="navbar navbar-expand-lg navbar-white bg-white">
             <%= link_to image_tag("logo_nutriti.svg", height: 50), week_path(current_user.id), class:"navbar-brand ml-5" %>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
@@ -27,33 +26,7 @@
             </div>
             <button class="side-btn btn btn-outline-warning mr-2" id="nav-collapse" style="z-index: 9999;"><i class="fas fa-bars"></i></button>
           </nav>
-          <% if current_user.incomplete_profile? %>
-          <div class="alert alert-warning" role="alert">
-            Veuillez remplir vos informations en <b><%= link_to "cliquant ici", user_path(current_user.id), class:"text-warning"%></b> pour profiter pleinement de nos fonctionnalités.  
-          </div>
-          <% end %>
         </div>
-
-        <!-- Flash -->
-        <% flash.each do |key, value| %>
-          <% if key == "error" %>
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-              <%= content_tag :span, value, class: "flash #{key}" %>
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-          <% else %>
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-              <%= content_tag :span, value, class: "flash #{key}" %>
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-          <% end %>
-        <% end %>
-        <!-- End of Flash -->
-
 
         <!-- Sidebar-->
         <div id="side-nav" class="container-right" style="display:none;">
@@ -72,11 +45,14 @@
               <% end %>
               <h5 class="ml-2 my-3"><td class="nav-item <%= 'active' if current_page?(user_path(current_user.id)) %> "><%= link_to "Voir profil", user_path(current_user.id), class: "text-warning text-decoration-none" %></td></h5>
         
-              <h5 class="ml-2 my-3"><td class="nav-item"><%= link_to "Editer son petit déjeuner", edit_breakfast_path(current_user.breakfast.id), "data-target" => "#breakfastModal", "data-toggle" =>"modal", remote: true,class:'text-warning text-decoration-none'%></td></h5>
+              <h5 class="ml-2 my-3"><td class="nav-item"><%= link_to "Modifier son petit déjeuner", edit_breakfast_path(current_user.breakfast.id), "data-target" => "#breakfastModal", "data-toggle" =>"modal", remote: true,class:'text-warning text-decoration-none'%></td></h5>
+              
               <% if current_user.is_premium %>
               <td class="nav-item"><h5 class="ml-2 my-3"><%= link_to "Générer un repas", meals_path, data:{method: 'post'}, class:'text-warning text-decoration-none'%></td></h5>
               
               <td class="nav-item"><h5 class="ml-2 my-3 mb-5"><%= link_to "Générer une journée", days_path, data:{method: 'post'}, class:'text-warning text-decoration-none'%></td></h5>
+              
+              <td class="nav-item"><p class="ml-2 my-3 mb-5"><%= link_to "Se désabonner du premium", user_path(current_user.id, user:{is_premium: false}), data:{method: 'put', confirm: "Êtes-vous sûr de vouloir vous désabonnez ? Vous perdrez toutes les fonctionnalités premium de Nutriti" }, class:'text-danger text-decoration-none'%></td></p>
         
               <% else %>
               <td class="nav-item"><h6 class="ml-2 my-3"><%= link_to "Générer un repas", charges_path, class:'text-warning text-decoration-none'%> <span class="badge badge-pill badge-light"><i class="far fa-star mr-2"></i> Premium</span></td></h6>
@@ -96,6 +72,32 @@
       </div>
     </div>
 
+    <% if current_user.incomplete_profile? %>
+      <div class="alert alert-warning" role="alert">
+        Veuillez remplir vos informations pour profiter pleinement de nos fonctionnalités.  
+      </div>
+    <% end %>
+
+    <!-- Flash -->
+    <div class="container-fluid">
+        <% flash.each do |key, value| %>
+          <% if key == "error" %>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <%= content_tag :span, value, class: "flash #{key}" %>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          <% else %>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <%= content_tag :span, value, class: "flash #{key}" %>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          <% end %>
+        <% end %>
+    </div>
     <div class="content">
 
       <%= yield %>
