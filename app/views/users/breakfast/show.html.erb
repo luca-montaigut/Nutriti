@@ -14,11 +14,11 @@
               <% if alim_group ==  food.alim_group %>            
                 <tr>
                   <% if food.weight_for_one != 1%>
-                    <td><%= (elem[1].round / food.weight_for_one).ceil%></td>
-                  <% elsif elem[1].round < 999 %>
-                    <td><%= elem[1].round%> <%= food.basic_unity%></td>
+                    <td><%= (elem[1].ceil / food.weight_for_one).ceil%></td>
+                  <% elsif elem[1].ceil < 999 %>
+                    <td><%= elem[1].ceil%> <%= food.basic_unity%></td>
                   <% else %>
-                    <td><%= (elem[1].round.to_f / 1000).round(2)%> <%= food.thousand_unity%></td>
+                    <td><%= (elem[1].ceil.to_f / 1000).ceil(2)%> <%= food.thousand_unity%></td>
                   <%end%>
                   <td class="bold"><%= elem[0]%></td>
                 </tr>
@@ -43,7 +43,7 @@
   <ul>
     <li class="my-2 ">Calories de ce petit déjeuner : <%= @users_breakfast.kcal.ceil %> kcal</li>
     <li class="my-2">Votre besoin à ce moment de la journée : <%= current_user.needbymeal(@users_breakfast).ceil %> kcal</li>
-    <li class="my-2">Nous vous conseillons de multiplier les proportions de la recette par <%= (current_user.needbymeal(@users_breakfast)/@users_breakfast.kcal).round(1) %> pour coller à vos besoins réels</li>
+    <li class="my-2">Nous vous conseillons de multiplier les proportions de la recette par <%= (current_user.needbymeal(@users_breakfast)/@users_breakfast.kcal).ceil(1) %> pour coller à vos besoins réels</li>
   </ul>
   <h2 class="mt-5 text-success border-bottom py-3"> Le repas </h2>
   <ul class="no_dot_ul">

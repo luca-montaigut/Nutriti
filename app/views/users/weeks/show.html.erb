@@ -20,11 +20,11 @@
               <% if alim_group ==  food.alim_group %>            
                 <tr>
                   <% if food.weight_for_one != 1%>
-                    <td><%= (elem[1].round / food.weight_for_one).ceil%> <%= food.basic_unity%></td>
-                  <% elsif elem[1].round < 999 %>
-                    <td><%= elem[1].round%> <%= food.basic_unity%></td>
+                    <td><%= (elem[1].ceil / food.weight_for_one).ceil%> <%= food.basic_unity%></td>
+                  <% elsif elem[1].ceil < 999 %>
+                    <td><%= elem[1].ceil%> <%= food.basic_unity%></td>
                   <% else %>
-                    <td><%= (elem[1].round.to_f / 1000).round(2)%> <%= food.thousand_unity%></td>
+                    <td><%= (elem[1].ceil.to_f / 1000).ceil(2)%> <%= food.thousand_unity%></td>
                   <%end%>
                   <td class="bold"><%= elem[0]%></td>
                 </tr>
